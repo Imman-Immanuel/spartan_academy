@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spartan_academy/screens/landing_screen/landing_Screen_widgets.dart';
+import 'package:spartan_academy/screens/landing_screen/landing_screen_widgets.dart';
 
 import 'screens/home_screen.dart';
 import 'package:get/get.dart';
