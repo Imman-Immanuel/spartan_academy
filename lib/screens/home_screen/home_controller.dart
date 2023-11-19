@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:spartan_academy/screens/admin_dashboard_screen.dart';
-import 'package:spartan_academy/screens/admin_login_screen.dart';
-import 'package:spartan_academy/screens/contact_us_screen.dart';
-import 'package:spartan_academy/screens/members_screen.dart';
-import 'package:spartan_academy/screens/welcome_screen.dart';
+import 'package:spartan_academy/screens/admin_dashboard_screen/view/admin_dashboard_screen.dart';
+import 'package:spartan_academy/screens/admin_login_screen/view/admin_login_screen.dart';
+import 'package:spartan_academy/screens/contact_us_screen/view/contact_us_screen.dart';
+import 'package:spartan_academy/screens/members_screen/view/members_screen.dart';
+import 'package:spartan_academy/screens/welcome_screen/welcome_screen.dart';
 
 class HomeController extends GetxController {
   List homeMenuList = [

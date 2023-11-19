@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../widgets/admin_dashboard_widgets.dart';
+import 'admin_dashboard_widgets.dart';
 
 class AdminDashboardController extends GetxController {
   List<String> menuList = ['Students', 'Academy', 'Certificates'];
@@ -9,8 +9,9 @@ class AdminDashboardController extends GetxController {
     academyContentWidget(),
     certificatesContentWidget()
   ];
-  var currentMenuSelectionIndex = 2.obs;
-  var currentContentSelectionIndex = 2.obs;
+
+  var currentMenuSelectionIndex = 0.obs;
+  var currentContentSelectionIndex = 0.obs;
 
   var currentCertificateView = createCertificatesWidget().obs;
 

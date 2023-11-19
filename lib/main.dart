@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:spartan_academy/screens/landing_screen/landing_screen_widgets.dart';
 
-import 'screens/home_screen.dart';
+import 'screens/home_screen/view/home_screen.dart';
 import 'package:get/get.dart';
 
 void main() {
   runApp(GetMaterialApp(
     home: HomeScreen(),
-
-    // home: Landing_screen_widget(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.grey),
   ));

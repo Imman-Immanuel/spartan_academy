@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/admin_dashboard_controller.dart';
+import 'admin_dashboard_controller.dart';
 
 final AdminDashboardController _adc = Get.find<AdminDashboardController>();
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:spartan_academy/widgets/admin_dashboard_widgets.dart';
+import 'package:spartan_academy/screens/admin_dashboard_screen/admin_dashboard_widgets.dart';
 import 'package:get/get.dart';
-import '../controllers/admin_dashboard_controller.dart';
+import '../admin_dashboard_controller.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
   const AdminDashboardScreen({super.key});
@@ -57,7 +57,8 @@ class AdminDashboardScreen extends StatelessWidget {
                                 adc.changeCurrentMenuSelectionIndex(index);
                                 adc.changeCurrentContentSelectionIndex(index);
                               },
-                              child: menuItemWidget(adc.menuList[index]));
+                              child:
+                                  menuItemWidget(adc.menuList[index], false));
                         }
                       })),
                     )

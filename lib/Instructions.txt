@@ -1,0 +1,6 @@
+Naming Conventions Examples
+
+folder - landing_screen
+file - landing_screen.dart
+class - LandingScreen
+function - landingScreen
