@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../../widgets/landing_carousel_widget.dart';
 
 class Landing_screen_widget extends StatefulWidget {
