@@ -6,9 +6,9 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(GetMaterialApp(
-    // home: HomeScreen(),
+    home: HomeScreen(),
 
-    home: Landing_screen_widget(),
+    // home: Landing_screen_widget(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.grey),
   ));
