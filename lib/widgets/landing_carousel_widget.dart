@@ -22,11 +22,11 @@ Widget landing_screen_carousel_() {
                       begin: Alignment.topCenter,
                       end: Alignment(2, 5),
                       colors: [Colors.black, Colors.red])),
-              // child: Image.asset(
-              //   "assets/images/Imman_pic.jpg",
-              //   height: 60,
-              //   width: 60,
-              // ),
+              child: Image.asset(
+                "assets/images/Imman_pic.jpg",
+                height: 60,
+                width: 60,
+              ),
               // child: Text("Add Photos"),
             )
           ],
