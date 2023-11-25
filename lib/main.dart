@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'screens/home_screen/view/home_screen.dart';
 import 'package:get/get.dart';
 

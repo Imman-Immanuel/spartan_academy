@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spartan_academy/global/global_widgets.dart';
 
 class AdminLoginScreen extends StatelessWidget {
   const AdminLoginScreen({super.key});
@@ -24,28 +25,11 @@ class AdminLoginScreen extends StatelessWidget {
             SizedBox(
               height: 50,
             ),
-            SizedBox(
-              width: 350,
-              child: TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
+            SizedBox(width: 350, child: inputBoxWidget('Email')),
             SizedBox(
               height: 20,
             ),
-            SizedBox(
-              width: 350,
-              child: TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
+            SizedBox(width: 350, child: inputBoxWidget('Email')),
             SizedBox(
               height: 30,
             ),
