@@ -8,10 +8,10 @@ class WelcomeScreen extends StatelessWidget {
     return Center(
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
               child: Center(
                   child: Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: EdgeInsets.all(30.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,

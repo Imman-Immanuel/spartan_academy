@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(GetMaterialApp(
-    home: HomeScreen(),
+    home: const HomeScreen(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.grey),
   ));

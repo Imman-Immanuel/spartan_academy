@@ -1,8 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:spartan_academy/screens/home_screen/home_widgets.dart';
-import 'package:scroll_loop_auto_scroll/scroll_loop_auto_scroll.dart';
-import 'package:carousel_slider/carousel_controller.dart';
 
 import '../members_widgets.dart';
 

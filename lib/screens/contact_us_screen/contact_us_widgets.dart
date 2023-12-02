@@ -8,17 +8,17 @@ Widget contactItemWidget(IconData icon, String title, String content) {
       children: [
         // Icon
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(50)),
             color: Colors.white,
           ),
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Icon(
             icon,
             size: 40,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
         SizedBox(
@@ -28,18 +28,18 @@ Widget contactItemWidget(IconData icon, String title, String content) {
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.lightBlue,
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
                 content,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 18, height: 1.5),
+                    const TextStyle(color: Colors.white, fontSize: 18, height: 1.5),
               ),
             ],
           ),
@@ -50,7 +50,7 @@ Widget contactItemWidget(IconData icon, String title, String content) {
 }
 
 Widget contactUsTitleWidget() {
-  return Text(
+  return const Text(
     'Contact Us',
     style: TextStyle(
         fontSize: 50,
@@ -65,11 +65,11 @@ Widget contactUsContentWidget() {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       contactUsTitleWidget(),
-      SizedBox(
+      const SizedBox(
         height: 10,
       ),
-      Padding(
-        padding: const EdgeInsets.all(10.0),
+      const Padding(
+        padding: EdgeInsets.all(10.0),
         child: SizedBox(
           width: 800,
           child: Text(
@@ -80,7 +80,7 @@ Widget contactUsContentWidget() {
               style: TextStyle(fontSize: 18, color: Colors.white, height: 1.5)),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 30,
       ),
       contactUsItemsWidget()

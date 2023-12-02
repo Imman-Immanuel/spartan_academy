@@ -8,15 +8,15 @@ Widget adminDashboardButtonWidget(String text, void Function()? onPressFunc) {
   return ElevatedButton(
     onPressed: onPressFunc,
     style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-        backgroundColor: Color(0xFF1B1B1A),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+        backgroundColor: const Color(0xFF1B1B1A),
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         )),
     child: Text(
       text,
-      style: TextStyle(fontSize: 18),
+      style: const TextStyle(fontSize: 18),
     ),
   );
 }
@@ -26,7 +26,7 @@ Widget adminDashboardIconButtonWidget(
   return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
-          backgroundColor: Color(0xFF1B1B1A),
+          backgroundColor: const Color(0xFF1B1B1A),
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
@@ -40,10 +40,10 @@ Widget adminDashboardIconButtonWidget(
 Widget menuItemWidget(String name, [bool isSelected = false]) {
   return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(50)),
-        color: isSelected ? Color(0xFF1B1B1A) : Colors.white,
+        borderRadius: const BorderRadius.all(Radius.circular(50)),
+        color: isSelected ? const Color(0xFF1B1B1A) : Colors.white,
       ),
       child: Text(
         name,
@@ -53,13 +53,13 @@ Widget menuItemWidget(String name, [bool isSelected = false]) {
 }
 
 Widget studentsContentWidget() {
-  return Center(
+  return const Center(
     child: Text('Students Content here. Coming soon !'),
   );
 }
 
 Widget academyContentWidget() {
-  return Center(
+  return const Center(
     child: Text('Academy Content here. Coming soon !'),
   );
 }
@@ -74,7 +74,7 @@ Widget certificatesContentWidget() {
             adminDashboardButtonWidget('Create Certificates', () {
               _adc.currentCertificateView.value = createCertificatesWidget();
             }),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             adminDashboardButtonWidget('View Certificates', () {
@@ -96,35 +96,35 @@ Widget createCertificatesWidget() {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Text(
+      const Text(
         'Create Certificate',
         style: TextStyle(fontSize: 25),
       ),
-      SizedBox(
+      const SizedBox(
         height: 40,
       ),
       SizedBox(
         width: 300,
         child: TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'Full Name',
             border: OutlineInputBorder(),
           ),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 20,
       ),
       SizedBox(
         width: 300,
         child: TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'Level',
             border: OutlineInputBorder(),
           ),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 40,
       ),
       adminDashboardIconButtonWidget(Icons.arrow_right_alt_rounded, () {})
@@ -136,23 +136,23 @@ Widget viewCertificatesWidget() {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Text(
+      const Text(
         'View Certificate',
         style: TextStyle(fontSize: 25),
       ),
-      SizedBox(
+      const SizedBox(
         height: 40,
       ),
       SizedBox(
         width: 300,
         child: TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'Certificate ID',
             border: OutlineInputBorder(),
           ),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 40,
       ),
       adminDashboardIconButtonWidget(Icons.arrow_right_alt_rounded, () {})

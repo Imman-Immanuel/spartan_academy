@@ -15,11 +15,11 @@ class HomeController extends GetxController {
   ];
 
   List screensList = [
-    WelcomeScreen(),
-    MembersScreen(),
-    ContactUsScreen(),
-    AdminLoginScreen(),
-    AdminDashboardScreen()
+    const WelcomeScreen(),
+    const MembersScreen(),
+    const ContactUsScreen(),
+    const AdminLoginScreen(),
+    const AdminDashboardScreen()
   ];
 
   var currentScreenSelectionIndex = 0.obs;

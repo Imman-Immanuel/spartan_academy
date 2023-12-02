@@ -14,14 +14,14 @@ Widget memberWidget(String imgPath, String name, String designation,
             backgroundImage: AssetImage(imgPath),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Column(
           children: [
             Text(
               name,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 25,
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
@@ -32,18 +32,18 @@ Widget memberWidget(String imgPath, String name, String designation,
               ),
               Text(
                 designation2,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                 ),
               ),
             ],
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Text(
               designation,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 20,
               ),

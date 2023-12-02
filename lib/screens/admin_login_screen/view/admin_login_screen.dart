@@ -18,19 +18,19 @@ class AdminLoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "ADMIN LOGIN",
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             SizedBox(width: 350, child: inputBoxWidget('Email')),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(width: 350, child: inputBoxWidget('Email')),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             ElevatedButton(
@@ -39,8 +39,8 @@ class AdminLoginScreen extends StatelessWidget {
                     backgroundColor: Colors.black87,
                     foregroundColor: Colors.white,
                     padding:
-                        EdgeInsets.symmetric(horizontal: 25, vertical: 15)),
-                child: Text(
+                        const EdgeInsets.symmetric(horizontal: 25, vertical: 15)),
+                child: const Text(
                   "LOGIN",
                   style: TextStyle(fontSize: 20),
                 ))

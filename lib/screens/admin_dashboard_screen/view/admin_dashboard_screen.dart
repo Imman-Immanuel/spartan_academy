@@ -11,15 +11,15 @@ class AdminDashboardScreen extends StatelessWidget {
     final AdminDashboardController adc = Get.put(AdminDashboardController());
 
     return Scaffold(
-      backgroundColor: Color(0xFF1B1B1A),
+      backgroundColor: const Color(0xFF1B1B1A),
       body: Row(
         children: [
           // Left Menu
           Container(
-            margin: EdgeInsets.symmetric(vertical: 50),
-            padding: EdgeInsets.all(20),
+            margin: const EdgeInsets.symmetric(vertical: 50),
+            padding: const EdgeInsets.all(20),
             width: 250,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(20),
                   bottomRight: Radius.circular(20)),
@@ -31,14 +31,14 @@ class AdminDashboardScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Menu',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Obx(
@@ -64,15 +64,15 @@ class AdminDashboardScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
                       shadowColor: Colors.transparent,
                       padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 30)),
+                          const EdgeInsets.symmetric(vertical: 20, horizontal: 30)),
                   onPressed: () {},
-                  child: Row(
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
@@ -96,15 +96,15 @@ class AdminDashboardScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
             // Right container
             child: Container(
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(20),
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 color: Colors.white,
               ),
               // Right container contents
               child: Column(
                 children: [
-                  Row(
+                  const Row(
                     children: [
                       Icon(
                         Icons.person_2_rounded,

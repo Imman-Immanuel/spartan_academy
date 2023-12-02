@@ -7,7 +7,7 @@ Widget inputBoxWidget(String labelText,
     keyboardType: textInputType,
     decoration: InputDecoration(
       labelText: labelText,
-      border: OutlineInputBorder(),
+      border: const OutlineInputBorder(),
     ),
   );
 }
@@ -17,7 +17,7 @@ Widget buttonWidget(String text, void Function()? onPressFunc,
   return ElevatedButton(
     onPressed: onPressFunc,
     style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
         backgroundColor: backgroundColor,
         foregroundColor: foregroundColor,
         shape: RoundedRectangleBorder(
@@ -25,7 +25,7 @@ Widget buttonWidget(String text, void Function()? onPressFunc,
         )),
     child: Text(
       text,
-      style: TextStyle(fontSize: 18),
+      style: const TextStyle(fontSize: 18),
     ),
   );
 }

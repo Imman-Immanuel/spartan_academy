@@ -10,7 +10,7 @@ Widget achievementsCarouselWidget() {
           width: 2050,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment(2, 5),
                   colors: [Colors.black, Colors.red])),

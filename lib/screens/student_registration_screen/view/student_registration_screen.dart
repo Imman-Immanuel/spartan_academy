@@ -29,7 +29,7 @@ class StudentRegistrationScreen extends StatelessWidget {
             child: Container(
               width: 350,
               height: 400,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
@@ -37,7 +37,7 @@ class StudentRegistrationScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Student Registration',
                     style: TextStyle(
                       fontSize: 24,
@@ -45,18 +45,18 @@ class StudentRegistrationScreen extends StatelessWidget {
                       color: Colors.red,
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   // Two input boxes (Name, Mobile No)
                   inputBoxWidget('Name', textInputType: TextInputType.number),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Mobile No',
                       border: OutlineInputBorder(),
                     ),
                     keyboardType: TextInputType.phone,
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   // Register button with glossy effect
                   buttonWidget('REGISTER', () {}, Colors.white, Colors.red)
                 ],
