@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:spartan_academy/screens/home_screen/home_controller.dart';
 import 'package:spartan_academy/screens/student_registration_screen/view/student_registration_screen.dart';
 
+import '../../welcome_screen/view/welcome_screen.dart';
 import '../home_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,6 +28,6 @@ class HomeScreen extends StatelessWidget {
               }
             })),
         // body: hc.screensList[hc.currentScreenSelectionIndex.value]
-        body: const StudentRegistrationScreen()));
+        body: const WelcomeScreen()));
   }
 }

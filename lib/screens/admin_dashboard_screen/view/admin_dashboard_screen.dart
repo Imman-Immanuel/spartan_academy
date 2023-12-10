@@ -69,8 +69,8 @@ class AdminDashboardScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
                       shadowColor: Colors.transparent,
-                      padding:
-                          const EdgeInsets.symmetric(vertical: 20, horizontal: 30)),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 30)),
                   onPressed: () {},
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,

@@ -38,8 +38,8 @@ Widget contactItemWidget(IconData icon, String title, String content) {
               ),
               Text(
                 content,
-                style:
-                    const TextStyle(color: Colors.white, fontSize: 18, height: 1.5),
+                style: const TextStyle(
+                    color: Colors.white, fontSize: 18, height: 1.5),
               ),
             ],
           ),
