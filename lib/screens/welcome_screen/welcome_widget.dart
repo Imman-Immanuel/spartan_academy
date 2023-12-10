@@ -39,23 +39,18 @@ Widget achievementsCarouselWidget() {
 }
 
 Widget welcomeWidget() {
-  return const Row(
-    mainAxisAlignment: MainAxisAlignment.start,
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Welcome to SPARTAN TAEKWONDO MARTIAL ART ACADEMY",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-          ),
-          Text(
-            "(Empowering Lives Through Taekwondo Excellence)",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 30, color: Colors.red),
-          )
-        ],
+      Text(
+        "* * * Welcome to SPARTAN TAEKWONDO MARTIAL ART ACADEMY * * *",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
       ),
+      Text(
+        "(Empowering Lives Through Taekwondo Excellence)",
+        style: TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 30, color: Colors.red),
+      )
     ],
   );
 }
@@ -99,7 +94,7 @@ Widget aboutUsWidget() {
         Expanded(
             child: Center(
                 child: SizedBox(
-                    height: 400,
+                    height: 300,
                     child: Image.asset('assets/images/Spartan_logo.png'))))
       ],
     ),
@@ -113,7 +108,7 @@ Widget missionWidget() {
         Expanded(
             child: Center(
                 child: SizedBox(
-                    height: 400,
+                    height: 300,
                     child: Image.asset('assets/images/Spartan_logo.png')))),
         Expanded(
             child: Center(
@@ -147,14 +142,14 @@ Widget missionWidget() {
 }
 
 Widget faqWidget() {
-  return Center(
+  return const Center(
     child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
             child: Center(
                 child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text("Why choose SPARTAN TAEKWONDO MARTIAL ART ACADEMY ?",
                 style: TextStyle(
@@ -164,9 +159,21 @@ Widget faqWidget() {
             SizedBox(
               height: 10,
             ),
+            Center(
+              child: Text(
+                textAlign: TextAlign.center,
+                '''Expert Instructors \nOur experienced and certified instructors are passionate about Taekwondo and dedicated to helping you achieve your goals.
+''',
+                style: TextStyle(
+                    fontSize: 20,
+                    letterSpacing: 1,
+                    wordSpacing: 1.5,
+                    height: 1.5),
+              ),
+            ),
             Text(
-              textAlign: TextAlign.justify,
-              '''Expert Instructors:\nOur experienced and certified instructors are passionate about Taekwondo and dedicated to helping you achieve your goals.
+              textAlign: TextAlign.center,
+              '''State-of-the-Art Facilities \n Train in a safe and supportive environment equipped with top-notch facilities that cater to all skill levels.
   ''',
               style: TextStyle(
                   fontSize: 20,
@@ -175,8 +182,8 @@ Widget faqWidget() {
                   height: 1.5),
             ),
             Text(
-              textAlign: TextAlign.justify,
-              '''State-of-the-Art Facilities :\n Train in a safe and supportive environment equipped with top-notch facilities that cater to all skill levels.
+              textAlign: TextAlign.center,
+              '''Holistic Approach \n We focus not only on physical fitness but also on mental and emotional well-being. Taekwondo is a holistic martial art that nurtures both body and mind.
   ''',
               style: TextStyle(
                   fontSize: 20,
@@ -185,18 +192,8 @@ Widget faqWidget() {
                   height: 1.5),
             ),
             Text(
-              textAlign: TextAlign.justify,
-              '''Holistic Approach:\n We focus not only on physical fitness but also on mental and emotional well-being. Taekwondo is a holistic martial art that nurtures both body and mind.
-  ''',
-              style: TextStyle(
-                  fontSize: 20,
-                  letterSpacing: 1,
-                  wordSpacing: 1.5,
-                  height: 1.5),
-            ),
-            Text(
-              textAlign: TextAlign.justify,
-              '''Community Spirit:\n Join a vibrant community of like-minded individuals who support and encourage each other on their martial arts journey.
+              textAlign: TextAlign.center,
+              '''Community Spirit \n Join a vibrant community of like-minded individuals who support and encourage each other on their martial arts journey.
 ''',
               style: TextStyle(
                   fontSize: 20,
@@ -205,11 +202,79 @@ Widget faqWidget() {
                   height: 1.5),
             ),
             Text(
-              textAlign: TextAlign.justify,
-              '''Martial Arts Benefits
-Physical Fitness
-Taekwondo is a dynamic martial art that enhances cardiovascular health,\nFlexibility, \nStrength, and coordination. Our classes are designed to provide a full-body workout, \nHelping you achieve and maintain optimal physical fitness.
+              textAlign: TextAlign.center,
+              '''Martial Arts Benefits \nFlexibility,\nPhysical Fitness,\n Taekwondo is a dynamic martial art that enhances cardiovascular health, Strength, and coordination. \nHelping you achieve and maintain optimal physical fitness,\n Our classes are designed to provide a full-body workout.''',
+              style: TextStyle(
+                  fontSize: 20,
+                  letterSpacing: 1,
+                  wordSpacing: 1.5,
+                  height: 1.5),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Text("Self-Defense Skills",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1)),
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              '''Learn practical self-defense techniques that can be applied in real-life situations. Gain confidence knowing that you have the skills to protect yourself and your loved ones''',
+              style: TextStyle(
+                  fontSize: 20,
+                  letterSpacing: 1,
+                  wordSpacing: 1.5,
+                  height: 1.5),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Text("Character Development",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1)),
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              '''Taekwondo is not just about kicks and punches; it's about building character. Our training instills values such as respect, courtesy, humility, and perseverance, shaping individuals into responsible and respectful members of society.
 ''',
+              style: TextStyle(
+                  fontSize: 20,
+                  letterSpacing: 1,
+                  wordSpacing: 1.5,
+                  height: 1.5),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Text("Get Started Today!",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1)),
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              '''Embark on a journey of self-discovery, fitness, and empowerment at Spartan Taekwondo Martial Art Academy. Whether you're a beginner or an experienced martial artist, our academy welcomes individuals of all skill levels.
+''',
+              style: TextStyle(
+                  fontSize: 20,
+                  letterSpacing: 1,
+                  wordSpacing: 1.5,
+                  height: 1.5),
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              '''Contact us today to schedule your first class and experience the transformative power of Taekwondo!''',
               style: TextStyle(
                   fontSize: 20,
                   letterSpacing: 1,
@@ -218,11 +283,6 @@ Taekwondo is a dynamic martial art that enhances cardiovascular health,\nFlexibi
             ),
           ],
         ))),
-        Expanded(
-            child: Center(
-                child: SizedBox(
-                    height: 400,
-                    child: Image.asset('assets/images/Spartan_logo.png')))),
       ],
     ),
   );
