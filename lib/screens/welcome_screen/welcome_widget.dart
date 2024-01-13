@@ -65,7 +65,7 @@ Widget aboutUsWidget() {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Spartan Taekwondo Martial Art Academy ",
+            Text("Spartan Taekwondo Martial Art Academy",
                 style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
