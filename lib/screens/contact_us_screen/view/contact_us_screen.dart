@@ -7,16 +7,20 @@ class ContactUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: double.infinity,
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("images/ContactUs_Screen_Background.png"),
-            fit: BoxFit.cover),
-      ),
-      child: Center(
-        child: contactUsContentWidget(),
-      ),
-    );
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("images/ContactUs_Screen_Background.png"),
+              fit: BoxFit.cover),
+        ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 30,
+            ),
+            contactUsScreen()
+          ],
+        ));
   }
 }
