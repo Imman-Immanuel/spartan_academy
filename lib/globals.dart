@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 int smallScreenWidth = 320;
 int mediumScreenWidth = 600;
 
@@ -22,4 +24,43 @@ List<Map<String, String>> welcomeContents = [
     'content':
         "Physical Fitness, Taekwondo is a dynamic martial art that enhances cardiovascular health, Flexibility, Strength, and coordination. Our classes are designed to provide a full-body workout, \nHelping you achieve and maintain optimal physical fitness."
   }
+];
+
+List<Map<String, dynamic>> registrationLables = [
+  {
+    "lable": "Name",
+    "hint": "Please enter your Name",
+    "keyboardType": TextInputType.name,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "Gmail",
+    "hint": "Please enter your Gmail",
+    "keyboardType": TextInputType.emailAddress,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "DOB",
+    "hint": "Please enter your DOB",
+    "keyboardType": TextInputType.datetime,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "Professional",
+    "hint": "Please enter your WORK/STUDY",
+    "keyboardType": TextInputType.text,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "Address",
+    "hint": "Please enter your Address",
+    "keyboardType": TextInputType.streetAddress,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "Phone No",
+    "hint": "Please enter your PH.No",
+    "keyboardType": TextInputType.number,
+    "controller": TextEditingController,
+  },
 ];

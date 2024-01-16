@@ -104,37 +104,40 @@ import '../registration_screen/registration_widget.dart';
 // }
 
 final ContacUsController = Get.put(ContactUsScreenController());
-Widget contactUsScreen() {
+
+Widget contactUsScreen({context}) {
   return leftRightBoxContainer(
+      context: context,
+      imgPath: "images/Spartan_logo.png",
       Colum: Column(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-      Container(
-        padding: EdgeInsets.symmetric(vertical: 5),
-        child: const Icon(
-          Icons.account_box,
-          size: 150,
-        ),
-      ),
-      commonTextField(
-          label: "Name",
-          hint: "Enter Your Name",
-          controler: ContacUsController.nameConroller),
-      commonTextField(
-          label: "Gmail",
-          hint: "Enter Your Gmail",
-          controler: ContacUsController.gmailConroller),
-      commonTextField(
-          label: "Phone No",
-          hint: "Work/Study",
-          controler: ContacUsController.phoneNoConroller),
-      commonTextField(
-          label: "Message",
-          hint: "Enter Your Message",
-          controler: ContacUsController.messageConroller),
-      sendButtonWidget(),
-    ],
-  ));
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 5),
+            child: const Icon(
+              Icons.account_box,
+              size: 150,
+            ),
+          ),
+          commonTextField(
+              label: "Name",
+              hint: "Enter Your Name",
+              controler: ContacUsController.nameConroller),
+          commonTextField(
+              label: "Gmail",
+              hint: "Enter Your Gmail",
+              controler: ContacUsController.gmailConroller),
+          commonTextField(
+              label: "Phone No",
+              hint: "Work/Study",
+              controler: ContacUsController.phoneNoConroller),
+          commonTextField(
+              label: "Message",
+              hint: "Enter Your Message",
+              controler: ContacUsController.messageConroller),
+          sendButtonWidget(),
+        ],
+      ));
 }
 
 Widget sendButtonWidget() {

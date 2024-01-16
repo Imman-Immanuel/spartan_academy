@@ -17,11 +17,13 @@ class RegistrationScreen extends StatelessWidget {
             fit: BoxFit.cover),
       ),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            registrationScreen(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              registrationScreen(context: context),
+            ],
+          ),
         ),
       ),
     );
