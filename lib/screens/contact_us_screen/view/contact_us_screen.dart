@@ -8,7 +8,7 @@ class ContactUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-          height: double.infinity,
+          // height: double.infinity,
           width: double.infinity,
           decoration: const BoxDecoration(
             image: DecorationImage(
