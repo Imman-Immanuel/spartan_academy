@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_controller.dart';
@@ -14,35 +13,35 @@ Widget leftRightBoxContainer({required Widget Colum}) {
         children: [
           Expanded(
             child: ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 200, minHeight: 600),
+              constraints: const BoxConstraints(maxWidth: 200, minHeight: 600),
               child: Container(
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0xFF2E0404).withOpacity(0.5),
+                      color: const Color(0xFF2E0404).withOpacity(0.5),
                       // offset: Offset(6, 10),
                       blurRadius: 8.8,
                       spreadRadius: 2.0,
                     )
                   ],
                   borderRadius: BorderRadius.circular(13.0),
-                  color: Color(0xFF2E0404),
+                  color: const Color(0xFF2E0404),
                 ),
-                child: Column(
+                child: const Column(
                   children: [],
                 ),
               ),
             ),
           ),
-          SizedBox(width: 100),
+          const SizedBox(width: 100),
           Expanded(
             child: ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 200, minHeight: 600),
+              constraints: const BoxConstraints(maxWidth: 200, minHeight: 600),
               child: Container(
                 decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: Color(0xFF2E0404).withOpacity(0.5),
+                        color: const Color(0xFF2E0404).withOpacity(0.5),
                         // offset: Offset(6, 10),
                         blurRadius: 8.8,
                         spreadRadius: 2.0,
@@ -64,9 +63,9 @@ Widget leftRightBoxContainer({required Widget Colum}) {
 ///common snackbar
 snackBar({msg}) {
   return Get.snackbar("Error", msg,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       maxWidth: 250,
-      animationDuration: Duration(milliseconds: 300),
+      animationDuration: const Duration(milliseconds: 300),
       snackPosition: SnackPosition.BOTTOM,
       colorText: Colors.red,
       borderRadius: 5,
@@ -101,7 +100,7 @@ Widget registrationScreen() {
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Container(
-        padding: EdgeInsets.symmetric(vertical: 5),
+        padding: const EdgeInsets.symmetric(vertical: 5),
         child: const Icon(
           Icons.account_box,
           size: 150,
@@ -141,7 +140,7 @@ Widget sendButtonWidget() {
     onPressed: () {
       RegistrationController.validation();
     },
-    child: Container(
+    child: const SizedBox(
         width: 100,
         height: 40,
         child: Center(

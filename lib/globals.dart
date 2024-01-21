@@ -1,3 +1,4 @@
+double verySmallScreenWidth = 280;
 int smallScreenWidth = 320;
 int mediumScreenWidth = 600;
 

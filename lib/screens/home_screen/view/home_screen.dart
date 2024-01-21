@@ -10,21 +10,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HomeController hc = Get.put(HomeController());
-    return Obx(() => Scaffold(
-        appBar: AppBar(
-            backgroundColor: const Color(0xFF1B1B1A),
-            actions: List.generate(hc.homeMenuList.length, (index) {
-              if (index == hc.currentScreenSelectionIndex.value) {
-                return homeMenuWidget(hc.homeMenuList[index], () {
-                  hc.changeCurrentScreenSelectionIndex(index);
-                }, true);
-              } else {
-                return homeMenuWidget(hc.homeMenuList[index], () {
-                  hc.changeCurrentScreenSelectionIndex(index);
-                });
-              }
-            })),
-        // body: hc.screensList[hc.currentScreenSelectionIndex.value]
-        body: ContactUsScreen()));
+    // return Obx(() => Scaffold(
+    //     appBar: AppBar(
+    //         backgroundColor: const Color(0xFF1B1B1A),
+    //         actions: List.generate(hc.homeMenuList.length, (index) {
+    //           if (index == hc.currentScreenSelectionIndex.value) {
+    //             return homeMenuWidget(hc.homeMenuList[index], () {
+    //               hc.changeCurrentScreenSelectionIndex(index);
+    //             }, true);
+    //           } else {
+    //             return homeMenuWidget(hc.homeMenuList[index], () {
+    //               hc.changeCurrentScreenSelectionIndex(index);
+    //             });
+    //           }
+    //         })),
+    // body: hc.screensList[hc.currentScreenSelectionIndex.value]
+    return Scaffold(
+      body: ContactUsScreen(),
+    );
   }
 }

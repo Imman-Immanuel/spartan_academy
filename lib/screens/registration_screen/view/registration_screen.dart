@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spartan_academy/global/global_widgets.dart';
 
 import '../registration_widget.dart';
 
