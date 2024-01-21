@@ -21,6 +21,9 @@ class RegistrationScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(
+                height: 30,
+              ),
               registrationScreen(context: context),
             ],
           ),

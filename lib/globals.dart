@@ -26,7 +26,7 @@ List<Map<String, String>> welcomeContents = [
   }
 ];
 
-List<Map<String, dynamic>> registrationLables = [
+List<Map<String, dynamic>> registrationList = [
   {
     "lable": "Name",
     "hint": "Please enter your Name",

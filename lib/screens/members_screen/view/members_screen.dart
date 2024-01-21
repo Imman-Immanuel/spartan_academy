@@ -29,7 +29,7 @@ class MembersScreen extends StatelessWidget {
                 memberWidget('images/Sample_user.png', 'Hema Sankar',
                     'General Secretary'),
                 memberWidget(
-                  'images/Sample_user.png',
+                  'assets/images/sathish.jpg',
                   'Sathish Kumar',
                   'Joint Secretary',
                 ),
