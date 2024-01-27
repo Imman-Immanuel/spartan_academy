@@ -28,5 +28,23 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: ContactUsScreen(),
     );
+    return Obx(() => Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            actions: List.generate(hc.homeMenuList.length, (index) {
+              if (index == hc.currentScreenSelectionIndex.value) {
+                return homeMenuWidget(hc.homeMenuList[index], () {
+                  hc.changeCurrentScreenSelectionIndex(index);
+                }, true);
+              } else {
+                return homeMenuWidget(hc.homeMenuList[index], () {
+                  hc.changeCurrentScreenSelectionIndex(index);
+                });
+              }
+            })),
+        body: hc.screensList[hc.currentScreenSelectionIndex.value]
+        // body: ContactUsScreen()
+
+        ));
   }
 }

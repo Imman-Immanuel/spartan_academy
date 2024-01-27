@@ -5,11 +5,14 @@ import 'package:spartan_academy/screens/contact_us_screen/view/contact_us_screen
 import 'package:spartan_academy/screens/members_screen/view/members_screen.dart';
 import 'package:spartan_academy/screens/welcome_screen/view/welcome_screen.dart';
 
+import '../registration_screen/view/registration_screen.dart';
+
 class HomeController extends GetxController {
   List homeMenuList = [
     'Home',
     'Members',
     'Contact',
+    'Registration',
     'Admin Login',
     'Admin Dashboard'
   ];
@@ -18,6 +21,7 @@ class HomeController extends GetxController {
     const WelcomeScreen(),
     const MembersScreen(),
     const ContactUsScreen(),
+    const RegistrationScreen(),
     const AdminLoginScreen(),
     const AdminDashboardScreen()
   ];

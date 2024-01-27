@@ -8,7 +8,7 @@ Widget homeMenuWidget(String menuName, void Function()? onPressFunc,
         menuName,
         style: TextStyle(
             fontSize: isSelected ? 20 : 18,
-            color: isSelected ? Colors.white : Colors.white70,
+            color: isSelected ? Colors.red : Colors.black,
             fontWeight: isSelected ? FontWeight.bold : null),
       ));
 }
