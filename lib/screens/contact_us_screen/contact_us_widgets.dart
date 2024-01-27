@@ -4,8 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spartan_academy/screens/contact_us_screen/contact_us_controller.dart';
 import 'package:spartan_academy/globals.dart';
 
-import '../registration_screen/registration_widget.dart';
-
 Widget iconLink({required String iconPath, double size = 30}) {
   return SvgPicture.asset(
     iconPath,
@@ -98,7 +96,7 @@ Widget contactCard(BuildContext context) {
               height: 30,
             ),
             ElevatedButton(
-              onPressed: (){},
+              onPressed: _submitForm,
               style: ElevatedButton.styleFrom(
                 padding:
                     const EdgeInsets.symmetric(vertical: 18, horizontal: 30),
@@ -131,74 +129,37 @@ Widget contactCard(BuildContext context) {
       ),
     ),
   );
+}
 
-
-// final ContacUsController = Get.put(ContactUsScreenController());
-//
-// Widget contactUsScreen({context}) {
-//   return leftRightBoxContainer(
-//       context: context,
-//       imgPath: "images/Spartan_logo.png",
-//       Colum: Column(
-//         mainAxisAlignment: MainAxisAlignment.spaceAround,
-//         children: [
-//           Container(
-//             padding: EdgeInsets.symmetric(vertical: 5),
-//             child: const Icon(
-//               Icons.account_box,
-//               size: 150,
-//             ),
-//           ),
-//           commonTextField(
-//               label: "Name",
-//               hint: "Enter Your Name",
-//               controler: ContacUsController.nameConroller),
-//           commonTextField(
-//               label: "Gmail",
-//               hint: "Enter Your Gmail",
-//               controler: ContacUsController.gmailConroller),
-//           commonTextField(
-//               label: "Phone No",
-//               hint: "Work/Study",
-//               controler: ContacUsController.phoneNoConroller),
-//           commonTextField(
-//               label: "Message",
-//               hint: "Enter Your Message",
-//               controler: ContacUsController.messageConroller),
-//           sendButtonWidget(),
-//         ],
-//       ));
-// }
-//
 void _submitForm() {}
-//
-// Widget contactUsSplitContainer(BuildContext context) {
-//   double screenWidth = MediaQuery.of(context).size.width;
-//   bool isSmallScreen = screenWidth < mediumScreenWidth;
-//
-//   return Center(
-//     child: SingleChildScrollView(
-//       child: isSmallScreen
-//           ? Column(
-//               children: [contactCard(context), mapCard()],
-//             )
-//           : Column(
-//               children: [
-//                 Row(
-//                   children: [
-//                     Expanded(
-//                       child: Column(
-//                         children: [contactCard(context)],
-//                       ),
-//                     ),
-//                     Expanded(
-//                         child: Column(
-//                       children: [mapCard()],
-//                     )),
-//                   ],
-//                 ),
-//               ],
-//             ),
-//     ),
-//   );
-// }
+
+Widget contactUsSplitContainer(BuildContext context) {
+  double screenWidth = MediaQuery.of(context).size.width;
+  bool isSmallScreen = screenWidth < mediumScreenWidth;
+
+  return Center(
+    child: SingleChildScrollView(
+      child: isSmallScreen
+          ? Column(
+              children: [contactCard(context), mapCard()],
+            )
+          : Column(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [contactCard(context)],
+                      ),
+                    ),
+                    Expanded(
+                        child: Column(
+                      children: [mapCard()],
+                    )),
+                  ],
+                ),
+              ],
+            ),
+    ),
+  );
+}

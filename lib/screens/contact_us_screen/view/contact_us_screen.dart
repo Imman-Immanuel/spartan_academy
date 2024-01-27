@@ -20,7 +20,6 @@ class ContactUsScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              contactUsScreen(context: context)
             ],
           )),
     );
