@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spartan_academy/screens/contact_us_screen/contact_us_controller.dart';
@@ -49,7 +48,7 @@ Widget contactCard(BuildContext context) {
   double screenWidth = MediaQuery.of(context).size.width;
   bool isVerySmallScreen = screenWidth < verySmallScreenWidth;
 
-  return Container(
+  return SizedBox(
     width: 500,
     height: 500,
     child: Card(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_controller.dart';
 
-import '../../globals.dart';
 
 final RegistrationController = Get.put(RegistraionScreenController());
 
@@ -44,7 +43,7 @@ Widget leftRightBoxContainer({
                     )
                   ]),
             ),
-            SizedBox(width: 50),
+            const SizedBox(width: 50),
           ],
 
           // Right box - web view  Widget
@@ -58,7 +57,7 @@ Widget leftRightBoxContainer({
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                          color: Color(0xFF2E0404).withOpacity(0.5),
+                          color: const Color(0xFF2E0404).withOpacity(0.5),
                           // offset: Offset(6, 10),
                           blurRadius: 8.8,
                           spreadRadius: 2.0,
@@ -81,7 +80,7 @@ Widget leftRightBoxContainer({
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
-                            color: Color(0xFF2E0404).withOpacity(0.5),
+                            color: const Color(0xFF2E0404).withOpacity(0.5),
                             // offset: Offset(6, 10),
                             blurRadius: 8.8,
                             spreadRadius: 2.0,
@@ -142,7 +141,7 @@ Widget registrationScreen({context}) {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 5),
+            padding: const EdgeInsets.symmetric(vertical: 5),
             child: const Icon(
               Icons.account_box,
               size: 150,

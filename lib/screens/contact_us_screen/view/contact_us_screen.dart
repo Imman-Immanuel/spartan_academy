@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../contact_us_widgets.dart';
+
 class ContactUsScreen extends StatelessWidget {
   const ContactUsScreen({super.key});
 
@@ -17,9 +19,10 @@ class ContactUsScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
+              contactUsSplitContainer(context)
             ],
           )),
     );
