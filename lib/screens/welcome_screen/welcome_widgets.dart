@@ -10,8 +10,6 @@ Widget welcomeSplitContainerWidget1({
   required String content,
   required BuildContext context,
   double imgHeight = 300,
-  double headingFontSize = 30,
-  double contentFontSize = 20,
   Color headingFontColor = Colors.black,
   Color contentFontColor = Colors.black,
 }) {
@@ -128,7 +126,9 @@ Widget carsoalModel(String imgPath, String name, double height) {
           name,
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+              fontSize: contentFontSize,
+              color: Colors.black,
+              fontWeight: FontWeight.bold),
         ),
       ],
     ),
@@ -146,12 +146,13 @@ Widget classesOfferWidget() {
           ),
           Text(
             "Classes Offer",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: headingFontSize, fontWeight: FontWeight.bold),
           ),
         ],
       ),
       SizedBox(
-        height: 50,
+        height: 30,
       ),
       CarouselSlider(
           items: [
@@ -175,26 +176,27 @@ Widget classesOfferWidget() {
               autoPlay: true)),
       Text(
         "Get Started Today",
-        style: TextStyle(fontSize: 25),
+        style: TextStyle(fontSize: headingFontSize),
       ),
       SizedBox(
-        height: 30,
+        height: 25,
       ),
       Text(
         "Embark on your Taekwondo journey with us. Join a community that is passionate about growth, empowerment, and camaraderie. Discover the benefits of martial arts in a welcoming and supportive environment.",
-        style: TextStyle(fontSize: 25),
+        style:
+            TextStyle(fontSize: contentFontSize, fontFamily: "JacquseFrancois"),
         textAlign: TextAlign.center,
       ),
       SizedBox(
-        height: 30,
+        height: 25,
       ),
       Text(
         "Contact us for a free trial class or to learn more about our programs",
-        style: TextStyle(fontSize: 25),
+        style: TextStyle(fontSize: contentFontSize),
         textAlign: TextAlign.center,
       ),
       SizedBox(
-        height: 30,
+        height: 25,
       ),
       Container(
         decoration: BoxDecoration(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_controller.dart';
 
-
 final RegistrationController = Get.put(RegistraionScreenController());
 
 ///common widet for registration and contact us screen
@@ -103,6 +102,8 @@ snackBar({msg}) {
   return Get.snackbar("Error", msg,
       duration: const Duration(seconds: 2),
       maxWidth: 250,
+      padding: EdgeInsets.all(3.0),
+      margin: EdgeInsets.symmetric(vertical: 15),
       animationDuration: const Duration(milliseconds: 300),
       snackPosition: SnackPosition.BOTTOM,
       colorText: Colors.red,
@@ -115,12 +116,12 @@ snackBar({msg}) {
 
 ///common Text field
 Widget commonTextField(
-    {required String label, required String hint, required controler}) {
+    {required String label, required String hint, required controller}) {
   return SizedBox(
     width: 400,
     child: TextField(
         keyboardType: null,
-        controller: controler,
+        controller: controller,
         decoration: InputDecoration(
             fillColor: Colors.green,
             counterStyle: const TextStyle(color: Colors.white),
@@ -150,37 +151,37 @@ Widget registrationScreen({context}) {
           commonTextField(
               label: "Name",
               hint: "Enter Your Name",
-              controler: RegistrationController.nameController),
+              controller: RegistrationController.nameController),
           commonTextField(
               label: "Gmail",
               hint: "Enter Your Gmail",
-              controler: RegistrationController.gmailController),
+              controller: RegistrationController.gmailController),
           commonTextField(
               label: "Dob",
               hint: "Enter Your Date Of Birth",
-              controler: RegistrationController.dobController),
+              controller: RegistrationController.dobController),
           commonTextField(
               label: "professional",
               hint: "Work/Study",
-              controler: RegistrationController.workStudyController),
+              controller: RegistrationController.workStudyController),
           commonTextField(
               label: "Address",
               hint: "Enter Your Address",
-              controler: RegistrationController.addressController),
+              controller: RegistrationController.addressController),
           commonTextField(
               label: "Phone Number",
               hint: "Enter Your Phone Number",
-              controler: RegistrationController.phoneNumberController),
-          sendButtonWidget(),
+              controller: RegistrationController.phoneNumberController),
+          sendButtonWidget(ontab: () {
+            RegistrationController.validation();
+          }),
         ],
       ));
 }
 
-Widget sendButtonWidget() {
+Widget sendButtonWidget({ontab}) {
   return ElevatedButton(
-    onPressed: () {
-      RegistrationController.validation();
-    },
+    onPressed: ontab,
     child: const SizedBox(
         width: 100,
         height: 40,

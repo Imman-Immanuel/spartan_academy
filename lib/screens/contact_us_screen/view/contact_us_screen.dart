@@ -22,7 +22,7 @@ class ContactUsScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              contactUsSplitContainer(context)
+              contactUsWidget(context),
             ],
           )),
     );
