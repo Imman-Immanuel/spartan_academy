@@ -1,5 +1,5 @@
-import 'dart:js';
-
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/globals.dart';
@@ -105,57 +105,69 @@ Widget homePageWiget({context}) {
   );
 }
 
-Widget carsoalModel(String imgPath, String name, String designation,
-    [String? designation2]) {
-  return Padding(
-    padding: const EdgeInsets.all(15.0),
+Widget carsoalModel(
+  String imgPath,
+  String name,
+) {
+  return ConstrainedBox(
+    constraints: BoxConstraints(
+      minWidth: 100.0,
+      minHeight: 300.0,
+      maxWidth: 300.0,
+      maxHeight: 300.0,
+    ),
     child: Column(
       children: [
-        CircleAvatar(
-          backgroundColor: Colors.black87,
-          radius: 115,
-          child: CircleAvatar(
-            radius: 110,
-            backgroundImage: AssetImage(imgPath),
-          ),
-        ),
+        Container(
+            decoration: BoxDecoration(
+                border: Border.all(width: 2.0),
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.transparent),
+            child: Image.asset(imgPath)),
         const SizedBox(
           height: 20,
         ),
-        Column(
-          children: [
-            Text(
-              name,
-              style: const TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-            ),
-            if (designation2 != null) ...[
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                designation2,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-            ],
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              designation,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              ),
-            ),
-          ],
-        )
+        Text(
+          name,
+          style: TextStyle(
+              fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+        ),
       ],
     ),
+  ).paddingOnly(left: 20, right: 20);
+}
+
+Widget classesWeOfferWidget() {
+  double currentScreenWidth = MediaQuery.of(Get.context!).size.width;
+  return Column(
+    children: [
+      Row(
+        children: [
+          SizedBox(
+            width: 50,
+          ),
+          Text(
+            "Classes Offer",
+            style: TextStyle(fontSize: 30),
+          ),
+        ],
+      ),
+      SizedBox(
+        height: 50,
+      ),
+      CarouselSlider(
+          items: [
+            carsoalModel("assets/images/Sample_user.png", "sathish"),
+            carsoalModel("assets/images/Sample_user.png", "kumar"),
+            carsoalModel("assets/images/Sample_user.png", "imman"),
+          ],
+          options: CarouselOptions(
+              height: 400,
+              scrollDirection: Axis.horizontal,
+              // enlargeCenterPage: true,
+              // enlargeFactor: .4,
+              viewportFraction: currentScreenWidth < 1000 ? .9 : .3,
+              autoPlay: true)),
+    ],
   );
 }
