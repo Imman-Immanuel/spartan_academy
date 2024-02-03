@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "284240795493",
+    "project_id": "spartanacademy-71a45",
+    "storage_bucket": "spartanacademy-71a45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284240795493:android:29d06b69691fee82e1738c",
+        "android_client_info": {
+          "package_name": "spartan.py.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6HFwoi5yNoas7jDWqvTB1dsWljrh4NVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284240795493:android:3a3bb8d759eb2c5de1738c",
+        "android_client_info": {
+          "package_name": "spartanAcademy.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6HFwoi5yNoas7jDWqvTB1dsWljrh4NVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
