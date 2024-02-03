@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/globals.dart';
+import 'welcome_controller.dart';
 
 Widget welcomeSplitContainerWidget1({
   required String imgPath,

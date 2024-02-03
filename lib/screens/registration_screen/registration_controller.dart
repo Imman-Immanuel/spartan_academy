@@ -5,6 +5,45 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_widget.dart';
 
+List<Map<String, dynamic>> registrationList = [
+  {
+    "lable": "Name",
+    "hint": "Please enter your Name",
+    "keyboardType": TextInputType.name,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "Gmail",
+    "hint": "Please enter your Gmail",
+    "keyboardType": TextInputType.emailAddress,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "DOB",
+    "hint": "Please enter your DOB",
+    "keyboardType": TextInputType.datetime,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "Professional",
+    "hint": "Please enter your WORK/STUDY",
+    "keyboardType": TextInputType.text,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "Address",
+    "hint": "Please enter your Address",
+    "keyboardType": TextInputType.streetAddress,
+    "controller": TextEditingController,
+  },
+  {
+    "lable": "Phone No",
+    "hint": "Please enter your PH.No",
+    "keyboardType": TextInputType.number,
+    "controller": TextEditingController,
+  },
+];
+
 class RegistraionScreenController extends GetxController {
   TextEditingController nameController = TextEditingController();
   TextEditingController gmailController = TextEditingController();

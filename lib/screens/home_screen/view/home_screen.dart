@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/screens/home_screen/home_controller.dart';
-import '../../contact_us_screen/view/contact_us_screen.dart';
 import '../home_widgets.dart';
 
 class HomeScreen extends StatelessWidget {

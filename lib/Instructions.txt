@@ -5,6 +5,7 @@ file - landing_screen.dart
 class - LandingScreen
 function - landingScreen
 
+---------------------------------------------------------------------------
 
 Content for home page:
 
@@ -41,3 +42,4 @@ Get Started Today!
 Embark on a journey of self-discovery, fitness, and empowerment at [Your Academy Name]. Whether you're a beginner or an experienced martial artist, our academy welcomes individuals of all skill levels.
 
 Contact us today to schedule your first class and experience the transformative power of Taekwondo!
+
