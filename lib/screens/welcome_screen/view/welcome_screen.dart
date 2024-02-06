@@ -9,7 +9,20 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Column(
-      children: [homePageWiget(context: context), classesOfferWidget()],
+      children: [
+        SizedBox(
+          height: 325,
+        ),
+        Text(
+          style: TextStyle(fontSize: 30),
+          "scroll down",
+        ),
+        SizedBox(
+          height: 325,
+        ),
+        homePageWiget(context: context),
+        classesOfferWidget()
+      ],
     ));
   }
 }

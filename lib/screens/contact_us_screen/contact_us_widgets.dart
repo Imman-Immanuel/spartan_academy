@@ -45,8 +45,8 @@ Widget contactUsWidget(context) {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             for (int i = 0; i < contactUsIconLinksPath.length; i++) ...[
-              ElevatedButton(
-                onPressed: () async {
+              GestureDetector(
+                onTap: () async {
                   var url = contactUsIconLinksPath[i]["url"];
                   if (await canLaunch(url)) {
                     await launch(url);

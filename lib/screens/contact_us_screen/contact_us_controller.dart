@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
 import '../registration_screen/registration_widget.dart';
 
 TextEditingController nameController = TextEditingController();

@@ -1,7 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/globals.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../contact_us_screen/contact_us_controller.dart';
 import 'welcome_controller.dart';
 
 Widget welcomeSplitContainerWidget1({
@@ -52,12 +55,13 @@ Widget welcomeSplitContainerWidget1({
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
+                flex: 1,
                 child:
                     SizedBox(height: imgHeight, child: Image.asset(imgPath))),
             Expanded(
+              flex: 2,
               child: Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -73,10 +77,12 @@ Widget welcomeSplitContainerWidget1({
                       strutStyle: StrutStyle(),
                       textAlign: TextAlign.justify,
                       style: TextStyle(
+                          height: 2,
+                          wordSpacing: 6,
                           letterSpacing: 1,
                           color: contentFontColor,
                           fontSize: contentFontSize),
-                    )
+                    ).paddingOnly(right: 100)
                   ],
                 ),
               ),
@@ -99,26 +105,26 @@ Widget homePageWiget({context}) {
           heading: welcomeContents[1]['heading']!,
           content: welcomeContents[1]['content']!,
           context: context),
-      welcomeSplitContainerWidget1(
-          imgPath: 'images/Spartan_logo.png',
-          heading: welcomeContents[2]['heading']!,
-          content: welcomeContents[2]['content']!,
-          context: context),
-      welcomeSplitContainerWidget1(
-          imgPath: 'images/Spartan_logo.png',
-          heading: welcomeContents[3]['heading']!,
-          content: welcomeContents[3]['content']!,
-          context: context),
-      welcomeSplitContainerWidget1(
-          imgPath: 'images/Spartan_logo.png',
-          heading: welcomeContents[4]['heading']!,
-          content: welcomeContents[4]['content']!,
-          context: context),
-      welcomeSplitContainerWidget1(
-          imgPath: 'images/Spartan_logo.png',
-          heading: welcomeContents[5]['heading']!,
-          content: welcomeContents[5]['content']!,
-          context: context),
+      // welcomeSplitContainerWidget1(
+      //     imgPath: 'images/Spartan_logo.png',
+      //     heading: welcomeContents[2]['heading']!,
+      //     content: welcomeContents[2]['content']!,
+      //     context: context),
+      // welcomeSplitContainerWidget1(
+      //     imgPath: 'images/Spartan_logo.png',
+      //     heading: welcomeContents[3]['heading']!,
+      //     content: welcomeContents[3]['content']!,
+      //     context: context),
+      // welcomeSplitContainerWidget1(
+      //     imgPath: 'images/Spartan_logo.png',
+      //     heading: welcomeContents[4]['heading']!,
+      //     content: welcomeContents[4]['content']!,
+      //     context: context),
+      // welcomeSplitContainerWidget1(
+      //     imgPath: 'images/Spartan_logo.png',
+      //     heading: welcomeContents[5]['heading']!,
+      //     content: welcomeContents[5]['content']!,
+      //     context: context),
     ],
   );
 }
@@ -189,7 +195,7 @@ Widget classesOfferWidget() {
                 currentScreenWidth < 1000 ? 200.0 : 260.0),
           ],
           options: CarouselOptions(
-              height: 400,
+              height: currentScreenWidth < 1000 ? 300 : 400,
               scrollDirection: Axis.horizontal,
               // enlargeCenterPage: true,
               // enlargeFactor: .4,
@@ -204,8 +210,12 @@ Widget classesOfferWidget() {
       ),
       Text(
         "Embark on your Taekwondo journey with us. Join a community that is passionate about growth, empowerment, and camaraderie. Discover the benefits of martial arts in a welcoming and supportive environment.",
-        style:
-            TextStyle(fontSize: contentFontSize, fontFamily: "JacquseFrancois"),
+        style: TextStyle(
+          height: 2,
+          wordSpacing: 6,
+          letterSpacing: 1,
+          fontSize: contentFontSize,
+        ),
         textAlign: TextAlign.center,
       ).marginAll(20),
       SizedBox(
@@ -213,9 +223,14 @@ Widget classesOfferWidget() {
       ),
       Text(
         "Contact us for a free trial class or to learn more about our programs",
-        style: TextStyle(fontSize: contentFontSize),
+        style: TextStyle(
+            letterSpacing: 1, wordSpacing: 2, fontSize: contentFontSize),
         textAlign: TextAlign.center,
       ).marginAll(20),
+      SizedBox(
+        height: 25,
+      ),
+      Text("Version : 0.2"),
       SizedBox(
         height: 25,
       ),
@@ -227,6 +242,27 @@ Widget classesOfferWidget() {
                 top: BorderSide(color: Color(0xFFCF8282), width: 3.0))),
         width: MediaQuery.sizeOf(Get.context!).width,
         height: 60,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            for (int i = 0; i < contactUsIconLinksPath.length; i++) ...[
+              GestureDetector(
+                onTap: () async {
+                  var url = contactUsIconLinksPath[i]["url"];
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+                child: SvgPicture.asset(
+                  contactUsIconLinksPath[i]["svg"],
+                  height: 40,
+                ),
+              ),
+            ]
+          ],
+        ),
       ),
       SizedBox(
         height: 30,
