@@ -16,6 +16,8 @@ Widget welcomeSplitContainerWidget1({
   double screenWidth = MediaQuery.of(context).size.width;
   bool isSmallScreen = screenWidth < mediumScreenWidth;
   return isSmallScreen
+
+      ///MOBILE VIEW
       ? Center(
           child: Column(
             children: [
@@ -44,7 +46,10 @@ Widget welcomeSplitContainerWidget1({
             ],
           ).marginAll(20),
         )
+
+      ///WEB VIEW
       : Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
                 child:
@@ -52,7 +57,7 @@ Widget welcomeSplitContainerWidget1({
             Expanded(
               child: Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -65,8 +70,12 @@ Widget welcomeSplitContainerWidget1({
                     ),
                     Text(
                       content,
+                      strutStyle: StrutStyle(),
+                      textAlign: TextAlign.justify,
                       style: TextStyle(
-                          color: contentFontColor, fontSize: contentFontSize),
+                          letterSpacing: 1,
+                          color: contentFontColor,
+                          fontSize: contentFontSize),
                     )
                   ],
                 ),
@@ -78,6 +87,7 @@ Widget welcomeSplitContainerWidget1({
 
 Widget homePageWiget({context}) {
   return Column(
+    mainAxisAlignment: MainAxisAlignment.start,
     children: [
       welcomeSplitContainerWidget1(
           imgPath: 'images/Spartan_logo.png',
@@ -99,10 +109,21 @@ Widget homePageWiget({context}) {
           heading: welcomeContents[3]['heading']!,
           content: welcomeContents[3]['content']!,
           context: context),
+      welcomeSplitContainerWidget1(
+          imgPath: 'images/Spartan_logo.png',
+          heading: welcomeContents[4]['heading']!,
+          content: welcomeContents[4]['content']!,
+          context: context),
+      welcomeSplitContainerWidget1(
+          imgPath: 'images/Spartan_logo.png',
+          heading: welcomeContents[5]['heading']!,
+          content: welcomeContents[5]['content']!,
+          context: context),
     ],
   );
 }
 
+///carsal model widget for home
 Widget carsoalModel(String imgPath, String name, double height) {
   return ConstrainedBox(
     constraints: BoxConstraints(
@@ -186,7 +207,7 @@ Widget classesOfferWidget() {
         style:
             TextStyle(fontSize: contentFontSize, fontFamily: "JacquseFrancois"),
         textAlign: TextAlign.center,
-      ),
+      ).marginAll(20),
       SizedBox(
         height: 25,
       ),
@@ -194,7 +215,7 @@ Widget classesOfferWidget() {
         "Contact us for a free trial class or to learn more about our programs",
         style: TextStyle(fontSize: contentFontSize),
         textAlign: TextAlign.center,
-      ),
+      ).marginAll(20),
       SizedBox(
         height: 25,
       ),

@@ -35,10 +35,10 @@ List<Map<String, dynamic>> contactUsInputs = [
 ];
 
 List contactUsIconLinksPath = [
-  'svg/phone.svg',
-  'svg/whatsapp.svg',
-  'svg/gmail.svg',
-  'svg/instagram.svg'
+  {"svg": 'svg/phone.svg', "url": "tel:7010996304"},
+  {"svg": 'svg/whatsapp.svg', "url": "https://wa.me/7010996304"},
+  {"svg": 'svg/gmail.svg', "url": "mailto:solosathish7@gmail.com"},
+  {"svg": 'svg/instagram.svg', "url": "https://www.instagram.com/sathishmaruk"},
 ];
 
 contactUsValidation() {

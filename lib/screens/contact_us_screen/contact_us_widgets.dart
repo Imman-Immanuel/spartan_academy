@@ -1,14 +1,9 @@
-import 'dart:js';
-import 'dart:js';
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:spartan_academy/screens/contact_us_screen/contact_us_controller.dart';
 import 'package:spartan_academy/globals.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 Widget iconLink({required String iconPath, double size = 40}) {
   return SvgPicture.asset(
@@ -30,9 +25,7 @@ Widget contactUsWidget(context) {
             fontSize: contentFontSize,
           ),
         ),
-        // SizedBox(
-        //   height: 30,
-        // ),
+
         for (int index = 0; index < contactUsInputs.length; index++) ...[
           commonTextField(
               label: contactUsInputs[index]['label'],
@@ -52,7 +45,20 @@ Widget contactUsWidget(context) {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             for (int i = 0; i < contactUsIconLinksPath.length; i++) ...[
-              iconLink(iconPath: contactUsIconLinksPath[i])
+              ElevatedButton(
+                onPressed: () async {
+                  var url = contactUsIconLinksPath[i]["url"];
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+                child: SvgPicture.asset(
+                  contactUsIconLinksPath[i]["svg"],
+                  height: 50,
+                ),
+              ),
             ]
           ],
         ),
