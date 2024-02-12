@@ -25,11 +25,17 @@ List<Map<String, String>> welcomeContents = [
         "We focus not only on physical fitness but also on mental and emotional well-being. Taekwondo is a holistic martial art that nurtures both body and mind."
   },
   {
+    'heading': 'Community Spirit',
+    'content':
+        " Join a vibrant community of like-minded individuals who support and encourage each other on their martial arts journey."
+  },
+  {
     'heading': 'Martial Arts Benefits',
     'content':
         "Taekwondo is a dynamic martial art that enhances cardiovascular health, flexibility, strength, and coordination. Our classes are designed to provide a full-body workout, helping you achieve and maintain optimal physical fitness."
   }
 ];
+
 // List<Map<String, String>> welcomeContents = [
 //   {
 //     'heading': 'Why choose SPARTAN TAEKWONDO MARTIAL ART ACADEMY ?',

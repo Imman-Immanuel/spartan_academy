@@ -16,7 +16,7 @@ At [Your Academy Name], we take pride in being more than just a martial arts aca
 Our Mission
 Our mission is to empower individuals of all ages with the skills and mindset needed to overcome life's challenges. Through the teachings of Taekwondo, we aim to instill values such as respect, integrity, perseverance, and self-control. We believe that the principles learned on the mat extend far beyond, influencing every aspect of our students' lives.
 
-Why Choose [Your Academy Name]?
+    Why Choose [Your Academy Name]?
 Expert Instructors
 :
 Our experienced and certified instructors are passionate about Taekwondo and dedicated to helping you achieve your goals.

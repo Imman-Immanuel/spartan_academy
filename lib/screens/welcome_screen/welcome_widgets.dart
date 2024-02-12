@@ -15,6 +15,7 @@ Widget welcomeSplitContainerWidget1({
   double imgHeight = 300,
   Color headingFontColor = Colors.black,
   Color contentFontColor = Colors.black,
+  required bool imageContent,
 }) {
   double screenWidth = MediaQuery.of(context).size.width;
   bool isSmallScreen = screenWidth < mediumScreenWidth;
@@ -23,6 +24,7 @@ Widget welcomeSplitContainerWidget1({
       ///MOBILE VIEW
       ? Center(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: imgHeight, child: Image.asset(imgPath)),
               const SizedBox(
@@ -51,81 +53,128 @@ Widget welcomeSplitContainerWidget1({
         )
 
       ///WEB VIEW
-      : Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Expanded(
-                flex: 1,
-                child:
-                    SizedBox(height: imgHeight, child: Image.asset(imgPath))),
-            Expanded(
-              flex: 2,
-              child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      heading,
-                      style: TextStyle(
-                          color: headingFontColor, fontSize: headingFontSize),
+      : imageContent
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                    flex: 1,
+                    child: SizedBox(
+                        height: imgHeight, child: Image.asset(imgPath))),
+                Expanded(
+                  flex: 2,
+                  child: Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          heading,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              color: headingFontColor,
+                              fontSize: headingFontSize),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          maxLines: 7,
+                          content,
+                          // strutStyle: StrutStyle(),
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                              height: 2,
+                              wordSpacing: 6,
+                              letterSpacing: 1,
+                              color: contentFontColor,
+                              fontSize: contentFontSize),
+                        ).paddingOnly(right: 100)
+                      ],
                     ),
-                    const SizedBox(
-                      height: 30,
+                  ),
+                )
+              ],
+            ).marginAll(20)
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          heading,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              color: headingFontColor,
+                              fontSize: headingFontSize),
+                        ).paddingOnly(left: 100),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          content,
+                          strutStyle: StrutStyle(),
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              height: 2,
+                              wordSpacing: 6,
+                              letterSpacing: 1,
+                              color: contentFontColor,
+                              fontSize: contentFontSize),
+                        ).paddingOnly(left: 100)
+                      ],
                     ),
-                    Text(
-                      content,
-                      strutStyle: StrutStyle(),
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                          height: 2,
-                          wordSpacing: 6,
-                          letterSpacing: 1,
-                          color: contentFontColor,
-                          fontSize: contentFontSize),
-                    ).paddingOnly(right: 100)
-                  ],
+                  ),
                 ),
-              ),
-            )
-          ],
-        ).marginAll(20);
+                Expanded(
+                    flex: 1,
+                    child: SizedBox(
+                        height: imgHeight, child: Image.asset(imgPath))),
+              ],
+            ).marginAll(20);
 }
 
-Widget homePageWiget({context}) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    children: [
-      welcomeSplitContainerWidget1(
-          imgPath: 'images/Spartan_logo.png',
-          heading: welcomeContents[0]['heading']!,
-          content: welcomeContents[0]['content']!,
-          context: context),
-      welcomeSplitContainerWidget1(
-          imgPath: 'images/Spartan_logo.png',
-          heading: welcomeContents[1]['heading']!,
-          content: welcomeContents[1]['content']!,
-          context: context),
-      // welcomeSplitContainerWidget1(
-      //     imgPath: 'images/Spartan_logo.png',
-      //     heading: welcomeContents[2]['heading']!,
-      //     content: welcomeContents[2]['content']!,
-      //     context: context),
-      // welcomeSplitContainerWidget1(
-      //     imgPath: 'images/Spartan_logo.png',
-      //     heading: welcomeContents[3]['heading']!,
-      //     content: welcomeContents[3]['content']!,
-      //     context: context),
-      // welcomeSplitContainerWidget1(
-      //     imgPath: 'images/Spartan_logo.png',
-      //     heading: welcomeContents[4]['heading']!,
-      //     content: welcomeContents[4]['content']!,
-      //     context: context),
-      // welcomeSplitContainerWidget1(
-      //     imgPath: 'images/Spartan_logo.png',
-      //     heading: welcomeContents[5]['heading']!,
-      //     content: welcomeContents[5]['content']!,
-      //     context: context),
-    ],
+Widget welcomeContainerTwo({
+  required String heading,
+  required String content,
+  Color headingFontColor = Colors.black,
+  Color contentFontColor = Colors.black,
+}) {
+  return Center(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(
+          heading,
+          style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: headingFontColor,
+              fontSize: headingFontSize),
+        ).paddingOnly(
+          left: 100,
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        Text(
+          content,
+          // strutStyle: StrutStyle(),
+          textAlign: TextAlign.justify,
+          style: TextStyle(
+              fontWeight: FontWeight.w500,
+              height: 2,
+              wordSpacing: 6,
+              letterSpacing: 1,
+              color: contentFontColor,
+              fontSize: contentFontSize),
+        ).paddingOnly(right: 100, left: 100)
+      ],
+    ),
   );
 }
 
@@ -160,6 +209,50 @@ Widget carsoalModel(String imgPath, String name, double height) {
       ],
     ),
   ).paddingOnly(left: 20, right: 20);
+}
+
+Widget homePageWiget({context}) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      welcomeSplitContainerWidget1(
+          imageContent: true,
+          imgPath: 'images/Spartan_logo.png',
+          heading: welcomeContents[0]['heading']!,
+          content: welcomeContents[0]['content']!,
+          context: context),
+      SizedBox(
+        height: 50,
+      ),
+      welcomeSplitContainerWidget1(
+          imageContent: false,
+          imgPath: 'images/Spartan_logo.png',
+          heading: welcomeContents[1]['heading']!,
+          content: welcomeContents[1]['content']!,
+          context: context),
+      Text("Why choose Us",
+              style: TextStyle(
+                  fontSize: headingFontSize, fontWeight: FontWeight.bold))
+          .paddingOnly(left: 100),
+      welcomeContainerTwo(
+        heading: welcomeContents[2]['heading']!,
+        content: welcomeContents[2]['content']!,
+      ),
+      welcomeContainerTwo(
+        heading: welcomeContents[3]['heading']!,
+        content: welcomeContents[3]['content']!,
+      ),
+      welcomeContainerTwo(
+        heading: welcomeContents[4]['heading']!,
+        content: welcomeContents[4]['content']!,
+      ),
+      welcomeContainerTwo(
+        heading: welcomeContents[5]['heading']!,
+        content: welcomeContents[5]['content']!,
+      ),
+    ],
+  );
 }
 
 Widget classesOfferWidget() {
@@ -230,7 +323,7 @@ Widget classesOfferWidget() {
       SizedBox(
         height: 25,
       ),
-      Text("Version : 0.2"),
+      Text("Version : 0.3"),
       SizedBox(
         height: 25,
       ),
