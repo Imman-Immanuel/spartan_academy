@@ -1,3 +1,6 @@
+import 'dart:js';
+import 'dart:js';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -26,7 +29,9 @@ Widget welcomeSplitContainerWidget1({
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: imgHeight, child: Image.asset(imgPath)),
+              SizedBox(
+                  height: imgHeight,
+                  child: Center(child: Image.asset(imgPath))),
               const SizedBox(
                 height: 40,
               ),
@@ -43,8 +48,13 @@ Widget welcomeSplitContainerWidget1({
                   ),
                   Text(
                     content,
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
-                        color: contentFontColor, fontSize: contentFontSize),
+                        height: 2,
+                        wordSpacing: 6,
+                        letterSpacing: 1,
+                        color: contentFontColor,
+                        fontSize: contentFontSize),
                   )
                 ],
               ),
@@ -144,10 +154,11 @@ Widget welcomeContainerTwo({
   Color headingFontColor = Colors.black,
   Color contentFontColor = Colors.black,
 }) {
+  double screenWidth = MediaQuery.of(Get.context!).size.width;
+  bool isSmallScreen = screenWidth < mediumScreenWidth;
   return Center(
     child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           heading,
@@ -155,16 +166,14 @@ Widget welcomeContainerTwo({
               fontWeight: FontWeight.w600,
               color: headingFontColor,
               fontSize: headingFontSize),
-        ).paddingOnly(
-          left: 100,
         ),
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
         Text(
           content,
           // strutStyle: StrutStyle(),
-          textAlign: TextAlign.justify,
+          textAlign: TextAlign.center,
           style: TextStyle(
               fontWeight: FontWeight.w500,
               height: 2,
@@ -172,9 +181,10 @@ Widget welcomeContainerTwo({
               letterSpacing: 1,
               color: contentFontColor,
               fontSize: contentFontSize),
-        ).paddingOnly(right: 100, left: 100)
+        )
       ],
-    ),
+    ).paddingOnly(
+        left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
   );
 }
 
@@ -208,12 +218,13 @@ Widget carsoalModel(String imgPath, String name, double height) {
         ),
       ],
     ),
-  ).paddingOnly(left: 20, right: 20);
+  );
 }
 
 Widget homePageWiget({context}) {
+  double screenWidth = MediaQuery.of(Get.context!).size.width;
+  bool isSmallScreen = screenWidth < mediumScreenWidth;
   return Column(
-    mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       welcomeSplitContainerWidget1(
@@ -231,25 +242,43 @@ Widget homePageWiget({context}) {
           heading: welcomeContents[1]['heading']!,
           content: welcomeContents[1]['content']!,
           context: context),
-      Text("Why choose Us",
+      SizedBox(
+        height: isSmallScreen ? 150 : 250,
+      ),
+      Text("Why choose Us :",
               style: TextStyle(
                   fontSize: headingFontSize, fontWeight: FontWeight.bold))
-          .paddingOnly(left: 100),
+          .paddingOnly(left: isSmallScreen ? 20 : 100),
+      SizedBox(
+        height: 50,
+      ),
       welcomeContainerTwo(
         heading: welcomeContents[2]['heading']!,
         content: welcomeContents[2]['content']!,
       ),
-      welcomeContainerTwo(
-        heading: welcomeContents[3]['heading']!,
-        content: welcomeContents[3]['content']!,
+      SizedBox(
+        height: 50,
       ),
       welcomeContainerTwo(
         heading: welcomeContents[4]['heading']!,
         content: welcomeContents[4]['content']!,
       ),
+      SizedBox(
+        height: 50,
+      ),
+      welcomeContainerTwo(
+        heading: welcomeContents[3]['heading']!,
+        content: welcomeContents[3]['content']!,
+      ),
+      SizedBox(
+        height: 50,
+      ),
       welcomeContainerTwo(
         heading: welcomeContents[5]['heading']!,
         content: welcomeContents[5]['content']!,
+      ),
+      SizedBox(
+        height: isSmallScreen ? 100 : 200,
       ),
     ],
   );
@@ -257,19 +286,18 @@ Widget homePageWiget({context}) {
 
 Widget classesOfferWidget() {
   double currentScreenWidth = MediaQuery.of(Get.context!).size.width;
+  bool isSmallScreen = currentScreenWidth < mediumScreenWidth;
+
   return Column(
+    // crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Row(
-        children: [
-          SizedBox(
-            width: 50,
-          ),
-          Text(
-            "Classes Offer",
-            style: TextStyle(
-                fontSize: headingFontSize, fontWeight: FontWeight.bold),
-          ),
-        ],
+      // SizedBox(
+      //   width: 50,
+      // ),
+      Text(
+        "Classes Offer",
+        style:
+            TextStyle(fontSize: headingFontSize, fontWeight: FontWeight.bold),
       ),
       SizedBox(
         height: 30,
@@ -310,7 +338,8 @@ Widget classesOfferWidget() {
           fontSize: contentFontSize,
         ),
         textAlign: TextAlign.center,
-      ).marginAll(20),
+      ).paddingOnly(
+          left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
       SizedBox(
         height: 25,
       ),
@@ -319,7 +348,8 @@ Widget classesOfferWidget() {
         style: TextStyle(
             letterSpacing: 1, wordSpacing: 2, fontSize: contentFontSize),
         textAlign: TextAlign.center,
-      ).marginAll(20),
+      ).paddingOnly(
+          left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
       SizedBox(
         height: 25,
       ),
