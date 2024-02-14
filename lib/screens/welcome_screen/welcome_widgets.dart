@@ -29,20 +29,20 @@ Widget welcomeSplitContainerWidget1({
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                  height: imgHeight,
-                  child: Center(child: Image.asset(imgPath))),
+              Text(
+                heading,
+                style: TextStyle(
+                    color: headingFontColor, fontSize: headingFontSize),
+              ),
               const SizedBox(
                 height: 40,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    heading,
-                    style: TextStyle(
-                        color: headingFontColor, fontSize: headingFontSize),
-                  ),
+                  SizedBox(
+                      height: imgHeight,
+                      child: Center(child: Image.asset(imgPath))),
                   const SizedBox(
                     height: 30,
                   ),
@@ -238,12 +238,12 @@ Widget homePageWiget({context}) {
       ),
       welcomeSplitContainerWidget1(
           imageContent: false,
-          imgPath: 'images/Spartan_logo.png',
+          imgPath: 'assets/images/ourMission.png',
           heading: welcomeContents[1]['heading']!,
           content: welcomeContents[1]['content']!,
           context: context),
       SizedBox(
-        height: isSmallScreen ? 150 : 250,
+        height: isSmallScreen ? 150 : 200,
       ),
       Text("Why choose Us :",
               style: TextStyle(
