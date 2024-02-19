@@ -18,6 +18,12 @@ class HomeController extends GetxController {
   ];
 
   List screensList = [
+    // Get.offAll(WelcomeScreen()),
+    // Get.offAll(MembersScreen()),
+    // Get.offAll(WelcomeScreen()),
+    // Get.offAll(ContactUsScreen()),
+    // Get.offAll(RegistrationScreen()),
+    // Get.offAll(AdminDashboardScreen()),
     const WelcomeScreen(),
     const MembersScreen(),
     const ContactUsScreen(),
