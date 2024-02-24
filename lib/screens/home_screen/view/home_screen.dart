@@ -62,37 +62,48 @@ class HomeScreen extends StatelessWidget {
               top: 0,
               left: 0,
               right: 0,
-              child: Container(
-                  color: Colors.black87,
-                  height: 60,
-                  child: screenWidth > 530
-                      ? Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: List.generate(
-                              hc.homeMenuList.length,
-                              (index) => homeMenuWidget(
-                                  menuName: hc.homeMenuList[index],
-                                  onPressFunc: () {
-                                    hc.currentScreenSelectionIndex.value =
-                                        index;
-                                  },
-                                  isSelected: index ==
-                                          hc.currentScreenSelectionIndex.value
-                                      ? true
-                                      : false)),
-                        )
-                      : Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(
-                              Icons.menu_rounded,
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              width: 20,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Container(
+                      color: Colors.black87,
+                      height: 60,
+                      child: screenWidth > 530
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: List.generate(
+                                  hc.homeMenuList.length,
+                                  (index) => homeMenuWidget(
+                                      menuName: hc.homeMenuList[index],
+                                      onPressFunc: () {
+                                        hc.currentScreenSelectionIndex.value =
+                                            index;
+                                      },
+                                      isSelected: index ==
+                                              hc.currentScreenSelectionIndex
+                                                  .value
+                                          ? true
+                                          : false)),
                             )
-                          ],
-                        )),
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Icon(
+                                  Icons.menu_rounded,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                )
+                              ],
+                            )),
+                  Container(
+                    color: Colors.red,
+                    height: 3,
+                    width: 520,
+                  )
+                ],
+              ),
             ),
           ],
         )));
