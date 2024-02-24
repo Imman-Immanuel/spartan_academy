@@ -14,7 +14,7 @@ class HomeController extends GetxController {
     'Contact',
     'Registration',
     'Admin Login',
-    'Admin Dashboard'
+    // 'Admin Dashboard'
   ];
 
   List screensList = [
@@ -29,7 +29,7 @@ class HomeController extends GetxController {
     const ContactUsScreen(),
     const RegistrationScreen(),
     const AdminLoginScreen(),
-    const AdminDashboardScreen()
+    // const AdminDashboardScreen()
   ];
 
   var currentScreenSelectionIndex = 0.obs;

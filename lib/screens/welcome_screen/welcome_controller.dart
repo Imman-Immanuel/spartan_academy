@@ -15,7 +15,7 @@ List<Map<String, String>> welcomeContents = [
         "Our experienced and certified instructors are passionate about Taekwondo and dedicated to helping you achieve your goals."
   },
   {
-    'heading': 'State-of-the-Art Facilities',
+    'heading': 'State of the Art Facilities',
     'content':
         "Train in a safe and supportive environment equipped with top-notch facilities that cater to all skill levels."
   },

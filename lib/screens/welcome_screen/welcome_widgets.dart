@@ -162,6 +162,7 @@ Widget welcomeContainerTwo({
       children: [
         Text(
           heading,
+          textAlign: TextAlign.center,
           style: TextStyle(
               fontWeight: FontWeight.w600,
               color: headingFontColor,
