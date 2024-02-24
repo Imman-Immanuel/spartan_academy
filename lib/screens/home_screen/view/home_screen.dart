@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                   Container(
                       color: Colors.black87,
                       height: 60,
-                      child: screenWidth > 530
+                      child: screenWidth > 575
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: List.generate(
@@ -97,11 +97,13 @@ class HomeScreen extends StatelessWidget {
                                 )
                               ],
                             )),
-                  Container(
-                    color: Colors.red,
-                    height: 3,
-                    width: 520,
-                  )
+                  screenWidth > 575
+                      ? Container(
+                          color: Colors.red,
+                          height: 3,
+                          width: 565,
+                        )
+                      : Container()
                 ],
               ),
             ),
