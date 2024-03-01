@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "spartan-academy-7ecb2"
-  }
+    "default": "spartanacademy-db52c",
+    "staging": "spartanacademy-db52c"
+  },
+  "targets": {},
+  "etags": {}
 }
