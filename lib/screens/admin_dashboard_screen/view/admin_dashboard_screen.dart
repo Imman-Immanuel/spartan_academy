@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spartan_academy/screens/admin_dashboard_screen/admin_dashboard_widgets.dart';
 import 'package:get/get.dart';
+import '../../home_screen/view/home_screen.dart';
 import '../admin_dashboard_controller.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
@@ -71,7 +72,11 @@ class AdminDashboardScreen extends StatelessWidget {
                       shadowColor: Colors.transparent,
                       padding: const EdgeInsets.symmetric(
                           vertical: 20, horizontal: 30)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.offAll(HomeScreen(),
+                        transition: Transition.noTransition,
+                        duration: Duration(seconds: 5));
+                  },
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [

@@ -43,6 +43,7 @@ dependencies:
   flutter_svg: ^2.0.9
   url_launcher: ^6.2.4
   firebase_core: ^2.24.2
+  firebase_auth: ^4.16.0
 
 dev_dependencies:
   flutter_test:

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:spartan_academy/global/global_widgets.dart';
 
-class AdminLoginScreen extends StatelessWidget {
-  const AdminLoginScreen({super.key});
+import '../admin_login_controler.dart';
 
+class AdminLoginScreen extends StatelessWidget {
+  AdminLoginScreen({super.key});
+
+  final ac = Get.put(AdminLoginController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,21 +29,29 @@ class AdminLoginScreen extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            SizedBox(width: 350, child: inputBoxWidget('Email')),
+            SizedBox(
+                width: 350,
+                child:
+                    inputBoxWidget('Gmail', controler: ac.adminGmailControler)),
             const SizedBox(
               height: 20,
             ),
-            SizedBox(width: 350, child: inputBoxWidget('Email')),
+            SizedBox(
+                width: 350,
+                child: inputBoxWidget('Password',
+                    controler: ac.passwordControler, obscureText: true)),
             const SizedBox(
               height: 30,
             ),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  ac.validation();
+                },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black87,
                     foregroundColor: Colors.white,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 25, vertical: 15)),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 25, vertical: 15)),
                 child: const Text(
                   "LOGIN",
                   style: TextStyle(fontSize: 20),

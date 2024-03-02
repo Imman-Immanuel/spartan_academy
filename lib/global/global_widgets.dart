@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 Widget inputBoxWidget(String labelText,
-    {bool obscureText = false, TextInputType? textInputType}) {
+    {bool obscureText = false,
+    TextInputType? textInputType,
+    required TextEditingController controler}) {
   return TextFormField(
+    controller: controler,
     obscureText: obscureText,
     keyboardType: textInputType,
     decoration: InputDecoration(
