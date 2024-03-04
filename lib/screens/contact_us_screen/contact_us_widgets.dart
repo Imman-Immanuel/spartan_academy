@@ -22,7 +22,7 @@ Widget contactUsWidget(context) {
         Text(
           "Get In Touch",
           style: TextStyle(
-            fontSize: contentFontSize,
+            fontSize: headingFontSize,
           ),
         ),
 

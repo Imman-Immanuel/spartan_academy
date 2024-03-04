@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import '../registration_screen/registration_controller.dart';
 import '../registration_screen/registration_widget.dart';
 
 TextEditingController nameController = TextEditingController();
@@ -32,7 +35,8 @@ List<Map<String, dynamic>> contactUsInputs = [
     'textInputType': TextInputType.text
   }
 ];
-
+FirebaseFirestore fs = FirebaseFirestore.instance;
+RegistraionScreenController rc = Get.put(RegistraionScreenController());
 List contactUsIconLinksPath = [
   {"svg": 'svg/phone.svg', "url": "tel:7010996304"},
   {"svg": 'svg/whatsapp.svg', "url": "https://wa.me/7010996304"},
@@ -43,6 +47,23 @@ List contactUsIconLinksPath = [
     "url": "hhttps://maps.app.goo.gl/5hvvuUMZ1EAhsuicA"
   },
 ];
+contacUs() async {
+  rc.loader.value = true;
+  await Future.delayed(Duration(seconds: 3), () async {
+    await fs.collection('ContacUs').doc(emailController.text).set({
+      "name": nameController.text,
+      'gmail': emailController.text,
+      "phoneNo": phoneNoController.text,
+      "addres": messageController.text
+    });
+  });
+  nameController.text = "";
+  emailController.text = "";
+  phoneNoController.text = "";
+  messageController.text = "";
+  rc.loader.value = false;
+  print(fs);
+}
 
 contactUsValidation() {
   if (nameController.text == "") {
@@ -57,4 +78,5 @@ contactUsValidation() {
     snackBar(msg: "Kindly Enter Your Message");
     return;
   }
+  contacUs();
 }

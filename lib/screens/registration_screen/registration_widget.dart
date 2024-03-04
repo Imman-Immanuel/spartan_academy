@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:spartan_academy/screens/contact_us_screen/contact_us_controller.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_controller.dart';
 
 final RegistrationController = Get.put(RegistraionScreenController());
@@ -180,15 +181,35 @@ Widget registrationScreen({context}) {
 }
 
 Widget sendButtonWidget({ontab}) {
-  return ElevatedButton(
-    onPressed: ontab,
-    child: const SizedBox(
-        width: 100,
-        height: 40,
-        child: Center(
-            child: Text(
-          "Send",
-          style: TextStyle(fontSize: 20),
-        ))),
-  ).paddingOnly(bottom: 30, top: 30);
+  return Obx(
+    () => ElevatedButton(
+      onPressed: ontab,
+      child: SizedBox(
+          width: 100,
+          height: 40,
+          child: Center(
+              child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Send",
+                style: TextStyle(fontSize: 20),
+              ),
+              if (rc.loader.value) ...[
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 25,
+                  width: 25,
+                  child: CircularProgressIndicator(
+                    color: Colors.red, // Set the color
+                    strokeWidth: 3.0,
+                  ),
+                ),
+              ]
+            ],
+          ))),
+    ).paddingOnly(bottom: 30, top: 30),
+  );
 }

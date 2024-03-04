@@ -11,16 +11,20 @@ class AdminLoginController extends GetxController {
   TextEditingController passwordControler = TextEditingController();
 
   FirebaseAuth auth = FirebaseAuth.instance;
+
   signup() async {
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: adminGmailControler.text,
         password: passwordControler.text,
       );
+
+      // Map taskData = {"task": tc.text.toUpperCase(), 'isDone': false};
+
       print("signup page");
       print(credential);
       // await auth
-      //     .collection("USER")
+      //     .collection("spartanAcademy")
       //     .doc(mailController.text)
       //     .set({'email': mailController.text, 'username': userController.text});
 
