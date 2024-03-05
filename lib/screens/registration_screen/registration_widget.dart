@@ -117,10 +117,14 @@ snackBar({msg}) {
 
 ///common Text field
 Widget commonTextField(
-    {required String label, required String hint, required controller}) {
+    {required String label,
+    required String hint,
+    required controller,
+    maxlength}) {
   return SizedBox(
     width: 400,
     child: TextField(
+        maxLength: maxlength,
         keyboardType: null,
         controller: controller,
         decoration: InputDecoration(
@@ -139,44 +143,52 @@ Widget registrationScreen({context}) {
   return leftRightBoxContainer(
       context: context,
       imgPath: "images/Spartan_logo.png",
-      Colum: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 5),
-            child: const Icon(
-              Icons.account_box,
-              size: 150,
+      Colum: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              child: const Icon(
+                Icons.account_box,
+                size: 150,
+              ),
             ),
-          ),
-          commonTextField(
-              label: "Name",
-              hint: "Enter Your Name",
-              controller: RegistrationController.nameController),
-          commonTextField(
-              label: "Gmail",
-              hint: "Enter Your Gmail",
-              controller: RegistrationController.gmailController),
-          commonTextField(
-              label: "Dob",
-              hint: "Enter Your Date Of Birth",
-              controller: RegistrationController.dobController),
-          commonTextField(
-              label: "professional",
-              hint: "Work/Study",
-              controller: RegistrationController.workStudyController),
-          commonTextField(
-              label: "Address",
-              hint: "Enter Your Address",
-              controller: RegistrationController.addressController),
-          commonTextField(
-              label: "Phone Number",
-              hint: "Enter Your Phone Number",
-              controller: RegistrationController.phoneNumberController),
-          sendButtonWidget(ontab: () {
-            RegistrationController.validation();
-          }),
-        ],
+            commonTextField(
+                // maxLegth: 10,
+                label: "Name",
+                hint: "Enter Your Name",
+                controller: RegistrationController.nameController),
+            commonTextField(
+                // maxLegth: 10,
+                label: "Gmail",
+                hint: "Enter Your Gmail",
+                controller: RegistrationController.gmailController),
+            commonTextField(
+                // maxLegth: 10,
+                label: "Dob",
+                hint: "Enter Your Date Of Birth",
+                controller: RegistrationController.dobController),
+            commonTextField(
+                // maxLegth: 10,
+                label: "professional",
+                hint: "Work/Study",
+                controller: RegistrationController.workStudyController),
+            commonTextField(
+                // maxLegth: 10,
+                label: "Address",
+                hint: "Enter Your Address",
+                controller: RegistrationController.addressController),
+            commonTextField(
+                maxlength: 10,
+                label: "Phone Number",
+                hint: "Enter Your Phone Number",
+                controller: RegistrationController.phoneNumberController),
+            sendButtonWidget(ontab: () {
+              RegistrationController.validation();
+            }),
+          ],
+        ),
       ));
 }
 

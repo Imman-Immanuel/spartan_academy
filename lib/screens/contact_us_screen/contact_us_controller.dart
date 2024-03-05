@@ -14,25 +14,29 @@ List<Map<String, dynamic>> contactUsInputs = [
     'label': 'Name',
     'hint': 'Enter your name',
     'controller': nameController,
-    'textInputType': TextInputType.name
+    'textInputType': TextInputType.name,
+    "maxLength": 30,
   },
   {
     'label': 'Gmail',
     'hint': 'Enter your Gmail',
     'controller': emailController,
-    'textInputType': TextInputType.emailAddress
+    'textInputType': TextInputType.emailAddress,
+    "maxLength": 30,
   },
   {
     'label': 'Phone No.',
     'hint': 'Enter your Phone No.',
     'controller': phoneNoController,
-    'textInputType': TextInputType.phone
+    'textInputType': TextInputType.phone,
+    "maxLength": 10,
   },
   {
     'label': 'Message',
     'hint': 'Enter your Message',
     'controller': messageController,
-    'textInputType': TextInputType.text
+    'textInputType': TextInputType.text,
+    "maxLength": 50,
   }
 ];
 FirebaseFirestore fs = FirebaseFirestore.instance;
@@ -71,12 +75,21 @@ contactUsValidation() {
     return;
   } else if (emailController.text == "") {
     snackBar(msg: "Kindly Enter Your Gmail");
+  } else if (!RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+      .hasMatch(emailController.text)) {
+    snackBar(msg: "Please Enter Valid Gmail Address");
+    return;
   } else if (phoneNoController.text == "") {
     snackBar(msg: "Kindly Enter Your Phone Number");
     return;
+  } else if (!RegExp(r"^[6-9][0-9]{9}$").hasMatch(phoneNoController.text)) {
+    return snackBar(
+        msg:
+            "Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9");
   } else if (messageController.text == "") {
     snackBar(msg: "Kindly Enter Your Message");
     return;
+  } else {
+    contacUs();
   }
-  contacUs();
 }

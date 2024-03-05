@@ -66,7 +66,7 @@ class RegistraionScreenController extends GetxController {
       });
     });
     nameController.text = "";
-    gmailController.text;
+    gmailController.text = "";
     dobController.text = "";
     workStudyController.text = "";
     phoneNumberController.text = "";
@@ -83,6 +83,10 @@ class RegistraionScreenController extends GetxController {
       return;
     } else if (gmailController.text == "") {
       snackBar(msg: "Kindly Enter Your Gmail");
+    } else if (!RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(gmailController.text)) {
+      snackBar(msg: "Please Enter Valid Gmail Address");
+      return;
     } else if (dobController.text == "") {
       snackBar(msg: "Kindly Enter Your Date Of birth");
       return;
@@ -95,7 +99,13 @@ class RegistraionScreenController extends GetxController {
     } else if (phoneNumberController.text == "") {
       snackBar(msg: "Kindly Enter Your Phone Number");
       return;
+    } else if (!RegExp(r"^[6-9][0-9]{9}$")
+        .hasMatch(phoneNumberController.text)) {
+      return snackBar(
+          msg:
+              "Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9");
+    } else {
+      registration();
     }
-    registration();
   }
 }

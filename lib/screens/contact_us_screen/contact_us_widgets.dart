@@ -28,6 +28,7 @@ Widget contactUsWidget(context) {
 
         for (int index = 0; index < contactUsInputs.length; index++) ...[
           commonTextField(
+              maxlength: contactUsInputs[index]['maxLength'],
               label: contactUsInputs[index]['label'],
               hint: contactUsInputs[index]['hint'],
               controller: contactUsInputs[index]['controller'])
