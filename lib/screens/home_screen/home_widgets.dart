@@ -22,7 +22,7 @@ Widget homeTopBar() {
       // Your main content goes here
       Container(
         color: Colors.white, // Change this to your main background color
-        child: Center(
+        child: const Center(
           child: Text(
             'Your main content goes here',
             style: TextStyle(fontSize: 20),
@@ -37,7 +37,7 @@ Widget homeTopBar() {
         child: Container(
           color: Colors.blue, // Change this to your desired container color
           height: 50, // Change this to your desired container height
-          child: Center(
+          child: const Center(
             child: Text(
               'Fixed Container at the Top',
               style: TextStyle(color: Colors.white),

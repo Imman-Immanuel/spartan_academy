@@ -1,5 +1,3 @@
-import 'dart:js';
-import 'dart:js';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -126,7 +124,7 @@ Widget welcomeSplitContainerWidget1({
                         ),
                         Text(
                           content,
-                          strutStyle: StrutStyle(),
+                          strutStyle: const StrutStyle(),
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -234,7 +232,7 @@ Widget homePageWiget({context}) {
           heading: welcomeContents[0]['heading']!,
           content: welcomeContents[0]['content']!,
           context: context),
-      SizedBox(
+      const SizedBox(
         height: 50,
       ),
       welcomeSplitContainerWidget1(
@@ -250,28 +248,28 @@ Widget homePageWiget({context}) {
               style: TextStyle(
                   fontSize: headingFontSize, fontWeight: FontWeight.bold))
           .paddingOnly(left: isSmallScreen ? 20 : 100),
-      SizedBox(
+      const SizedBox(
         height: 50,
       ),
       welcomeContainerTwo(
         heading: welcomeContents[2]['heading']!,
         content: welcomeContents[2]['content']!,
       ),
-      SizedBox(
+      const SizedBox(
         height: 50,
       ),
       welcomeContainerTwo(
         heading: welcomeContents[4]['heading']!,
         content: welcomeContents[4]['content']!,
       ),
-      SizedBox(
+      const SizedBox(
         height: 50,
       ),
       welcomeContainerTwo(
         heading: welcomeContents[3]['heading']!,
         content: welcomeContents[3]['content']!,
       ),
-      SizedBox(
+      const SizedBox(
         height: 50,
       ),
       welcomeContainerTwo(
@@ -300,7 +298,7 @@ Widget classesOfferWidget() {
         style:
             TextStyle(fontSize: headingFontSize, fontWeight: FontWeight.bold),
       ),
-      SizedBox(
+      const SizedBox(
         height: 30,
       ),
       CarouselSlider(
@@ -327,7 +325,7 @@ Widget classesOfferWidget() {
         "Get Started Today",
         style: TextStyle(fontSize: headingFontSize),
       ),
-      SizedBox(
+      const SizedBox(
         height: 25,
       ),
       Text(
@@ -341,7 +339,7 @@ Widget classesOfferWidget() {
         textAlign: TextAlign.center,
       ).paddingOnly(
           left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
-      SizedBox(
+      const SizedBox(
         height: 25,
       ),
       Text(
@@ -351,15 +349,15 @@ Widget classesOfferWidget() {
         textAlign: TextAlign.center,
       ).paddingOnly(
           left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
-      SizedBox(
+      const SizedBox(
         height: 25,
       ),
-      Text("Version : 0.3"),
-      SizedBox(
+      const Text("Version : 0.3"),
+      const SizedBox(
         height: 25,
       ),
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Color(0xFF4B0000),
             border: Border(
                 bottom: BorderSide(color: Color(0xFFCF8282), width: 3.0),
@@ -388,7 +386,7 @@ Widget classesOfferWidget() {
           ],
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 30,
       )
     ],

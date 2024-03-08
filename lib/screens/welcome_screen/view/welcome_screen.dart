@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spartan_academy/globals.dart';
 import '../welcome_widgets.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -7,7 +6,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
       width: double.infinity,
       // decoration: const BoxDecoration(
       //   image: DecorationImage(
@@ -16,14 +15,14 @@ class WelcomeScreen extends StatelessWidget {
       // ),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 325,
           ),
-          Text(
+          const Text(
             style: TextStyle(fontSize: 30),
             "scroll down",
           ),
-          SizedBox(
+          const SizedBox(
             height: 325,
           ),
           homePageWiget(context: context),

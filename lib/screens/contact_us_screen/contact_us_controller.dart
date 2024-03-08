@@ -53,7 +53,7 @@ List contactUsIconLinksPath = [
 ];
 contacUs() async {
   rc.loader.value = true;
-  await Future.delayed(Duration(seconds: 3), () async {
+  await Future.delayed(const Duration(seconds: 3), () async {
     await fs.collection('ContacUs').doc(emailController.text).set({
       "name": nameController.text,
       'gmail': emailController.text,

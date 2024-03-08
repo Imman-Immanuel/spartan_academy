@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_widget.dart';
 
 List<Map<String, dynamic>> registrationList = [
@@ -55,7 +54,7 @@ class RegistraionScreenController extends GetxController {
   FirebaseFirestore fs = FirebaseFirestore.instance;
   registration() async {
     loader.value = true;
-    await Future.delayed(Duration(seconds: 3), () async {
+    await Future.delayed(const Duration(seconds: 3), () async {
       await fs.collection('Registration').doc(gmailController.text).set({
         "name": nameController.text,
         'gmail': gmailController.text,

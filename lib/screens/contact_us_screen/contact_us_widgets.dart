@@ -16,7 +16,7 @@ Widget contactUsWidget(context) {
   return leftRightBoxContainer(
       Colum:
           Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Text(
@@ -63,7 +63,7 @@ Widget contactUsWidget(context) {
             ]
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
       ]),

@@ -73,9 +73,9 @@ class AdminDashboardScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           vertical: 20, horizontal: 30)),
                   onPressed: () {
-                    Get.offAll(HomeScreen(),
+                    Get.offAll(const HomeScreen(),
                         transition: Transition.noTransition,
-                        duration: Duration(seconds: 5));
+                        duration: const Duration(seconds: 5));
                   },
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,

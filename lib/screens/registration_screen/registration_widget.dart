@@ -103,8 +103,8 @@ snackBar({msg}) {
   return Get.snackbar("Error", msg,
       duration: const Duration(seconds: 2),
       maxWidth: 250,
-      padding: EdgeInsets.all(3.0),
-      margin: EdgeInsets.symmetric(vertical: 15),
+      padding: const EdgeInsets.all(3.0),
+      margin: const EdgeInsets.symmetric(vertical: 15),
       animationDuration: const Duration(milliseconds: 300),
       snackPosition: SnackPosition.BOTTOM,
       colorText: Colors.red,
@@ -203,15 +203,15 @@ Widget sendButtonWidget({ontab}) {
               child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 "Send",
                 style: TextStyle(fontSize: 20),
               ),
               if (rc.loader.value) ...[
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
-                Container(
+                const SizedBox(
                   height: 25,
                   width: 25,
                   child: CircularProgressIndicator(
