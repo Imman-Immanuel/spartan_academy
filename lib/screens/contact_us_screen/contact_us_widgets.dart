@@ -67,7 +67,7 @@ Widget contactUsWidget(context) {
           height: 15,
         ),
       ]),
-      imgPath: "images/Spartan_logo.png",
+      imgPath: "assets/images/Spartan_logo.png",
       context: context);
 }
 

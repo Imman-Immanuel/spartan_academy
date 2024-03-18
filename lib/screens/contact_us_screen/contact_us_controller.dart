@@ -25,7 +25,7 @@ List<Map<String, dynamic>> contactUsInputs = [
     "maxLength": 30,
   },
   {
-    'label': 'Phone No.',
+    'label': 'Phone No',
     'hint': 'Enter your Phone No.',
     'controller': phoneNoController,
     'textInputType': TextInputType.phone,
@@ -42,14 +42,10 @@ List<Map<String, dynamic>> contactUsInputs = [
 FirebaseFirestore fs = FirebaseFirestore.instance;
 RegistraionScreenController rc = Get.put(RegistraionScreenController());
 List contactUsIconLinksPath = [
-  {"svg": 'svg/phone.svg', "url": "tel:7010996304"},
-  {"svg": 'svg/whatsapp.svg', "url": "https://wa.me/7010996304"},
-  {"svg": 'svg/gmail.svg', "url": "mailto:solosathish7@gmail.com"},
-  // {"svg": 'svg/instagram.svg', "url": "https://www.instagram.com/sathishmaruk"},
-  {
-    "svg": 'svg/instagram.svg',
-    "url": "hhttps://maps.app.goo.gl/5hvvuUMZ1EAhsuicA"
-  },
+  {"svg": 'assets/svg/phone.svg', "url": "tel:7010996304"},
+  {"svg": 'assets/svg/whatsapp.svg', "url": "https://wa.me/7010996304"},
+  {"svg": 'assets/svg/gmail.svg', "url": "mailto:solosathish7@gmail.com"},
+  {"svg": 'svg/instagram.svg', "url": "https://www.instagram.com/sathishmaruk"},
 ];
 contacUs() async {
   rc.loader.value = true;

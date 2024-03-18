@@ -13,7 +13,7 @@ class MembersScreen extends StatelessWidget {
       width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("images/Members_Screen_Background.png"),
+            image: AssetImage("assets/images/Members_Screen_Background.png"),
             fit: BoxFit.cover),
       ),
       child: Center(
@@ -23,10 +23,10 @@ class MembersScreen extends StatelessWidget {
           child: CarouselSlider(
               items: [
                 memberWidget(
-                    'images/Sample_user.png', 'Nehru', 'President', 'MLA'),
-                memberWidget('images/Sample_user.png', 'Keerthi Varman',
+                    'assets/images/Sample_user.png', 'Nehru', 'President', 'MLA'),
+                memberWidget('assets/images/Sample_user.png', 'Keerthi Varman',
                     'Vice President', 'Traffic Inspector'),
-                memberWidget('images/Sample_user.png', 'Hema Sankar',
+                memberWidget('assets/images/Sample_user.png', 'Hema Sankar',
                     'General Secretary'),
                 memberWidget(
                   'assets/images/sathish.jpg',
@@ -34,17 +34,17 @@ class MembersScreen extends StatelessWidget {
                   'Joint Secretary',
                 ),
                 memberWidget(
-                  'images/Imman_pic.jpg',
+                  'assets/images/Imman_pic.jpg',
                   'Immanuel S',
                   'Treasurer',
                 ),
                 memberWidget(
-                  'images/Sample_user.png',
+                  'assets/images/Sample_user.png',
                   'Siva Kumar',
                   'E.C Member',
                 ),
                 memberWidget(
-                  'images/Sample_user.png',
+                  'assets/images/Sample_user.png',
                   'Vishnu Balan',
                   'E.C Member',
                 ),

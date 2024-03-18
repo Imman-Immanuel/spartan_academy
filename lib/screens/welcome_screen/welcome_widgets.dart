@@ -228,7 +228,7 @@ Widget homePageWiget({context}) {
     children: [
       welcomeSplitContainerWidget1(
           imageContent: true,
-          imgPath: 'images/Spartan_logo.png',
+          imgPath: 'assets/images/Spartan_logo.png',
           heading: welcomeContents[0]['heading']!,
           content: welcomeContents[0]['content']!,
           context: context),
@@ -352,7 +352,8 @@ Widget classesOfferWidget() {
       const SizedBox(
         height: 25,
       ),
-      const Text("Version : 0.3"),
+      const Text("Version : 0.7"
+          ""),
       const SizedBox(
         height: 25,
       ),

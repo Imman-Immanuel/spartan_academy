@@ -147,7 +147,7 @@ Widget commonTextField(
 Widget registrationScreen({context}) {
   return leftRightBoxContainer(
       context: context,
-      imgPath: "images/Spartan_logo.png",
+      imgPath: "assets/images/Spartan_logo.png",
       Colum: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
