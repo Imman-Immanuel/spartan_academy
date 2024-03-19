@@ -1,14 +1,49 @@
-import 'dart:js';
-import 'dart:js';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_holo_date_picker/date_picker.dart';
-import 'package:flutter_holo_date_picker/i18n/date_picker_i18n.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:spartan_academy/screens/contact_us_screen/contact_us_controller.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_controller.dart';
 
 final RegistrationController = Get.put(RegistraionScreenController());
+
+///common date picker
+Widget datePicker() {
+  return Container(
+    width: 400,
+    child: TextField(
+      autocorrect: true,
+      controller: RegistrationController.dobController,
+      focusNode: FocusNode(),
+      readOnly: true,
+      decoration: InputDecoration(
+          fillColor: Colors.green,
+          counterStyle: const TextStyle(color: Colors.white),
+          label: Text(
+            "Date of Birth",
+          ),
+          hintText: "Select Your Date",
+          focusColor: Colors.green),
+      onTap: () async {
+        final DateTime? pickedDate = await showDatePicker(
+          context: Get.context!,
+          confirmText: "Done",
+          initialDate: DateTime(2000),
+          firstDate: DateTime(1950),
+          lastDate: DateTime.now(),
+        );
+        if (pickedDate != null) {
+          print("date ${pickedDate}");
+          String formattedDate = DateFormat('dd/MM/yyyy').format(pickedDate);
+          RegistrationController.dobController.text =
+              formattedDate.toString().split(" ")[0];
+          print("date picker ${formattedDate}");
+        }
+      },
+    ),
+  );
+}
 
 ///common widet for registration and contact us screen
 Widget leftRightBoxContainer({
@@ -169,48 +204,7 @@ Widget registrationScreen({context}) {
                 label: "Gmail",
                 hint: "Enter Your Gmail",
                 controller: RegistrationController.gmailController),
-            // commonTextField(
-            //     // maxLegth: 10,
-            //     label: "Dob",
-            //     hint: "Enter Your Date Of Birth",
-            //     controller: RegistrationController.dobController),
-            ElevatedButton(
-                onPressed: () {
-                  showDialog(
-                    context: Get.context!,
-                    builder: (BuildContext context) {
-                      return DatePickerDialog(
-                          confirmText: "done",
-                          keyboardType: TextInputType.datetime,
-                          initialDate: DateTime(1950),
-                          firstDate: DateTime(1950),
-                          lastDate: DateTime.now(),
-                          onDatePickerModeChange: (s) {
-                            print("Selected date: $s");
-                            Get.back();
-                          });
-                    },
-                  );
-                },
-                child: Text("text")),
-            // TextField(
-            //   onChanged: (date) async {
-            //     var datePicked = await DatePicker.showSimpleDatePicker(
-            //       context,
-            //       // initialDate: DateTime(2020),
-            //       firstDate: DateTime(1950),
-            //       lastDate: DateTime.now(),
-            //       dateFormat: "dd-MMMM-yyyy",
-            //       locale: DateTimePickerLocale.en_us,
-            //       looping: false,
-            //     );
-            //
-            //     final snackBar =
-            //         SnackBar(content: Text("Date Picked $datePicked"));
-            //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            //   },
-            // ),
-
+            datePicker(),
             commonTextField(
                 // maxLegth: 10,
                 label: "professional",
@@ -264,6 +258,6 @@ Widget sendButtonWidget({ontab}) {
               ]
             ],
           ))),
-    ).paddingOnly(bottom: 30, top: 30),
+    ).paddingOnly(bottom: 30, top: 5),
   );
 }
