@@ -14,7 +14,7 @@ class ContactUsScreen extends StatelessWidget {
           width: double.infinity,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("images/Admin_Login_Background.jpg"),
+                image: AssetImage("assets/images/Admin_Login_Background.jpg"),
                 fit: BoxFit.cover),
           ),
           child: Column(

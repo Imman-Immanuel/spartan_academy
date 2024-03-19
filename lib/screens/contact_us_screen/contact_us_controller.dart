@@ -45,7 +45,10 @@ List contactUsIconLinksPath = [
   {"svg": 'assets/svg/phone.svg', "url": "tel:7010996304"},
   {"svg": 'assets/svg/whatsapp.svg', "url": "https://wa.me/7010996304"},
   {"svg": 'assets/svg/gmail.svg', "url": "mailto:solosathish7@gmail.com"},
-  {"svg": 'svg/instagram.svg', "url": "https://www.instagram.com/sathishmaruk"},
+  {
+    "svg": 'assets/svg/instagram.svg',
+    "url": "https://www.instagram.com/sathishmaruk"
+  },
 ];
 contacUs() async {
   rc.loader.value = true;

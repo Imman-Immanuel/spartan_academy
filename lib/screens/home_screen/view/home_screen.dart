@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/screens/home_screen/home_controller.dart';
@@ -45,13 +46,49 @@ class HomeScreen extends StatelessWidget {
                                           ? true
                                           : false)),
                             )
-                          : const Row(
+                          : Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Icon(
-                                  Icons.menu_rounded,
-                                  color: Colors.white,
-                                ),
+                                ElevatedButton(
+                                    onPressed: () {
+                                      showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                    right: 20,
+                                                    top: 20,
+                                                  ),
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                        color: Colors.red,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10)),
+                                                    height: 400,
+                                                    width: 200,
+                                                  ),
+                                                ),
+                                              ],
+                                            );
+                                          });
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.transparent,
+                                        fixedSize: Size(3, 1)),
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.menu_rounded,
+                                        color: Colors.white,
+                                      ),
+                                    )),
                                 SizedBox(
                                   width: 20,
                                 )
