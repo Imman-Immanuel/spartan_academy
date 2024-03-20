@@ -63,17 +63,51 @@ class HomeScreen extends StatelessWidget {
                                                 Padding(
                                                   padding:
                                                       const EdgeInsets.only(
-                                                    right: 20,
-                                                    top: 20,
+                                                    right: 0,
+                                                    top: 0,
                                                   ),
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                        color: Colors.red,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(10)),
-                                                    height: 400,
-                                                    width: 200,
+                                                  child: Align(
+                                                    alignment:
+                                                        Alignment.topRight,
+                                                    child: Container(
+                                                      decoration: const BoxDecoration(
+                                                          color: Colors.red,
+                                                          borderRadius:
+                                                              BorderRadius.only(
+                                                                  bottomLeft: Radius
+                                                                      .circular(
+                                                                          300),
+                                                                  topLeft: Radius
+                                                                      .circular(
+                                                                          5))),
+                                                      height: MediaQuery.sizeOf(
+                                                              context)
+                                                          .height,
+                                                      width: 200,
+                                                      child: Column(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: List.generate(
+                                                            hc.homeMenuList
+                                                                .length,
+                                                            (index) =>
+                                                                homeMenuWidget(
+                                                                    menuName: hc
+                                                                            .homeMenuList[
+                                                                        index],
+                                                                    onPressFunc:
+                                                                        () {
+                                                                      hc.currentScreenSelectionIndex
+                                                                              .value =
+                                                                          index;
+                                                                    },
+                                                                    isSelected: index ==
+                                                                            hc.currentScreenSelectionIndex.value
+                                                                        ? true
+                                                                        : false)),
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -83,13 +117,13 @@ class HomeScreen extends StatelessWidget {
                                     style: ElevatedButton.styleFrom(
                                         primary: Colors.transparent,
                                         fixedSize: Size(3, 1)),
-                                    child: Center(
+                                    child: const Center(
                                       child: Icon(
                                         Icons.menu_rounded,
                                         color: Colors.white,
                                       ),
                                     )),
-                                SizedBox(
+                                const SizedBox(
                                   width: 20,
                                 )
                               ],
