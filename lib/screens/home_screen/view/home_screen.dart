@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
                                           });
                                     },
                                     style: ElevatedButton.styleFrom(
-                                        primary: Colors.transparent,
+                                        // primary: Colors.transparent,
                                         fixedSize: Size(3, 1)),
                                     child: const Center(
                                       child: Icon(

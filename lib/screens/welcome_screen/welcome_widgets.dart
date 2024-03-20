@@ -352,8 +352,7 @@ Widget classesOfferWidget() {
       const SizedBox(
         height: 25,
       ),
-      const Text("Version : 0.8"
-          ""),
+      const Text("Version : 0.8"),
       const SizedBox(
         height: 25,
       ),
