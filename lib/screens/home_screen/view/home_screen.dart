@@ -101,6 +101,8 @@ class HomeScreen extends StatelessWidget {
                                                                       hc.currentScreenSelectionIndex
                                                                               .value =
                                                                           index;
+                                                                      Navigator.pop(
+                                                                          context);
                                                                     },
                                                                     isSelected: index ==
                                                                             hc.currentScreenSelectionIndex.value
