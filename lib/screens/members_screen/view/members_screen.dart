@@ -55,12 +55,12 @@ class MembersScreen extends StatelessWidget {
                 ),
               ],
               options: CarouselOptions(
-                  height: currentScreenWidth < 575 ? 290 : 370,
+                  height: currentScreenWidth < 575 ? 330 : 400,
                   scrollDirection: Axis.horizontal,
                   enlargeCenterPage: true,
                   enlargeFactor: 0.3,
                   viewportFraction: 0.9,
-                  autoPlay: false)),
+                  autoPlay: true)),
         ),
       ),
     );
