@@ -8,6 +8,7 @@ class MembersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double currentScreenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: double.infinity,
       width: double.infinity,
@@ -18,12 +19,16 @@ class MembersScreen extends StatelessWidget {
       ),
       child: Center(
         child: SizedBox(
-          height: 370,
+          height: double.infinity,
           width: double.infinity,
           child: CarouselSlider(
               items: [
                 memberWidget(
-                    'assets/images/Sample_user.png', 'Nehru', 'President', 'MLA'),
+                  'assets/images/Sample_user.png',
+                  'Nehru',
+                  'President',
+                  'MLA',
+                ),
                 memberWidget('assets/images/Sample_user.png', 'Keerthi Varman',
                     'Vice President', 'Traffic Inspector'),
                 memberWidget('assets/images/Sample_user.png', 'Hema Sankar',
@@ -50,11 +55,12 @@ class MembersScreen extends StatelessWidget {
                 ),
               ],
               options: CarouselOptions(
+                  height: currentScreenWidth < 575 ? 290 : 370,
                   scrollDirection: Axis.horizontal,
-                  // enlargeCenterPage: true,
-                  // enlargeFactor: .4,
-                  // viewportFraction: .3,
-                  autoPlay: true)),
+                  enlargeCenterPage: true,
+                  enlargeFactor: 0.3,
+                  viewportFraction: 0.9,
+                  autoPlay: false)),
         ),
       ),
     );

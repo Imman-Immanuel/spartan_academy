@@ -1,4 +1,3 @@
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -318,7 +317,7 @@ Widget classesOfferWidget() {
               height: currentScreenWidth < 1000 ? 300 : 400,
               scrollDirection: Axis.horizontal,
               // enlargeCenterPage: true,
-              // enlargeFactor: .4,
+              enlargeFactor: .4,
               viewportFraction: currentScreenWidth < 1000 ? .9 : .3,
               autoPlay: true)),
       Text(
