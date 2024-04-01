@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 Widget homeMenuWidget(
     {required String menuName, onPressFunc, bool isSelected = false}) {
@@ -13,6 +14,38 @@ Widget homeMenuWidget(
               color: isSelected ? Colors.red : Colors.white,
               fontWeight: isSelected ? FontWeight.bold : null),
         )),
+  );
+}
+
+Widget mobileHomeMenuWidget(
+    {required String menuName,
+    onPressFunc,
+    bool isSelected = false,
+    required IconData icons}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 5),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Icon(
+          icons,
+          color: isSelected ? Colors.red : Colors.white,
+          size: isSelected ? 26 : 23,
+        ),
+        SizedBox(
+          width: 20,
+        ),
+        TextButton(
+            onPressed: onPressFunc,
+            child: Text(
+              menuName,
+              style: TextStyle(
+                  fontSize: isSelected ? 19 : 16,
+                  color: isSelected ? Colors.red : Colors.white,
+                  fontWeight: isSelected ? FontWeight.bold : null),
+            )),
+      ],
+    ).paddingOnly(top: 5, bottom: 5),
   );
 }
 

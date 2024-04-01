@@ -10,7 +10,7 @@ void main() async {
   );
 
   runApp(GetMaterialApp(
-    home: const HomeScreen(),
+    home: HomeScreen(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.grey),
   ));

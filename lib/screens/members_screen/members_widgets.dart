@@ -100,12 +100,13 @@ Widget memberWidget(String imgPath, String name, String designation,
                         ),
                       ),
                     ],
-                    // const SizedBox(
-                    //   height: 3,
-                    // ),
+                    const SizedBox(
+                      height: 3,
+                    ),
                     Text(
                       designation,
                       style: const TextStyle(
+                        fontStyle: FontStyle.italic,
                         color: Colors.white,
                         fontSize: 17,
                       ),

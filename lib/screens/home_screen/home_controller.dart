@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/screens/admin_login_screen/view/admin_login_screen.dart';
 import 'package:spartan_academy/screens/contact_us_screen/view/contact_us_screen.dart';
@@ -14,6 +15,13 @@ class HomeController extends GetxController {
     'Registration',
     'Admin Login',
     // 'Admin Dashboard'
+  ];
+  List iconList = [
+    Icons.home,
+    Icons.group,
+    Icons.call,
+    Icons.note_alt_rounded,
+    Icons.admin_panel_settings,
   ];
 
   List screensList = [
