@@ -10,7 +10,7 @@ class ContactUsScreen extends StatelessWidget {
     // return contactUsSplitContainer(context);
     return SingleChildScrollView(
       child: Container(
-          // height: double.infinity,
+          height: MediaQuery.sizeOf(context).height,
           width: double.infinity,
           decoration: const BoxDecoration(
             image: DecorationImage(
