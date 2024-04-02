@@ -26,7 +26,7 @@ Widget welcomeSplitContainerWidget1({
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              SelectableText(
                 heading,
                 style: TextStyle(
                     color: headingFontColor, fontSize: headingFontSize),
@@ -43,7 +43,7 @@ Widget welcomeSplitContainerWidget1({
                   const SizedBox(
                     height: 30,
                   ),
-                  Text(
+                  SelectableText(
                     content,
                     textAlign: TextAlign.justify,
                     style: TextStyle(
@@ -74,7 +74,7 @@ Widget welcomeSplitContainerWidget1({
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        SelectableText(
                           heading,
                           style: TextStyle(
                               fontWeight: FontWeight.w900,
@@ -84,7 +84,7 @@ Widget welcomeSplitContainerWidget1({
                         const SizedBox(
                           height: 30,
                         ),
-                        Text(
+                        SelectableText(
                           maxLines: 7,
                           content,
                           // strutStyle: StrutStyle(),
@@ -111,7 +111,7 @@ Widget welcomeSplitContainerWidget1({
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        SelectableText(
                           heading,
                           style: TextStyle(
                               fontWeight: FontWeight.w900,
@@ -222,63 +222,76 @@ Widget carsoalModel(String imgPath, String name, double height) {
 Widget homePageWiget({context}) {
   double screenWidth = MediaQuery.of(Get.context!).size.width;
   bool isSmallScreen = screenWidth < mediumScreenWidth;
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      welcomeSplitContainerWidget1(
-          imageContent: true,
-          imgPath: 'assets/images/Spartan_logo.png',
-          heading: welcomeContents[0]['heading']!,
-          content: welcomeContents[0]['content']!,
-          context: context),
-      const SizedBox(
-        height: 50,
-      ),
-      welcomeSplitContainerWidget1(
-          imageContent: false,
-          imgPath: 'assets/images/ourMission.png',
-          heading: welcomeContents[1]['heading']!,
-          content: welcomeContents[1]['content']!,
-          context: context),
-      SizedBox(
-        height: isSmallScreen ? 150 : 200,
-      ),
-      Text("Why choose Us :",
-              style: TextStyle(
-                  fontSize: headingFontSize, fontWeight: FontWeight.bold))
-          .paddingOnly(left: isSmallScreen ? 20 : 100),
-      const SizedBox(
-        height: 50,
-      ),
-      welcomeContainerTwo(
-        heading: welcomeContents[2]['heading']!,
-        content: welcomeContents[2]['content']!,
-      ),
-      const SizedBox(
-        height: 50,
-      ),
-      welcomeContainerTwo(
-        heading: welcomeContents[4]['heading']!,
-        content: welcomeContents[4]['content']!,
-      ),
-      const SizedBox(
-        height: 50,
-      ),
-      welcomeContainerTwo(
-        heading: welcomeContents[3]['heading']!,
-        content: welcomeContents[3]['content']!,
-      ),
-      const SizedBox(
-        height: 50,
-      ),
-      welcomeContainerTwo(
-        heading: welcomeContents[5]['heading']!,
-        content: welcomeContents[5]['content']!,
-      ),
-      SizedBox(
-        height: isSmallScreen ? 100 : 200,
-      ),
-    ],
+  return Container(
+    decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.circular(10),
+        gradient: LinearGradient(
+          colors: [
+            Colors.redAccent,
+            Colors.white,
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        )),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        welcomeSplitContainerWidget1(
+            imageContent: true,
+            imgPath: 'assets/images/Spartan_logo.png',
+            heading: welcomeContents[0]['heading']!,
+            content: welcomeContents[0]['content']!,
+            context: context),
+        const SizedBox(
+          height: 50,
+        ),
+        welcomeSplitContainerWidget1(
+            imageContent: false,
+            imgPath: 'assets/images/ourMission.png',
+            heading: welcomeContents[1]['heading']!,
+            content: welcomeContents[1]['content']!,
+            context: context),
+        SizedBox(
+          height: isSmallScreen ? 150 : 200,
+        ),
+        Text("Why choose Us :",
+                style: TextStyle(
+                    fontSize: headingFontSize, fontWeight: FontWeight.bold))
+            .paddingOnly(left: isSmallScreen ? 20 : 100),
+        const SizedBox(
+          height: 50,
+        ),
+        welcomeContainerTwo(
+          heading: welcomeContents[2]['heading']!,
+          content: welcomeContents[2]['content']!,
+        ),
+        const SizedBox(
+          height: 50,
+        ),
+        welcomeContainerTwo(
+          heading: welcomeContents[4]['heading']!,
+          content: welcomeContents[4]['content']!,
+        ),
+        const SizedBox(
+          height: 50,
+        ),
+        welcomeContainerTwo(
+          heading: welcomeContents[3]['heading']!,
+          content: welcomeContents[3]['content']!,
+        ),
+        const SizedBox(
+          height: 50,
+        ),
+        welcomeContainerTwo(
+          heading: welcomeContents[5]['heading']!,
+          content: welcomeContents[5]['content']!,
+        ),
+        SizedBox(
+          height: isSmallScreen ? 100 : 200,
+        ),
+      ],
+    ),
   );
 }
 
@@ -292,7 +305,7 @@ Widget classesOfferWidget() {
       // SizedBox(
       //   width: 50,
       // ),
-      Text(
+      SelectableText(
         "Classes Offer",
         style:
             TextStyle(fontSize: headingFontSize, fontWeight: FontWeight.bold),
@@ -320,14 +333,14 @@ Widget classesOfferWidget() {
               enlargeFactor: .4,
               viewportFraction: currentScreenWidth < 1000 ? .9 : .3,
               autoPlay: true)),
-      Text(
+      SelectableText(
         "Get Started Today",
         style: TextStyle(fontSize: headingFontSize),
       ),
       const SizedBox(
         height: 25,
       ),
-      Text(
+      SelectableText(
         "Embark on your Taekwondo journey with us. Join a community that is passionate about growth, empowerment, and camaraderie. Discover the benefits of martial arts in a welcoming and supportive environment.",
         style: TextStyle(
           height: 2,
@@ -341,7 +354,7 @@ Widget classesOfferWidget() {
       const SizedBox(
         height: 25,
       ),
-      Text(
+      SelectableText(
         "Contact us for a free trial class or to learn more about our programs",
         style: TextStyle(
             letterSpacing: 1, wordSpacing: 2, fontSize: contentFontSize),
@@ -351,7 +364,7 @@ Widget classesOfferWidget() {
       const SizedBox(
         height: 25,
       ),
-      const Text("Version : 0.8"),
+      const SelectableText("Version : 0.8"),
       const SizedBox(
         height: 25,
       ),

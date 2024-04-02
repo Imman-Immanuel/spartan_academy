@@ -19,7 +19,7 @@ Widget contactUsWidget(context) {
         const SizedBox(
           height: 30,
         ),
-        Text(
+        SelectableText(
           "Get In Touch",
           style: TextStyle(
             fontSize: headingFontSize,

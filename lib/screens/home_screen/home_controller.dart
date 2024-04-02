@@ -11,7 +11,7 @@ class HomeController extends GetxController {
   List homeMenuList = [
     'Home',
     'Members',
-    'Contact',
+    'Contact Us',
     'Registration',
     'Admin Login',
     // 'Admin Dashboard'

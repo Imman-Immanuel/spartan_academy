@@ -14,7 +14,7 @@ Widget adminDashboardButtonWidget(String text, void Function()? onPressFunc) {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         )),
-    child: Text(
+    child: SelectableText(
       text,
       style: const TextStyle(fontSize: 18),
     ),
@@ -45,7 +45,7 @@ Widget menuItemWidget(String name, [bool isSelected = false]) {
         borderRadius: const BorderRadius.all(Radius.circular(50)),
         color: isSelected ? const Color(0xFF1B1B1A) : Colors.white,
       ),
-      child: Text(
+      child: SelectableText(
         name,
         style: TextStyle(
             color: isSelected ? Colors.white : Colors.black, fontSize: 20),
@@ -54,7 +54,7 @@ Widget menuItemWidget(String name, [bool isSelected = false]) {
 
 Widget studentsContentWidget() {
   return const Center(
-    child: Text('Students Content here. Coming soon !'),
+    child: SelectableText('Students Content here. Coming soon !'),
   );
 }
 

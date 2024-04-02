@@ -20,7 +20,7 @@ Widget datePicker() {
       decoration: InputDecoration(
           fillColor: Colors.green,
           counterStyle: const TextStyle(color: Colors.white),
-          label: Text(
+          label: SelectableText(
             "Date of Birth",
           ),
           hintText: "Select Your Date",
@@ -170,7 +170,7 @@ Widget commonTextField(
         decoration: InputDecoration(
             fillColor: Colors.green,
             counterStyle: const TextStyle(color: Colors.white),
-            label: Text(
+            label: SelectableText(
               label,
             ),
             hintText: hint,

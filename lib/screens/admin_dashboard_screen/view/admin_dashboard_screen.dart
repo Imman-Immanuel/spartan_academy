@@ -32,7 +32,7 @@ class AdminDashboardScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    const SelectableText(
                       'Menu',
                       style: TextStyle(
                         fontSize: 30,

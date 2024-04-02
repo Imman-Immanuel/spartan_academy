@@ -26,7 +26,7 @@ Widget buttonWidget(String text, void Function()? onPressFunc,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         )),
-    child: Text(
+    child: SelectableText(
       text,
       style: const TextStyle(fontSize: 18),
     ),
@@ -34,7 +34,7 @@ Widget buttonWidget(String text, void Function()? onPressFunc,
 }
 
 Widget headingText1(String text, [Color? color]) {
-  return Text(
+  return SelectableText(
     text,
     style: TextStyle(
       color: color,

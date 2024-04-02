@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:spartan_academy/globals.dart';
 import 'package:spartan_academy/screens/home_screen/home_controller.dart';
 import '../home_widgets.dart';
 
@@ -299,15 +300,19 @@ class HomeScreen extends StatelessWidget {
                                   },
                                   onTap: () {
                                     showGeneralDialog(
+                                        transitionDuration:
+                                            Duration(milliseconds: 350),
                                         context: context,
                                         pageBuilder: (ctx, a1, a2) {
-                                          return Text("Satis Your a winner");
+                                          return Text("ss");
                                         },
                                         transitionBuilder:
                                             (ctx, a1, a2, child) {
                                           return Transform.translate(
-                                              filterQuality: FilterQuality.low,
-                                              offset: Offset(0.0, 0.15),
+                                              // transformHitTests: true,
+                                              filterQuality:
+                                                  FilterQuality.medium,
+                                              offset: Offset(0.30, 0.15),
                                               child: Stack(
                                                 children: [
                                                   Container(
@@ -412,11 +417,26 @@ class HomeScreen extends StatelessWidget {
                                               ));
                                         });
                                   },
-                                  child: const Center(
-                                    child: Icon(
-                                      Icons.menu_rounded,
-                                      color: Colors.white,
-                                    ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        "${hc.homeMenuList[hc.currentScreenSelectionIndex.value]}",
+                                        style: TextStyle(
+                                            color: Colors.red,
+                                            fontSize: headingFontSize - 5,
+                                            fontWeight: FontWeight.w900),
+                                      ),
+                                      SizedBox(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.36,
+                                      ),
+                                      Icon(
+                                        Icons.menu_sharp,
+                                        color: Colors.red,
+                                      ),
+                                    ],
                                   )),
                             ],
                           ).paddingOnly(right: 10)),

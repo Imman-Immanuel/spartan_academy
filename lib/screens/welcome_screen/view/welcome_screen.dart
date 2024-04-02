@@ -18,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
           const SizedBox(
             height: 325,
           ),
-          const Text(
+          const SelectableText(
             style: TextStyle(fontSize: 30),
             "scroll down",
           ),

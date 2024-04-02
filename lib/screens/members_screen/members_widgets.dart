@@ -28,7 +28,7 @@ Widget memberWidget(String imgPath, String name, String designation,
               Expanded(
                 child: Column(
                   children: [
-                    Text(
+                    SelectableText(
                       name,
                       style: const TextStyle(
                           fontSize: 25,
@@ -39,7 +39,7 @@ Widget memberWidget(String imgPath, String name, String designation,
                       const SizedBox(
                         height: 5,
                       ),
-                      Text(
+                      SelectableText(
                         designation2,
                         style: const TextStyle(
                           color: Colors.white,
@@ -50,7 +50,7 @@ Widget memberWidget(String imgPath, String name, String designation,
                     const SizedBox(
                       height: 5,
                     ),
-                    Text(
+                    SelectableText(
                       designation,
                       style: const TextStyle(
                         color: Colors.white,
@@ -81,7 +81,7 @@ Widget memberWidget(String imgPath, String name, String designation,
               Expanded(
                 child: Column(
                   children: [
-                    Text(
+                    SelectableText(
                       name,
                       style: const TextStyle(
                           fontSize: 20,
@@ -92,7 +92,7 @@ Widget memberWidget(String imgPath, String name, String designation,
                       const SizedBox(
                         height: 2,
                       ),
-                      Text(
+                      SelectableText(
                         designation2,
                         style: const TextStyle(
                           color: Colors.white,
@@ -103,7 +103,7 @@ Widget memberWidget(String imgPath, String name, String designation,
                     const SizedBox(
                       height: 3,
                     ),
-                    Text(
+                    SelectableText(
                       designation,
                       style: const TextStyle(
                         fontStyle: FontStyle.italic,

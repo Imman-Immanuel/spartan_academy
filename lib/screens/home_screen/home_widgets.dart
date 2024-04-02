@@ -56,7 +56,7 @@ Widget homeTopBar() {
       Container(
         color: Colors.white, // Change this to your main background color
         child: const Center(
-          child: Text(
+          child: SelectableText(
             'Your main content goes here',
             style: TextStyle(fontSize: 20),
           ),
@@ -71,7 +71,7 @@ Widget homeTopBar() {
           color: Colors.blue, // Change this to your desired container color
           height: 50, // Change this to your desired container height
           child: const Center(
-            child: Text(
+            child: SelectableText(
               'Fixed Container at the Top',
               style: TextStyle(color: Colors.white),
             ),
