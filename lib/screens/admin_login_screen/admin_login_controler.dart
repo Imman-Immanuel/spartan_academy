@@ -20,8 +20,6 @@ class AdminLoginController extends GetxController {
 
       // Map taskData = {"task": tc.text.toUpperCase(), 'isDone': false};
 
-      print("signup page");
-      print(credential);
       // await auth
       //     .collection("spartanAcademy")
       //     .doc(mailController.text)
@@ -35,12 +33,10 @@ class AdminLoginController extends GetxController {
       passwordControler.text = "";
     } catch (e) {
       Get.snackbar('Sign Up Error', ' UserName or Password incorrect');
-      print("e snacbar");
     }
   }
 
   validation() {
-    print("validation");
     if (adminGmailControler.text == "") {
       snackBar(msg: "Kindly Enter Your Gmail");
       return;
@@ -48,7 +44,5 @@ class AdminLoginController extends GetxController {
       snackBar(msg: "Kindly Enter Your Password");
     }
     signup();
-
-    print("signup pae");
   }
 }

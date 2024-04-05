@@ -65,7 +65,6 @@ contacUs() async {
   phoneNoController.text = "";
   messageController.text = "";
   rc.loader.value = false;
-  print(fs);
 }
 
 contactUsValidation() {

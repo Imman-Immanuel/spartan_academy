@@ -1,25 +1,23 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:spartan_academy/screens/contact_us_screen/contact_us_controller.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_controller.dart';
 
-final RegistrationController = Get.put(RegistraionScreenController());
+final registrationController = Get.put(RegistraionScreenController());
 
 ///common date picker
 Widget datePicker() {
-  return Container(
+  return SizedBox(
     width: 400,
     child: TextField(
       autocorrect: true,
-      controller: RegistrationController.dobController,
+      controller: registrationController.dobController,
       focusNode: FocusNode(),
       readOnly: true,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
           fillColor: Colors.green,
-          counterStyle: const TextStyle(color: Colors.white),
+          counterStyle: TextStyle(color: Colors.white),
           label: SelectableText(
             "Date of Birth",
           ),
@@ -34,11 +32,9 @@ Widget datePicker() {
           lastDate: DateTime.now(),
         );
         if (pickedDate != null) {
-          print("date ${pickedDate}");
           String formattedDate = DateFormat('dd/MM/yyyy').format(pickedDate);
-          RegistrationController.dobController.text =
+          registrationController.dobController.text =
               formattedDate.toString().split(" ")[0];
-          print("date picker ${formattedDate}");
         }
       },
     ),
@@ -47,7 +43,7 @@ Widget datePicker() {
 
 ///common widet for registration and contact us screen
 Widget leftRightBoxContainer({
-  required Widget Colum,
+  required Widget colum,
   required String imgPath,
   required BuildContext context,
 }) {
@@ -106,7 +102,7 @@ Widget leftRightBoxContainer({
                       color: Colors.white,
                       // color: Color(0xFF2E0404),
                       borderRadius: BorderRadius.circular(13.0)),
-                  child: Colum.paddingSymmetric(horizontal: 30),
+                  child: colum.paddingSymmetric(horizontal: 30),
                 )
 
               // Right box - Mobile view  Widget
@@ -129,7 +125,7 @@ Widget leftRightBoxContainer({
                         color: Colors.white,
                         // color: Color(0xFF2E0404),
                         borderRadius: BorderRadius.circular(13.0)),
-                    child: Colum.paddingSymmetric(horizontal: 20),
+                    child: colum.paddingSymmetric(horizontal: 20),
                   ).paddingSymmetric(horizontal: 30),
                 )
         ],
@@ -183,7 +179,7 @@ Widget registrationScreen({context}) {
   return leftRightBoxContainer(
       context: context,
       imgPath: "assets/images/Spartan_logo.png",
-      Colum: SingleChildScrollView(
+      colum: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -198,30 +194,30 @@ Widget registrationScreen({context}) {
                 // maxLegth: 10,
                 label: "Name",
                 hint: "Enter Your Name",
-                controller: RegistrationController.nameController),
+                controller: registrationController.nameController),
             commonTextField(
                 // maxLegth: 10,
                 label: "Gmail",
                 hint: "Enter Your Gmail",
-                controller: RegistrationController.gmailController),
+                controller: registrationController.gmailController),
             datePicker(),
             commonTextField(
                 // maxLegth: 10,
                 label: "professional",
                 hint: "Work/Study",
-                controller: RegistrationController.workStudyController),
+                controller: registrationController.workStudyController),
             commonTextField(
                 // maxLegth: 10,
                 label: "Address",
                 hint: "Enter Your Address",
-                controller: RegistrationController.addressController),
+                controller: registrationController.addressController),
             commonTextField(
                 maxlength: 10,
                 label: "Phone Number",
                 hint: "Enter Your Phone Number",
-                controller: RegistrationController.phoneNumberController),
+                controller: registrationController.phoneNumberController),
             sendButtonWidget(ontab: () {
-              RegistrationController.validation();
+              registrationController.validation();
             }),
           ],
         ),
@@ -229,6 +225,8 @@ Widget registrationScreen({context}) {
 }
 
 Widget sendButtonWidget({ontab}) {
+  double screenWidth = MediaQuery.of(Get.context!).size.width;
+
   return Obx(
     () => ElevatedButton(
       onPressed: ontab,
@@ -239,9 +237,9 @@ Widget sendButtonWidget({ontab}) {
               child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 "Send",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: screenWidth < 575 ? 18 : 20),
               ),
               if (rc.loader.value) ...[
                 const SizedBox(
@@ -258,6 +256,6 @@ Widget sendButtonWidget({ontab}) {
               ]
             ],
           ))),
-    ).paddingOnly(bottom: 30, top: 5),
+    ).paddingOnly(bottom: 25, top: 5),
   );
 }

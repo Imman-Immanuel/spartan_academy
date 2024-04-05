@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/globals.dart';
@@ -48,396 +49,151 @@ class HomeScreen extends StatelessWidget {
                                         : false)),
                           )
                         : Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // IconButton(
-                              //     onPressed: () {
-                              //       showDialog(
-                              //         context: context,
-                              //         builder: (BuildContext context) {
-                              //           return Align(
-                              //             alignment: Alignment.topRight,
-                              //             child: Dialog(
-                              //               backgroundColor: Colors.transparent,
-                              //               elevation: 0,
-                              //               child: Stack(
-                              //                 // alignment: Alignment(15, 30),
-                              //                 children: [
-                              //                   Container(
-                              //                     width: 450,
-                              //                     height: double.infinity,
-                              //                     decoration: BoxDecoration(
-                              //                       color: Colors.transparent
-                              //                           .withOpacity(0.5),
-                              //                     ),
-                              //                     child: BackdropFilter(
-                              //                       filter: ImageFilter.blur(
-                              //                           sigmaX: 8.0,
-                              //                           sigmaY: 8.0),
-                              //                       child: Container(
-                              //                         color: Colors.transparent,
-                              //                       ),
-                              //                     ),
-                              //                   ),
-                              //                   Row(
-                              //                     mainAxisAlignment:
-                              //                     MainAxisAlignment.end,
-                              //                     children: [
-                              //                       Align(
-                              //                         alignment:
-                              //                         Alignment.topRight,
-                              //                         child: Container(
-                              //                           color: Colors.black45,
-                              //                           height:
-                              //                           MediaQuery.sizeOf(
-                              //                               context)
-                              //                               .height,
-                              //                           width:
-                              //                           MediaQuery.sizeOf(
-                              //                               context)
-                              //                               .width *
-                              //                               0.7,
-                              //                           child: Column(
-                              //                             crossAxisAlignment:
-                              //                             CrossAxisAlignment
-                              //                                 .center,
-                              //                             children: [
-                              //                               const SizedBox(
-                              //                                 height: 20,
-                              //                               ),
-                              //                               Column(
-                              //                                 children: [
-                              //                                   Container(
-                              //                                     // margin:
-                              //                                     //     const EdgeInsets
-                              //                                     //         .only(
-                              //                                     //         top:
-                              //                                     //             10),
-                              //                                     height: 110,
-                              //                                     width: 110,
-                              //                                     decoration:
-                              //                                     BoxDecoration(
-                              //                                         borderRadius: BorderRadius.circular(
-                              //                                             60),
-                              //                                         image:
-                              //                                         const DecorationImage(
-                              //                                           fit:
-                              //                                           BoxFit.fill,
-                              //                                           image:
-                              //                                           AssetImage("assets/images/background.jpeg"),
-                              //                                         )),
-                              //                                   ),
-                              //                                 ],
-                              //                               ),
-                              //                               const SizedBox(
-                              //                                 height: 20,
-                              //                               ),
-                              //                               const Divider(
-                              //                                 color:
-                              //                                 Colors.white,
-                              //                               ),
-                              //                               const SizedBox(
-                              //                                 height: 20,
-                              //                               ),
-                              //                               Column(
-                              //                                 crossAxisAlignment:
-                              //                                 CrossAxisAlignment
-                              //                                     .start,
-                              //                                 children: List.generate(
-                              //                                     hc.homeMenuList.length,
-                              //                                         (index) => mobileHomeMenuWidget(
-                              //                                         icons: hc.iconList[index],
-                              //                                         menuName: hc.homeMenuList[index],
-                              //                                         onPressFunc: () {
-                              //                                           hc.currentScreenSelectionIndex.value =
-                              //                                               index;
-                              //                                           Navigator.pop(
-                              //                                               context);
-                              //                                         },
-                              //                                         isSelected: index == hc.currentScreenSelectionIndex.value ? true : false)),
-                              //                               ).paddingOnly(
-                              //                                   left: 10)
-                              //                             ],
-                              //                           ),
-                              //                         ),
-                              //                       ),
-                              //                     ],
-                              //                   ),
-                              //                 ],
-                              //               ),
-                              //             ),
-                              //           );
-                              //         },
-                              //       );
-                              //
-                              //       // showGeneralDialog(
-                              //       //   context: context,
-                              //       //   pageBuilder: (ctx, a1, a2) {
-                              //       //     return Text("Satis Your a winner");
-                              //       //   },
-                              //       //   transitionBuilder: (ctx, a1, a2, child) {
-                              //       //     return Transform.translate(
-                              //       //       // angle: math.radians(a1.value * 360),
-                              //       //       filterQuality: FilterQuality.low,
-                              //       //       offset: Offset(0.0, 0.15),
-                              //       //       child: Row(
-                              //       //         mainAxisAlignment:
-                              //       //             MainAxisAlignment.end,
-                              //       //         crossAxisAlignment:
-                              //       //             CrossAxisAlignment.start,
-                              //       //         children: [
-                              //       //           Container(
-                              //       //             color: Colors.black45,
-                              //       //             height:
-                              //       //                 MediaQuery.sizeOf(context)
-                              //       //                     .height,
-                              //       //             width:
-                              //       //                 MediaQuery.sizeOf(context)
-                              //       //                         .width *
-                              //       //                     0.7,
-                              //       //             child: Column(
-                              //       //               crossAxisAlignment:
-                              //       //                   CrossAxisAlignment.start,
-                              //       //               children: [
-                              //       //                 const SizedBox(
-                              //       //                   height: 20,
-                              //       //                 ),
-                              //       //                 Center(
-                              //       //                   child: Column(
-                              //       //                     children: [
-                              //       //                       Container(
-                              //       //                         margin:
-                              //       //                             const EdgeInsets
-                              //       //                                 .only(
-                              //       //                                 top: 10),
-                              //       //                         height: 110,
-                              //       //                         width: 110,
-                              //       //                         decoration:
-                              //       //                             BoxDecoration(
-                              //       //                                 borderRadius:
-                              //       //                                     BorderRadius.circular(
-                              //       //                                         60),
-                              //       //                                 image:
-                              //       //                                     const DecorationImage(
-                              //       //                                   fit: BoxFit
-                              //       //                                       .fill,
-                              //       //                                   image: AssetImage(
-                              //       //                                       "assets/images/background.jpeg"),
-                              //       //                                 )),
-                              //       //                       ),
-                              //       //                     ],
-                              //       //                   ),
-                              //       //                 ),
-                              //       //                 const SizedBox(
-                              //       //                   height: 20,
-                              //       //                 ),
-                              //       //                 const Divider(
-                              //       //                   color: Colors.white,
-                              //       //                 ),
-                              //       //                 const SizedBox(
-                              //       //                   height: 20,
-                              //       //                 ),
-                              //       //                 Column(
-                              //       //                   crossAxisAlignment:
-                              //       //                       CrossAxisAlignment
-                              //       //                           .start,
-                              //       //                   children: List.generate(
-                              //       //                       hc.homeMenuList
-                              //       //                           .length,
-                              //       //                       (index) =>
-                              //       //                           mobileHomeMenuWidget(
-                              //       //                               icons:
-                              //       //                                   hc.iconList[
-                              //       //                                       index],
-                              //       //                               menuName:
-                              //       //                                   hc.homeMenuList[
-                              //       //                                       index],
-                              //       //                               onPressFunc:
-                              //       //                                   () {
-                              //       //                                 hc.currentScreenSelectionIndex
-                              //       //                                         .value =
-                              //       //                                     index;
-                              //       //                                 Navigator.pop(
-                              //       //                                     context);
-                              //       //                               },
-                              //       //                               isSelected: index ==
-                              //       //                                       hc.currentScreenSelectionIndex
-                              //       //                                           .value
-                              //       //                                   ? true
-                              //       //                                   : false)),
-                              //       //                 ).paddingOnly(left: 10)
-                              //       //               ],
-                              //       //             ),
-                              //       //           ),
-                              //       //         ],
-                              //       //       ),
-                              //       //     );
-                              //       //   },
-                              //       //   transitionDuration:
-                              //       //       Duration(milliseconds: 600),
-                              //       // );
-                              //     },
-                              //     icon: Icon(Icons.contacts_sharp))
-
-                              // BackdropFilter(
-                              //     filter:
-                              //         ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-                              //     child:
-                              //
-                              //
-                              // )
-
+                              Container(),
+                              // SelectableText(
+                              //   "${hc.homeMenuList[hc.currentScreenSelectionIndex.value]}",
+                              //   style: TextStyle(
+                              //       color: Colors.red,
+                              //       fontSize: headingFontSize - 5,
+                              //       fontWeight: FontWeight.w900),
+                              // ),
                               GestureDetector(
-                                  onHorizontalDragEnd: (details) {
-                                    if (details.primaryVelocity! > 0) {
-                                      // Swiped right
-                                      Navigator.of(context).pop();
-                                    } else if (details.primaryVelocity! < 0) {
-                                      // Swiped left
-                                      Navigator.of(context)
-                                          .pop(); // Close the dialog
-                                    } // Close the dialog when swiping horizontally
-                                  },
-                                  onTap: () {
-                                    showGeneralDialog(
-                                        transitionDuration:
-                                            Duration(milliseconds: 350),
-                                        context: context,
-                                        pageBuilder: (ctx, a1, a2) {
-                                          return Text("ss");
-                                        },
-                                        transitionBuilder:
-                                            (ctx, a1, a2, child) {
-                                          return Transform.translate(
-                                              // transformHitTests: true,
-                                              filterQuality:
-                                                  FilterQuality.medium,
-                                              offset: Offset(0.30, 0.15),
-                                              child: Stack(
-                                                children: [
-                                                  Container(
-                                                    width: double.infinity,
-                                                    height: double.infinity,
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.transparent
-                                                          .withOpacity(0.5),
-                                                    ),
-                                                    child: BackdropFilter(
-                                                      filter: ImageFilter.blur(
-                                                          sigmaX: 8.0,
-                                                          sigmaY: 8.0),
-                                                      child: Container(
-                                                        color:
-                                                            Colors.transparent,
-                                                      ),
+                                onHorizontalDragEnd: (details) {
+                                  if (details.primaryVelocity! > 0) {
+                                    // Swiped right
+                                    Navigator.of(context).pop();
+                                  } else if (details.primaryVelocity! < 0) {
+                                    // Swiped left
+                                    Navigator.of(context)
+                                        .pop(); // Close the dialog
+                                  } // Close the dialog when swiping horizontally
+                                },
+                                onTap: () {
+                                  showGeneralDialog(
+                                      transitionDuration:
+                                          Duration(milliseconds: 350),
+                                      context: context,
+                                      pageBuilder: (ctx, a1, a2) {
+                                        return Text("ss");
+                                      },
+                                      transitionBuilder: (ctx, a1, a2, child) {
+                                        return Transform.translate(
+                                            // transformHitTests: true,
+                                            filterQuality: FilterQuality.medium,
+                                            offset: Offset(0.30, 0.15),
+                                            child: Stack(
+                                              children: [
+                                                Container(
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.transparent
+                                                        .withOpacity(0.5),
+                                                  ),
+                                                  child: BackdropFilter(
+                                                    filter: ImageFilter.blur(
+                                                        sigmaX: 8.0,
+                                                        sigmaY: 8.0),
+                                                    child: Container(
+                                                      color: Colors.transparent,
                                                     ),
                                                   ),
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.end,
-                                                    children: [
-                                                      Align(
-                                                        alignment:
-                                                            Alignment.topLeft,
-                                                        child: Container(
-                                                          color: Colors.black45,
-                                                          height:
-                                                              MediaQuery.sizeOf(
-                                                                      context)
-                                                                  .height,
-                                                          width:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  0.7,
-                                                          child: Column(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              const SizedBox(
-                                                                height: 20,
-                                                              ),
-                                                              Column(
-                                                                children: [
-                                                                  Container(
-                                                                    // margin:
-                                                                    //     const EdgeInsets
-                                                                    //         .only(
-                                                                    //         top:
-                                                                    //             10),
-                                                                    height: 110,
-                                                                    width: 110,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(60),
-                                                                            image: const DecorationImage(
-                                                                              fit: BoxFit.fill,
-                                                                              image: AssetImage("assets/images/background.jpeg"),
-                                                                            )),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              const SizedBox(
-                                                                height: 20,
-                                                              ),
-                                                              const Divider(
-                                                                color: Colors
-                                                                    .white,
-                                                              ),
-                                                              const SizedBox(
-                                                                height: 20,
-                                                              ),
-                                                              Column(
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: List.generate(
-                                                                    hc.homeMenuList.length,
-                                                                    (index) => mobileHomeMenuWidget(
-                                                                        icons: hc.iconList[index],
-                                                                        menuName: hc.homeMenuList[index],
-                                                                        onPressFunc: () {
-                                                                          hc.currentScreenSelectionIndex.value =
-                                                                              index;
-                                                                          Navigator.pop(
-                                                                              context);
-                                                                        },
-                                                                        isSelected: index == hc.currentScreenSelectionIndex.value ? true : false)),
-                                                              ).paddingOnly(
-                                                                  left: 10)
-                                                            ],
-                                                          ),
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          Alignment.topLeft,
+                                                      child: Container(
+                                                        color: Colors.black45,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                    context)
+                                                                .height,
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.7,
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            const SizedBox(
+                                                              height: 20,
+                                                            ),
+                                                            Column(
+                                                              children: [
+                                                                Container(
+                                                                  // margin:
+                                                                  //     const EdgeInsets
+                                                                  //         .only(
+                                                                  //         top:
+                                                                  //             10),
+                                                                  height: 110,
+                                                                  width: 110,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                          borderRadius: BorderRadius.circular(
+                                                                              60),
+                                                                          image:
+                                                                              const DecorationImage(
+                                                                            fit:
+                                                                                BoxFit.fill,
+                                                                            image:
+                                                                                AssetImage("assets/images/background.jpeg"),
+                                                                          )),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            const SizedBox(
+                                                              height: 20,
+                                                            ),
+                                                            const Divider(
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                            const SizedBox(
+                                                              height: 20,
+                                                            ),
+                                                            Column(
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: List.generate(
+                                                                  hc.homeMenuList.length,
+                                                                  (index) => mobileHomeMenuWidget(
+                                                                      icons: hc.iconList[index],
+                                                                      menuName: hc.homeMenuList[index],
+                                                                      onPressFunc: () {
+                                                                        hc.currentScreenSelectionIndex.value =
+                                                                            index;
+                                                                        Navigator.pop(
+                                                                            context);
+                                                                      },
+                                                                      isSelected: index == hc.currentScreenSelectionIndex.value ? true : false)),
+                                                            ).paddingOnly(
+                                                                left: 10)
+                                                          ],
                                                         ),
                                                       ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ));
-                                        });
-                                  },
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Text(
-                                        "${hc.homeMenuList[hc.currentScreenSelectionIndex.value]}",
-                                        style: TextStyle(
-                                            color: Colors.red,
-                                            fontSize: headingFontSize - 5,
-                                            fontWeight: FontWeight.w900),
-                                      ),
-                                      SizedBox(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                0.36,
-                                      ),
-                                      Icon(
-                                        Icons.menu_sharp,
-                                        color: Colors.red,
-                                      ),
-                                    ],
-                                  )),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ));
+                                      });
+                                },
+                                child: Icon(
+                                  Icons.menu_sharp,
+                                  color: Colors.red,
+                                ),
+                              ),
                             ],
                           ).paddingOnly(right: 10)),
               ],

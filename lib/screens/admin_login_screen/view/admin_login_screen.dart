@@ -52,7 +52,7 @@ class AdminLoginScreen extends StatelessWidget {
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 25, vertical: 15)),
-                child: const SelectableText(
+                child: const Text(
                   "LOGIN",
                   style: TextStyle(fontSize: 20),
                 ))

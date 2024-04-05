@@ -1,5 +1,9 @@
+import 'dart:js';
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:spartan_academy/screens/contact_us_screen/contact_us_controller.dart';
 import 'package:spartan_academy/globals.dart';
 import 'package:spartan_academy/screens/registration_screen/registration_widget.dart';
@@ -13,8 +17,9 @@ Widget iconLink({required String iconPath, double size = 40}) {
 }
 
 Widget contactUsWidget(context) {
+  double screeenWidth = MediaQuery.sizeOf(context).width;
   return leftRightBoxContainer(
-      Colum:
+      colum:
           Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         const SizedBox(
           height: 30,
@@ -25,7 +30,6 @@ Widget contactUsWidget(context) {
             fontSize: headingFontSize,
           ),
         ),
-
         for (int index = 0; index < contactUsInputs.length; index++) ...[
           commonTextField(
               maxlength: contactUsInputs[index]['maxLength'],
@@ -33,15 +37,9 @@ Widget contactUsWidget(context) {
               hint: contactUsInputs[index]['hint'],
               controller: contactUsInputs[index]['controller'])
         ],
-        // SizedBox(
-        //   height: 15,
-        // ),
         sendButtonWidget(ontab: () {
           contactUsValidation();
         }),
-        // SizedBox(
-        //   height: 30,
-        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -57,37 +55,16 @@ Widget contactUsWidget(context) {
                 },
                 child: SvgPicture.asset(
                   contactUsIconLinksPath[i]["svg"],
-                  height: 50,
+                  height: screeenWidth < 575 ? 38 : 50,
                 ),
               ),
             ]
           ],
         ),
         const SizedBox(
-          height: 15,
+          height: 20,
         ),
       ]),
       imgPath: "assets/images/Spartan_logo.png",
       context: context);
 }
-
-// for (int index = 0;
-// index < contactUsInputs.length;
-// index++) ...[
-// contactUsInputBox(
-// label: contactUsInputs[index]['label'],
-// hint: contactUsInputs[index]['hint'],
-// controller: contactUsInputs[index]['controller'],
-// textInputType: contactUsInputs[index]
-// ['textInputType']),
-// const SizedBox(
-// height: 5,
-// )
-// ],
-
-//
-// for (int index = 0;
-// index < contactUsIconLinksPath.length;
-// index++) ...[
-// iconLink(iconPath: contactUsIconLinksPath[index])
-// ],
