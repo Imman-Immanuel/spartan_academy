@@ -327,9 +327,12 @@ Widget classesOfferWidget() {
                 currentScreenWidth < 1000 ? 200.0 : 260.0),
           ],
           options: CarouselOptions(
-              height: currentScreenWidth < 1000 ? 300 : 400,
+              height: currentScreenWidth < 1000 ? 310 : 380,
               scrollDirection: Axis.horizontal,
               // enlargeCenterPage: true,
+              // animateToClosest: true,
+              autoPlayCurve: Curves.easeInOutCirc,
+              aspectRatio: 0.1,
               enlargeFactor: .4,
               viewportFraction: currentScreenWidth < 1000 ? .9 : .3,
               autoPlay: true)),
@@ -364,10 +367,7 @@ Widget classesOfferWidget() {
       const SizedBox(
         height: 25,
       ),
-      const SelectableText("Version : 1.3"),
-      const SizedBox(
-        height: 25,
-      ),
+
       Container(
         decoration: const BoxDecoration(
             color: Color(0xFF4B0000),
@@ -399,7 +399,12 @@ Widget classesOfferWidget() {
         ),
       ),
       const SizedBox(
-        height: 30,
+        height: 10,
+      ),
+      const SelectableText("Version : 1.3"),
+
+      const SizedBox(
+        height: 10,
       )
     ],
   );
