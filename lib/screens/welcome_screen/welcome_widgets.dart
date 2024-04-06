@@ -228,7 +228,7 @@ Widget homePageWiget({context}) {
         borderRadius: BorderRadius.circular(10),
         gradient: LinearGradient(
           colors: [
-            Colors.redAccent,
+            Colors.red.shade100,
             Colors.white,
           ],
           begin: Alignment.topCenter,
@@ -319,8 +319,8 @@ Widget classesOfferWidget() {
                 "assets/images/Sample_user.png",
                 "Black Belt Certification",
                 currentScreenWidth < 1000 ? 200.0 : 260.0),
-            carsoalModel("assets/images/Sample_user.png", "Classes for Kids",
-                currentScreenWidth < 1000 ? 200.0 : 260.0),
+            carsoalModel("assets/images/classesForKids.jpeg",
+                "Classes for Kids", currentScreenWidth < 1000 ? 200.0 : 260.0),
             carsoalModel(
                 "assets/images/Sample_user.png",
                 "Self-Defense Workshops",

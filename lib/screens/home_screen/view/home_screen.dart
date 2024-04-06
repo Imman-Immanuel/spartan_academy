@@ -20,17 +20,26 @@ class HomeScreen extends StatelessWidget {
 
     return Obx(
       () => Scaffold(
+        backgroundColor: Colors.transparent,
         body: Stack(
           children: [
+            // Container(
+            //   height: 650,
+            //   width: MediaQuery.sizeOf(context).width * 1,
+            //   decoration: const BoxDecoration(
+            //       image: DecorationImage(
+            //           image: AssetImage(
+            //               "assets/images/Background design output.jpg"))),
+            // ),
             Padding(
-              padding: const EdgeInsets.only(top: 60),
+              padding: const EdgeInsets.only(top: 0),
               child: hc.screensList[hc.currentScreenSelectionIndex.value],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Container(
-                    color: Colors.black87,
+                    color: Colors.transparent,
                     height: 60,
                     child: screenWidth > 575
                         ? Row(

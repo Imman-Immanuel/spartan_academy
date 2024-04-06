@@ -15,15 +15,14 @@ class WelcomeScreen extends StatelessWidget {
       // ),
       child: Column(
         children: [
-          const SizedBox(
-            height: 325,
-          ),
-          const SelectableText(
-            style: TextStyle(fontSize: 30),
-            "scroll down",
-          ),
-          const SizedBox(
-            height: 325,
+          Container(
+            height: MediaQuery.sizeOf(context).height,
+            width: MediaQuery.sizeOf(context).width,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage(
+                        "assets/images/Background design output.jpg"))),
           ),
           homePageWiget(context: context),
           classesOfferWidget()

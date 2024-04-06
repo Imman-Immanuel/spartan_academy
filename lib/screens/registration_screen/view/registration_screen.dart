@@ -12,7 +12,7 @@ class RegistrationScreen extends StatelessWidget {
       width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("images/Admin_Login_Background.jpg"),
+            image: AssetImage("assets/images/contactUsbg.jpeg"),
             fit: BoxFit.cover),
       ),
       child: Center(
