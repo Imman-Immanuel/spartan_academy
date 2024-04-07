@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../contact_us_widgets.dart';
@@ -17,13 +19,18 @@ class ContactUsScreen extends StatelessWidget {
                 image: AssetImage("assets/images/contactUsbg.jpeg"),
                 fit: BoxFit.cover),
           ),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 30,
+          child: ClipRRect(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  contactUsWidget(context),
+                ],
               ),
-              contactUsWidget(context),
-            ],
+            ),
           )),
     );
   }

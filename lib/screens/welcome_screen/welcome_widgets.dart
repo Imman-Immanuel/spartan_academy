@@ -401,7 +401,7 @@ Widget classesOfferWidget() {
       const SizedBox(
         height: 10,
       ),
-      const SelectableText("Version : 1.3"),
+      const SelectableText("Version : 1.4"),
 
       const SizedBox(
         height: 10,
