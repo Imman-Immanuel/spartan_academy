@@ -17,6 +17,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final HomeController hc = Get.put(HomeController());
     double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Obx(
       () => Scaffold(
@@ -51,6 +52,7 @@ class HomeScreen extends StatelessWidget {
                                     onPressFunc: () {
                                       hc.currentScreenSelectionIndex.value =
                                           index;
+                                      print("screen height ${screenHeight}");
                                     },
                                     isSelected: index ==
                                             hc.currentScreenSelectionIndex.value

@@ -10,6 +10,7 @@ class ContactUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return contactUsSplitContainer(context);
+
     return SingleChildScrollView(
       child: Container(
           height: MediaQuery.sizeOf(context).height,
@@ -25,7 +26,7 @@ class ContactUsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 30,
+                    height: 40,
                   ),
                   contactUsWidget(context),
                 ],
