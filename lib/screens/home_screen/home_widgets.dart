@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:spartan_academy/global/global_widgets.dart';
 
 Widget homeMenuWidget(
-    {required String menuName, onPressFunc, bool isSelected = false}) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 5),
-    child: TextButton(
-        onPressed: onPressFunc,
-        child: Text(
-          menuName,
-          style: TextStyle(
-              fontSize: isSelected ? 20 : 18,
-              color: isSelected ? Colors.red : Colors.white,
-              fontWeight: isSelected ? FontWeight.bold : null),
-        )),
+    {required String menuName, onPressFunc, required String indexed}) {
+  return Obx(
+    () => Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: TextButton(
+          onPressed: onPressFunc,
+          child: Text(
+            menuName,
+            style: TextStyle(
+                fontSize: indexed == hc.selectedButton.value ? 24 : 18,
+                color: indexed == hc.selectedButton.value
+                    ? Colors.red
+                    : Colors.white,
+                fontWeight: indexed == hc.selectedButton.value
+                    ? FontWeight.bold
+                    : FontWeight.normal),
+          )),
+    ),
   );
 }
 

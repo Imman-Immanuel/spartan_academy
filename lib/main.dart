@@ -14,7 +14,7 @@ void main() async {
   );
 
   runApp(GetMaterialApp(
-    home: SplashScreen(),
+    home: HomeScreen(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.grey),
   ));

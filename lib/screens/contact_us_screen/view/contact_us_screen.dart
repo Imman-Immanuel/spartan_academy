@@ -1,7 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../../../global/global_widgets.dart';
+import '../../home_screen/home_controller.dart';
+import '../../home_screen/home_widgets.dart';
 import '../contact_us_widgets.dart';
 
 class ContactUsScreen extends StatelessWidget {
@@ -10,29 +15,32 @@ class ContactUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return contactUsSplitContainer(context);
+    final HomeController hc = Get.put(HomeController());
+    double screenWidth = MediaQuery.of(context).size.width;
 
-    return SingleChildScrollView(
-      child: Container(
-          height: MediaQuery.sizeOf(context).height,
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/contactUsbg.jpeg"),
-                fit: BoxFit.cover),
-          ),
-          child: ClipRRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  contactUsWidget(context),
-                ],
-              ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+            height: MediaQuery.sizeOf(context).height,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              color: Colors.transparent,
+              image: DecorationImage(
+                  image: AssetImage("assets/images/contactUsbg.jpeg"),
+                  fit: BoxFit.cover),
             ),
-          )),
+            child: ClipRRect(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
+                child: Column(
+                  children: [
+                    headerWidget(),
+                    contactUsWidget(context),
+                  ],
+                ),
+              ),
+            )),
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:spartan_academy/screens/admin_login_screen/view/admin_login_screen.dart';
 import 'package:spartan_academy/screens/contact_us_screen/view/contact_us_screen.dart';
 import 'package:spartan_academy/screens/members_screen/view/members_screen.dart';
@@ -8,6 +9,8 @@ import 'package:spartan_academy/screens/welcome_screen/view/welcome_screen.dart'
 import '../registration_screen/view/registration_screen.dart';
 
 class HomeController extends GetxController {
+  var selectedButton = "".obs;
+  RxDouble isDraged = 0.0.obs;
   List homeMenuList = [
     'Home',
     'Members',
