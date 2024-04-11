@@ -46,6 +46,7 @@ class RegistrationScreen extends StatelessWidget {
                               child: registrationScreen(context: context),
                             ),
                             headerWidget(),
+                            blurWidget(),
                             animatedDrawer()
                           ],
                         ),

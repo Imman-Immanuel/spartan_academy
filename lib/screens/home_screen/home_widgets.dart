@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/global/global_widgets.dart';
@@ -60,9 +61,9 @@ Widget mobileHomeMenuWidget(
                           : null),
                 ),
               ],
-            )),
+            )).paddingOnly(top: 10, bottom: 10, left: 5),
       ],
-    ).paddingOnly(top: 5, bottom: 5),
+    ),
   );
 }
 

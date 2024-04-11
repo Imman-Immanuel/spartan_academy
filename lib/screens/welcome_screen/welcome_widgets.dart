@@ -201,7 +201,7 @@ Widget carsoalModel(String imgPath, String name, double height) {
             decoration: BoxDecoration(
                 border: Border.all(width: 3.0),
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.transparent),
+                color: Colors.white),
             child: Image.asset(imgPath)),
         const SizedBox(
           height: 20,
@@ -211,7 +211,7 @@ Widget carsoalModel(String imgPath, String name, double height) {
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: contentFontSize,
-              color: Colors.black,
+              color: Colors.white,
               fontWeight: FontWeight.bold),
         ),
       ],
@@ -299,113 +299,134 @@ Widget classesOfferWidget() {
   double currentScreenWidth = MediaQuery.of(Get.context!).size.width;
   bool isSmallScreen = currentScreenWidth < mediumScreenWidth;
 
-  return Column(
-    // crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      // SizedBox(
-      //   width: 50,
-      // ),
-      SelectableText(
-        "Classes Offer",
-        style:
-            TextStyle(fontSize: headingFontSize, fontWeight: FontWeight.bold),
-      ),
-      const SizedBox(
-        height: 30,
-      ),
-      CarouselSlider(
-          items: [
-            carsoalModel(
-                "assets/images/Sample_user.png",
-                "Black Belt Certification",
-                currentScreenWidth < 1000 ? 200.0 : 260.0),
-            carsoalModel("assets/images/classesForKids.jpeg",
-                "Classes for Kids", currentScreenWidth < 1000 ? 200.0 : 260.0),
-            carsoalModel(
-                "assets/images/Sample_user.png",
-                "Self-Defense Workshops",
-                currentScreenWidth < 1000 ? 200.0 : 260.0),
-          ],
-          options: CarouselOptions(
-              height: currentScreenWidth < 1000 ? 310 : 380,
-              scrollDirection: Axis.horizontal,
-              // enlargeCenterPage: true,
-              // animateToClosest: true,
-              autoPlayCurve: Curves.easeInOutCirc,
-              aspectRatio: 0.1,
-              enlargeFactor: .4,
-              viewportFraction: currentScreenWidth < 1000 ? .9 : .3,
-              autoPlay: true)),
-      SelectableText(
-        "Get Started Today",
-        style: TextStyle(fontSize: headingFontSize),
-      ),
-      const SizedBox(
-        height: 25,
-      ),
-      SelectableText(
-        "Embark on your Taekwondo journey with us. Join a community that is passionate about growth, empowerment, and camaraderie. Discover the benefits of martial arts in a welcoming and supportive environment.",
-        style: TextStyle(
-          height: 2,
-          wordSpacing: 6,
-          letterSpacing: 1,
-          fontSize: contentFontSize,
+  return Container(
+    // height: MediaQuery.sizeOf(Get.context!).height,
+    width: MediaQuery.sizeOf(Get.context!).width,
+    decoration: const BoxDecoration(
+        image: DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage("assets/images/classesOffer_bg.jpg"))),
+    child: Column(
+      // crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: 30,
         ),
-        textAlign: TextAlign.center,
-      ).paddingOnly(
-          left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
-      const SizedBox(
-        height: 25,
-      ),
-      SelectableText(
-        "Contact us for a free trial class or to learn more about our programs",
-        style: TextStyle(
-            letterSpacing: 1, wordSpacing: 2, fontSize: contentFontSize),
-        textAlign: TextAlign.center,
-      ).paddingOnly(
-          left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
-      const SizedBox(
-        height: 25,
-      ),
-
-      Container(
-        decoration: const BoxDecoration(
+        SelectableText(
+          "Classes Offer",
+          style: TextStyle(
+              fontSize: headingFontSize,
+              fontWeight: FontWeight.bold,
+              color: Colors.white),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        CarouselSlider(
+            items: [
+              carsoalModel(
+                  "assets/images/Sample_user.png",
+                  "Black Belt Certification",
+                  currentScreenWidth < 1000 ? 200.0 : 260.0),
+              carsoalModel(
+                  "assets/images/classesForKids.jpeg",
+                  "Classes for Kids",
+                  currentScreenWidth < 1000 ? 200.0 : 260.0),
+              carsoalModel(
+                  "assets/images/Sample_user.png",
+                  "Self-Defense Workshops",
+                  currentScreenWidth < 1000 ? 200.0 : 260.0),
+            ],
+            options: CarouselOptions(
+                height: currentScreenWidth < 1000 ? 310 : 380,
+                scrollDirection: Axis.horizontal,
+                // enlargeCenterPage: true,
+                // animateToClosest: true,
+                autoPlayCurve: Curves.easeInOutCirc,
+                aspectRatio: 0.1,
+                enlargeFactor: .4,
+                viewportFraction: currentScreenWidth < 1000 ? .9 : .3,
+                autoPlay: true)),
+        SelectableText(
+          "Get Started Today",
+          style: TextStyle(
+            fontSize: headingFontSize,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(
+          height: 25,
+        ),
+        SelectableText(
+          "Embark on your Taekwondo journey with us. Join a community that is passionate about growth, empowerment, and camaraderie. Discover the benefits of martial arts in a welcoming and supportive environment.",
+          style: TextStyle(
+            color: Colors.white,
+            height: 2,
+            wordSpacing: 6,
+            letterSpacing: 1,
+            fontSize: contentFontSize,
+          ),
+          textAlign: TextAlign.center,
+        ).paddingOnly(
+            left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
+        const SizedBox(
+          height: 25,
+        ),
+        SelectableText(
+          "Contact us for a free trial class or to learn more about our programs",
+          style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 1,
+              wordSpacing: 2,
+              fontSize: contentFontSize),
+          textAlign: TextAlign.center,
+        ).paddingOnly(
+            left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
+        const SizedBox(
+          height: 25,
+        ),
+        Container(
+          decoration: const BoxDecoration(
             color: Color(0xFF4B0000),
             border: Border(
                 bottom: BorderSide(color: Color(0xFFCF8282), width: 3.0),
-                top: BorderSide(color: Color(0xFFCF8282), width: 3.0))),
-        width: MediaQuery.sizeOf(Get.context!).width,
-        height: 60,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            for (int i = 0; i < contactUsIconLinksPath.length; i++) ...[
-              GestureDetector(
-                onTap: () async {
-                  var url = contactUsIconLinksPath[i]["url"];
-                  if (await canLaunch(url)) {
-                    await launch(url);
-                  } else {
-                    throw 'Could not launch $url';
-                  }
-                },
-                child: SvgPicture.asset(
-                  contactUsIconLinksPath[i]["svg"],
-                  height: 40,
+                top: BorderSide(color: Color(0xFFCF8282), width: 3.0)),
+          ),
+          width: MediaQuery.sizeOf(Get.context!).width,
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              for (int i = 0; i < contactUsIconLinksPath.length; i++) ...[
+                GestureDetector(
+                  onTap: () async {
+                    var url = contactUsIconLinksPath[i]["url"];
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: SvgPicture.asset(
+                    contactUsIconLinksPath[i]["svg"],
+                    height: 40,
+                  ),
                 ),
-              ),
-            ]
-          ],
+              ]
+            ],
+          ),
         ),
-      ),
-      const SizedBox(
-        height: 10,
-      ),
-      const SelectableText("Version : 1.6"),
-
-      const SizedBox(
-        height: 10,
-      )
-    ],
+        const SizedBox(
+          height: 10,
+        ),
+        const SelectableText(
+          "Version : 1.8",
+          style: TextStyle(color: Colors.white),
+        ),
+        const SizedBox(
+          height: 10,
+        )
+      ],
+    ),
   );
 }

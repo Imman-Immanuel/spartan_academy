@@ -31,7 +31,8 @@ class WelcomeScreen extends StatelessWidget {
                             "assets/images/HomePageBackground.jpg"))),
               ),
               headerWidget(),
-              Align(alignment: Alignment.topRight, child: animatedDrawer())
+              blurWidget(),
+              animatedDrawer()
             ]),
             homePageWiget(context: context),
             classesOfferWidget()

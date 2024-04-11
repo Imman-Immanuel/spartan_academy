@@ -50,9 +50,8 @@ class ContactUsScreen extends StatelessWidget {
                               child: contactUsWidget(context),
                             ),
                             headerWidget(),
-                            Align(
-                                alignment: Alignment.topRight,
-                                child: animatedDrawer())
+                            blurWidget(),
+                            animatedDrawer()
                           ],
                         ),
                       ],

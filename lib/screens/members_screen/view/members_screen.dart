@@ -51,6 +51,12 @@ class MembersScreen extends StatelessWidget {
                                   'Keerthi Varman',
                                   'Vice President',
                                   'Traffic Inspector'),
+                              memberWidget(
+                                'assets/images/Sample_user.png',
+                                'Chitti Babu',
+                                "of Puducherry Taekwondo Sports Association",
+                                'General Secretary',
+                              ),
                               memberWidget('assets/images/Sample_user.png',
                                   'Hema Sankar', 'General Secretary'),
                               memberWidget(
@@ -83,9 +89,8 @@ class MembersScreen extends StatelessWidget {
                                 autoPlay: true)),
                       ),
                       headerWidget(),
-                      Align(
-                          alignment: Alignment.topRight,
-                          child: animatedDrawer())
+                      blurWidget(),
+                      animatedDrawer()
                     ],
                   ),
                 ],
