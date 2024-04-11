@@ -122,30 +122,93 @@ Widget headerWidget() {
 }
 
 Widget contaire() {
-  return Obx(
-    () => GestureDetector(
+  return GestureDetector(
       onHorizontalDragEnd: (s) {
         double dragedDouble = s.velocity.pixelsPerSecond.dx;
         hc.isDraged.value = dragedDouble;
       },
-      child: AnimatedContainer(
-        duration: Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-        width:
-            hc.isDraged > 0 ? 0 : MediaQuery.sizeOf(Get.context!).width * 0.8,
-        height: MediaQuery.sizeOf(Get.context!).height,
-        child: Center(
-          child: Text(
-            'Animated Container',
-            style: TextStyle(color: Colors.white),
+      child: Stack(children: [
+        IconButton(
+            onPressed: () {
+              if (hc.isDraged.value >= 0) {
+                hc.isDraged.value = -1;
+              } else {
+                hc.isDraged.value = 1;
+              }
+            },
+            icon: Icon(
+              Icons.menu,
+              color: Colors.blue,
+            )),
+        // animatedDrawer()
+      ]));
+}
+
+Widget animatedDrawer() {
+  return Align(
+    alignment: Alignment.topRight,
+    child: AnimatedContainer(
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+      width: hc.isDraged.value > 0
+          ? 0
+          : MediaQuery.sizeOf(Get.context!).width * 0.8,
+      height: MediaQuery.sizeOf(Get.context!).height,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          mobileHomeMenuWidget(
+            icons: Icons.home,
+            menuName: "Home",
+            indexed: "0",
+            onPressFunc: () {
+              Get.offAll(WelcomeScreen(), transition: Transition.fadeIn);
+              hc.selectedButton.value = "0";
+            },
           ),
-        ),
-        decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(100),
-            bottomLeft: Radius.circular(100),
+          mobileHomeMenuWidget(
+            icons: Icons.group,
+            indexed: "1",
+            menuName: "Members",
+            onPressFunc: () {
+              Get.offAll(MembersScreen(), transition: Transition.fadeIn);
+              hc.selectedButton.value = "1";
+            },
           ),
+          mobileHomeMenuWidget(
+            icons: Icons.account_box,
+            indexed: "2",
+            menuName: "Contact Us",
+            onPressFunc: () {
+              Get.offAll(ContactUsScreen(), transition: Transition.fadeIn);
+              hc.selectedButton.value = "2";
+            },
+          ),
+          mobileHomeMenuWidget(
+            icons: Icons.note_alt_rounded,
+            indexed: "3",
+            menuName: "Registration",
+            onPressFunc: () {
+              Get.offAll(RegistrationScreen(), transition: Transition.fadeIn);
+              hc.selectedButton.value = "3";
+            },
+          ),
+          mobileHomeMenuWidget(
+            icons: Icons.admin_panel_settings_sharp,
+            indexed: "4",
+            menuName: "Admin",
+            onPressFunc: () {
+              Get.offAll(AdminLoginScreen(), transition: Transition.fadeIn);
+              hc.selectedButton.value = "4";
+            },
+          ),
+        ],
+      ),
+      decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(10),
+          bottomLeft: Radius.circular(10),
         ),
       ),
     ),

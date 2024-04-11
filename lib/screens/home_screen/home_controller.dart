@@ -9,8 +9,8 @@ import 'package:spartan_academy/screens/welcome_screen/view/welcome_screen.dart'
 import '../registration_screen/view/registration_screen.dart';
 
 class HomeController extends GetxController {
-  var selectedButton = "".obs;
-  RxDouble isDraged = 0.0.obs;
+  var selectedButton = "0".obs;
+  RxDouble isDraged = 2.0.obs;
   List homeMenuList = [
     'Home',
     'Members',

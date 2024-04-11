@@ -27,29 +27,39 @@ Widget homeMenuWidget(
 Widget mobileHomeMenuWidget(
     {required String menuName,
     onPressFunc,
-    bool isSelected = false,
+    required String indexed,
     required IconData icons}) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 5),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Icon(
-          icons,
-          color: isSelected ? Colors.red : Colors.white,
-          size: isSelected ? 26 : 23,
-        ),
-        SizedBox(
-          width: 20,
-        ),
         TextButton(
             onPressed: onPressFunc,
-            child: Text(
-              menuName,
-              style: TextStyle(
-                  fontSize: isSelected ? 19 : 16,
-                  color: isSelected ? Colors.red : Colors.white,
-                  fontWeight: isSelected ? FontWeight.bold : null),
+            child: Row(
+              children: [
+                Icon(
+                  icons,
+                  color: indexed == hc.selectedButton.value
+                      ? Colors.red
+                      : Colors.white,
+                  size: indexed == hc.selectedButton.value ? 26 : 23,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  menuName,
+                  style: TextStyle(
+                      fontSize: indexed == hc.selectedButton.value ? 19 : 16,
+                      color: indexed == hc.selectedButton.value
+                          ? Colors.red
+                          : Colors.white,
+                      fontWeight: indexed == hc.selectedButton.value
+                          ? FontWeight.bold
+                          : null),
+                ),
+              ],
             )),
       ],
     ).paddingOnly(top: 5, bottom: 5),

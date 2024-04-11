@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spartan_academy/screens/admin_dashboard_screen/admin_dashboard_widgets.dart';
 import 'package:get/get.dart';
+import '../../../global/global_widgets.dart';
 import '../../home_screen/view/home_screen.dart';
 import '../admin_dashboard_controller.dart';
 
@@ -24,7 +25,7 @@ class AdminDashboardScreen extends StatelessWidget {
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(20),
                   bottomRight: Radius.circular(20)),
-              color: Colors.white,
+              color: Colors.red,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

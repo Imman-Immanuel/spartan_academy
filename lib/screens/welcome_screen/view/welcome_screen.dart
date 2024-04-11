@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../../../global/global_widgets.dart';
@@ -14,26 +15,29 @@ class WelcomeScreen extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     // final HomeController hc = Get.put(HomeController());
 
-    return Scaffold(
-      body: SingleChildScrollView(
-          child: Column(
-        children: [
-          Stack(children: [
-            Container(
-              height: MediaQuery.sizeOf(context).height,
-              width: MediaQuery.sizeOf(context).width,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image:
-                          AssetImage("assets/images/HomePageBackground.jpg"))),
-            ),
-            headerWidget(),
-          ]),
-          homePageWiget(context: context),
-          classesOfferWidget()
-        ],
-      )),
+    return Obx(
+      () => Scaffold(
+        body: SingleChildScrollView(
+            child: Column(
+          children: [
+            Stack(children: [
+              Container(
+                height: MediaQuery.sizeOf(context).height,
+                width: MediaQuery.sizeOf(context).width,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage(
+                            "assets/images/HomePageBackground.jpg"))),
+              ),
+              headerWidget(),
+              Align(alignment: Alignment.topRight, child: animatedDrawer())
+            ]),
+            homePageWiget(context: context),
+            classesOfferWidget()
+          ],
+        )),
+      ),
     );
   }
 }
