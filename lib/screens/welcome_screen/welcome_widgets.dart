@@ -420,7 +420,7 @@ Widget classesOfferWidget() {
           height: 10,
         ),
         const SelectableText(
-          "Version : 1.8",
+          "Version : 1.9",
           style: TextStyle(color: Colors.white),
         ),
         const SizedBox(
