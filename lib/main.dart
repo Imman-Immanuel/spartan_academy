@@ -14,7 +14,7 @@ void main() async {
   );
 
   runApp(GetMaterialApp(
-    home: HomeScreen(),
+    home: SplashScreen(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.grey),
   ));
@@ -32,9 +32,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
-      Get.to(HomeScreen(),
-          transition: Transition.noTransition, duration: Duration(seconds: 2));
+    Timer(Duration(milliseconds: 600), () {
+      Get.off(
+        HomeScreen(),
+        transition: Transition.fadeIn,
+      );
 
       setState(() {
         zoomedOut = true;

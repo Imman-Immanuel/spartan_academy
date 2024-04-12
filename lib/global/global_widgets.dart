@@ -165,7 +165,7 @@ Widget animatedDrawer() {
   return Align(
     alignment: Alignment.topRight,
     child: AnimatedContainer(
-      duration: Duration(milliseconds: 500),
+      duration: Duration(milliseconds: 300),
       curve: Curves.easeInOut,
       width: hc.isDraged.value < 0
           ? MediaQuery.sizeOf(Get.context!).width * 0.8
