@@ -32,7 +32,7 @@ class ContactUsScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: Colors.transparent,
                 image: DecorationImage(
-                    image: AssetImage("assets/images/contactUsbg.jpeg"),
+                    image: AssetImage("assets/images/contactUsbg (2).jpeg"),
                     fit: BoxFit.cover),
               ),
               child: ClipRRect(

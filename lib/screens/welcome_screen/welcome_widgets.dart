@@ -306,7 +306,8 @@ Widget classesOfferWidget() {
     decoration: const BoxDecoration(
         image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage("assets/images/classesOffer_bg.jpg"))),
+            image:
+                AssetImage("assets/images/ContactUs_Screen_Background.png"))),
     child: Column(
       // crossAxisAlignment: CrossAxisAlignment.start,
       children: [

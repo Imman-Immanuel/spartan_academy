@@ -74,60 +74,108 @@ Widget headerWidget() {
       ? Padding(
           padding: const EdgeInsets.only(top: 12, right: 5),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              homeMenuWidget(
-                menuName: "Home",
-                indexed: "0",
-                onPressFunc: () {
-                  Get.offAll(WelcomeScreen(), transition: Transition.fadeIn);
-                  hc.selectedButton.value = "0";
-                },
-              ),
-              homeMenuWidget(
-                indexed: "1",
-                menuName: "Members",
-                onPressFunc: () {
-                  Get.offAll(MembersScreen(), transition: Transition.fadeIn);
-                  hc.selectedButton.value = "1";
-                },
-              ),
-              homeMenuWidget(
-                indexed: "2",
-                menuName: "Contact Us",
-                onPressFunc: () {
-                  Get.offAll(ContactUsScreen(), transition: Transition.fadeIn);
-                  hc.selectedButton.value = "2";
-                },
-              ),
-              homeMenuWidget(
-                indexed: "3",
-                menuName: "Registration",
-                onPressFunc: () {
-                  Get.offAll(RegistrationScreen(),
-                      transition: Transition.fadeIn);
-                  hc.selectedButton.value = "3";
-                },
-              ),
-              homeMenuWidget(
-                indexed: "4",
-                menuName: "Admin",
-                onPressFunc: () {
-                  Get.offAll(AdminLoginScreen(), transition: Transition.fadeIn);
-                  hc.selectedButton.value = "4";
-                },
+              IconButton(
+                  tooltip: "Home Page",
+                  onPressed: () {
+                    Get.off(HomeScreen(), transition: Transition.fadeIn);
+                  },
+                  icon: Container(
+                      height: 50,
+                      width: 50,
+                      // decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(10),
+                      //     border: Border.all(color: Colors.redAccent)),
+                      child: Image.asset("assets/images/Spartan_logo.png"))),
+              Container(
+                child: Row(
+                  children: [
+                    homeMenuWidget(
+                      menuName: "Home",
+                      indexed: "0",
+                      onPressFunc: () {
+                        Get.offAll(WelcomeScreen(),
+                            transition: Transition.fadeIn);
+                        hc.selectedButton.value = "0";
+                      },
+                    ),
+                    homeMenuWidget(
+                      indexed: "1",
+                      menuName: "Members",
+                      onPressFunc: () {
+                        Get.offAll(MembersScreen(),
+                            transition: Transition.fadeIn);
+                        hc.selectedButton.value = "1";
+                      },
+                    ),
+                    homeMenuWidget(
+                      indexed: "2",
+                      menuName: "Contact Us",
+                      onPressFunc: () {
+                        Get.offAll(ContactUsScreen(),
+                            transition: Transition.fadeIn);
+                        hc.selectedButton.value = "2";
+                      },
+                    ),
+                    homeMenuWidget(
+                      indexed: "3",
+                      menuName: "Registration",
+                      onPressFunc: () {
+                        Get.offAll(RegistrationScreen(),
+                            transition: Transition.fadeIn);
+                        hc.selectedButton.value = "3";
+                      },
+                    ),
+                    homeMenuWidget(
+                      indexed: "4",
+                      menuName: "Admin",
+                      onPressFunc: () {
+                        Get.offAll(AdminLoginScreen(),
+                            transition: Transition.fadeIn);
+                        hc.selectedButton.value = "4";
+                      },
+                    ),
+                  ],
+                ),
               ),
             ],
           ).paddingOnly(left: 10),
         )
-      : Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: drawerIcon(),
-            ),
-          ],
+      : Obx(
+          () => Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              IconButton(
+                  tooltip: "Home Page",
+                  onPressed: () {
+                    Get.off(HomeScreen(), transition: Transition.fadeIn);
+                  },
+                  icon: Container(
+                      height: 50,
+                      width: 50,
+                      // decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(10),
+                      //     border: Border.all(color: Colors.red)),
+                      child: Image.asset("assets/images/Spartan_logo.png"))),
+              if (hc.selectedButton.value == "2" ||
+                  hc.selectedButton.value == "3") ...[
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Text(
+                    "${hc.homeMenuList[int.parse(hc.selectedButton.value)]}",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ],
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: drawerIcon(),
+              ),
+            ],
+          ),
         );
 }
 
@@ -284,7 +332,7 @@ Widget animatedDrawer() {
                 },
               ),
               const SizedBox(
-                height: 120,
+                height: 60,
               ),
               const Divider(
                 color: Colors.white,
