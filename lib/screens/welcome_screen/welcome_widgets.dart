@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:spartan_academy/globals.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../global/global_widgets.dart';
 import '../contact_us_screen/contact_us_controller.dart';
 import 'welcome_controller.dart';
 
@@ -419,8 +420,8 @@ Widget classesOfferWidget() {
         const SizedBox(
           height: 10,
         ),
-        const SelectableText(
-          "Version : 1.9",
+        SelectableText(
+          "Version : ${hc.version.value}",
           style: TextStyle(color: Colors.white),
         ),
         const SizedBox(

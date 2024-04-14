@@ -11,6 +11,7 @@ import '../registration_screen/view/registration_screen.dart';
 class HomeController extends GetxController {
   var selectedButton = "0".obs;
   RxDouble isDraged = 2.0.obs;
+  var version = "2.1".obs;
   List homeMenuList = [
     'Home',
     'Members',
@@ -36,8 +37,8 @@ class HomeController extends GetxController {
     // Get.offAll(AdminDashboardScreen()),
     const WelcomeScreen(),
     const MembersScreen(),
-    const ContactUsScreen(),
-    const RegistrationScreen(),
+    ContactUsScreen(),
+    RegistrationScreen(),
     AdminLoginScreen(),
     // const AdminDashboardScreen()
   ];

@@ -11,6 +11,8 @@ class AdminLoginScreen extends StatelessWidget {
   AdminLoginScreen({super.key});
 
   final ac = Get.put(AdminLoginController());
+  double screenWidth = MediaQuery.of(Get.context!).size.width;
+
   @override
   Widget build(BuildContext context) {
     return Obx(
@@ -18,10 +20,10 @@ class AdminLoginScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: GestureDetector(
             onHorizontalDragEnd: (s) {
-              print("runtypetime ${s.velocity.pixelsPerSecond.dx.runtimeType}");
-              double dragedDouble = s.velocity.pixelsPerSecond.dx;
-              hc.isDraged.value = dragedDouble;
-              print(" draged value ${hc.isDraged}");
+              if (screenWidth < 575) {
+                hc.isDraged.value = s.velocity.pixelsPerSecond.dx;
+                print(" draged value ${hc.isDraged}");
+              }
             },
             child: Container(
               height: MediaQuery.sizeOf(context).height,

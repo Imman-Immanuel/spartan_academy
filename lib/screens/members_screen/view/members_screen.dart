@@ -17,10 +17,10 @@ class MembersScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: GestureDetector(
             onHorizontalDragEnd: (s) {
-              print("runtypetime ${s.velocity.pixelsPerSecond.dx.runtimeType}");
-              double dragedDouble = s.velocity.pixelsPerSecond.dx;
-              hc.isDraged.value = dragedDouble;
-              print(" draged value ${hc.isDraged}");
+              if (currentScreenWidth < 575) {
+                hc.isDraged.value = s.velocity.pixelsPerSecond.dx;
+                print(" draged value ${hc.isDraged}");
+              }
             },
             child: Container(
               height: MediaQuery.sizeOf(context).height,
