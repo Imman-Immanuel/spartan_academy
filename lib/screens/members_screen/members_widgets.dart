@@ -29,7 +29,7 @@ Widget memberWidget(String imgPath, String name, String designation,
                     SelectableText(
                       name,
                       style: const TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
@@ -41,7 +41,7 @@ Widget memberWidget(String imgPath, String name, String designation,
                         designation2,
                         style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 18,
                         ),
                       ),
                     ],
@@ -52,7 +52,7 @@ Widget memberWidget(String imgPath, String name, String designation,
                       designation,
                       style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: 16,
                       ),
                     ),
                   ],
@@ -114,5 +114,115 @@ Widget memberWidget(String imgPath, String name, String designation,
               )
             ],
           ),
+        );
+}
+
+Widget masterCard() {
+  double screenWidth = MediaQuery.of(Get.context!).size.width;
+
+  return screenWidth > 575
+      ? Column(
+          children: [
+            Container(
+              height: 150,
+              width: 140,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border(
+                      top: BorderSide(color: Colors.black, width: 2),
+                      right: BorderSide(color: Colors.black, width: 2),
+                      bottom: BorderSide(color: Colors.black, width: 2),
+                      left: BorderSide(color: Colors.black, width: 2)),
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/Sample_user.png"))),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Chief Master",
+              style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.red,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 15),
+            ),
+            SizedBox(height: 3),
+            SelectableText(
+              "CHITTIBABU P",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(height: 1),
+            SelectableText(
+              "General Secretary \n Of Puducherry Taekwondo \n Sports Association",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15,
+                letterSpacing: -0.5,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        )
+      : Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              height: 100,
+              width: 90,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border(
+                      top: BorderSide(color: Colors.black, width: 2),
+                      right: BorderSide(color: Colors.black, width: 2),
+                      bottom: BorderSide(color: Colors.black, width: 2),
+                      left: BorderSide(color: Colors.black, width: 2)),
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/Sample_user.png"))),
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            Text(
+              "Chief Master",
+              style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.red,
+                  // fontStyle: FontStyle.italic,
+                  fontSize: 12),
+            ),
+            SelectableText(
+              "CHITTIBABU P",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 13),
+            ),
+            SelectableText(
+              "General Secretary \n Of Puducherry Taekwondo \n Sports Association",
+              style: TextStyle(color: Colors.white, fontSize: 12),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        );
+}
+
+Widget positioned(Widget childWidget) {
+  double screenSize = MediaQuery.sizeOf(Get.context!).width;
+  return screenSize > 575
+      ? Positioned(
+          top: 100,
+          bottom: 90,
+          left: 90,
+          child: childWidget,
+        )
+      : Positioned(
+          top: 90,
+          bottom: 50,
+          left: 10,
+          child: childWidget,
         );
 }

@@ -199,11 +199,16 @@ Widget carsoalModel(String imgPath, String name, double height) {
     child: Column(
       children: [
         Container(
-            decoration: BoxDecoration(
-                border: Border.all(width: 3.0),
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white),
-            child: Image.asset(imgPath)),
+          height: 200,
+          width: 300,
+          decoration: BoxDecoration(
+            border: Border.all(width: 3.0, color: Colors.grey),
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+            image:
+                DecorationImage(image: AssetImage(imgPath), fit: BoxFit.fill),
+          ),
+        ),
         const SizedBox(
           height: 20,
         ),
@@ -327,16 +332,28 @@ Widget classesOfferWidget() {
         CarouselSlider(
             items: [
               carsoalModel(
-                  "assets/images/Sample_user.png",
-                  "Black Belt Certification",
+                  "assets/images/classesOffer3-min.jpg",
+                  "Color Belt & Black Belt Certification",
                   currentScreenWidth < 1000 ? 200.0 : 260.0),
+              // carsoalModel(
+              //     "assets/images/classesOffer1-min.png",
+              //     "Classes for Kids",
+              //     currentScreenWidth < 1000 ? 200.0 : 260.0),
               carsoalModel(
-                  "assets/images/classesForKids.jpeg",
-                  "Classes for Kids",
-                  currentScreenWidth < 1000 ? 200.0 : 260.0),
-              carsoalModel(
-                  "assets/images/Sample_user.png",
+                  "assets/images/classesOffer2-min.jpg",
                   "Self-Defense Workshops",
+                  currentScreenWidth < 1000 ? 200.0 : 260.0),
+              carsoalModel(
+                  "assets/images/classesOffer4-min.jpg",
+                  "Classes for kids",
+                  currentScreenWidth < 1000 ? 200.0 : 260.0),
+              carsoalModel(
+                  "assets/images/classesOffer5-min.jpg",
+                  "Special Training For SGFI Competion",
+                  currentScreenWidth < 1000 ? 200.0 : 260.0),
+              carsoalModel(
+                  "assets/images/classesOffer7-min.jpg",
+                  "Fitness & Strengthening Training",
                   currentScreenWidth < 1000 ? 200.0 : 260.0),
             ],
             options: CarouselOptions(
@@ -371,6 +388,32 @@ Widget classesOfferWidget() {
           textAlign: TextAlign.center,
         ).paddingOnly(
             left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
+        SizedBox(
+          height: 10,
+        ),
+        SelectableText(
+          "Venue",
+          style: TextStyle(
+            fontSize: headingFontSize,
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        locationWidget(
+          "Wiseman Hr. Sec. School, Vellalar St, Bharathidasan Nagar, Mudaliarpet, Puducherry - 605004",
+        ).paddingOnly(
+            left: isSmallScreen ? 20 : 100, right: isSmallScreen ? 20 : 100),
+        Text(
+          "& ",
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        locationWidget(
+                "Rathna Theater, Anna Salai, Opposite Guber Bazaar, Puducherry - 605001")
+            .paddingOnly(
+                left: isSmallScreen ? 20 : 100,
+                right: isSmallScreen ? 20 : 100),
         const SizedBox(
           height: 25,
         ),
@@ -430,5 +473,32 @@ Widget classesOfferWidget() {
         )
       ],
     ),
+  );
+}
+
+Widget locationWidget(adress) {
+  double isSmallScreen = MediaQuery.sizeOf(Get.context!).width;
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Icon(
+        Icons.location_on,
+        color: Colors.red,
+      ),
+      SizedBox(
+        width: 5,
+      ),
+      SelectableText(
+        adress,
+        style: TextStyle(
+          color: Colors.white,
+          height: 2,
+          wordSpacing: 6,
+          letterSpacing: 1,
+          fontSize: contentFontSize,
+        ),
+        textAlign: TextAlign.center,
+      ),
+    ],
   );
 }

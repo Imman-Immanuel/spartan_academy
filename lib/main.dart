@@ -32,11 +32,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(milliseconds: 600), () {
-      Get.off(
-        HomeScreen(),
-        transition: Transition.fadeIn,
-      );
+    Timer(Duration(seconds: 2), () {
+      Get.off(HomeScreen(),
+          transition: Transition.fadeIn, duration: Duration(milliseconds: 600));
 
       setState(() {
         zoomedOut = true;
@@ -50,24 +48,15 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       // backgroundColor: Colors.blue,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            // You can replace this with your splash screen image
-            Opacity(
-              opacity: fadeIn ? 0.0 : 1,
-              child: AnimatedContainer(
-                  height: zoomedOut ? 200 : MediaQuery.of(context).size.height,
-                  width: zoomedOut ? 200 : MediaQuery.of(context).size.width,
-                  duration: Duration(seconds: 3),
-                  curve: Curves.bounceInOut,
-                  child: Image.asset(
-                    "assets/images/splashScreenWeb.png",
-                    fit: BoxFit.cover,
-                  )),
-            ),
-          ],
-        ),
+        child: AnimatedContainer(
+            height: zoomedOut ? 200 : MediaQuery.of(context).size.height,
+            width: zoomedOut ? 200 : MediaQuery.of(context).size.width,
+            duration: Duration(seconds: 3),
+            curve: Curves.easeIn,
+            child: Image.asset(
+              "assets/images/splashScreenWeb.png",
+              fit: BoxFit.fill,
+            )),
       ),
     );
   }

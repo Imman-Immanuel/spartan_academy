@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 import '../../../global/global_widgets.dart';
@@ -36,57 +37,66 @@ class MembersScreen extends StatelessWidget {
                 children: [
                   Stack(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 150),
-                        child: CarouselSlider(
-                            items: [
-                              memberWidget(
-                                'assets/images/Sample_user.png',
-                                'Nehru',
-                                'President',
-                                'MLA',
-                              ),
-                              memberWidget(
-                                  'assets/images/Sample_user.png',
-                                  'Keerthi Varman',
-                                  'Vice President',
-                                  'Traffic Inspector'),
-                              memberWidget(
-                                'assets/images/Sample_user.png',
-                                'Chitti Babu',
-                                "of Puducherry Taekwondo Sports Association",
-                                'General Secretary',
-                              ),
-                              memberWidget('assets/images/Sample_user.png',
-                                  'Hema Sankar', 'General Secretary'),
-                              memberWidget(
-                                'assets/images/sathish.jpg',
-                                'Sathish Kumar',
-                                'Joint Secretary',
-                              ),
-                              memberWidget(
-                                'assets/images/Imman_pic.jpg',
-                                'Immanuel S',
-                                'Treasurer',
-                              ),
-                              memberWidget(
-                                'assets/images/Sample_user.png',
-                                'Siva Kumar',
-                                'E.C Member',
-                              ),
-                              memberWidget(
-                                'assets/images/Sample_user.png',
-                                'Vishnu Balan',
-                                'E.C Member',
-                              ),
-                            ],
-                            options: CarouselOptions(
-                                height: currentScreenWidth < 575 ? 330 : 400,
-                                scrollDirection: Axis.horizontal,
-                                enlargeCenterPage: true,
-                                enlargeFactor: 0.3,
-                                viewportFraction: 0.9,
-                                autoPlay: true)),
+                      positioned(
+                        masterCard(),
+                      ),
+                      Positioned(
+                        height: 600,
+                        width: MediaQuery.sizeOf(Get.context!).width,
+                        top: 30,
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 150),
+                            child: Stack(children: [
+                              CarouselSlider(
+                                  items: [
+                                    memberWidget(
+                                      'assets/images/neru2-min.png',
+                                      'Nehru',
+                                      'President',
+                                      'MLA',
+                                    ),
+                                    memberWidget(
+                                        '"assets/images/Sample_user.png"',
+                                        'Keerthi Varman',
+                                        'Vice President',
+                                        'Traffic Inspector'),
+                                    memberWidget(
+                                        'assets/images/Sample_user.png',
+                                        'Hema Sankar',
+                                        'General Secretary'),
+                                    memberWidget(
+                                      'assets/images/sathish.jpg',
+                                      'Sathish Kumar, B.com, MBA',
+                                      'Joint Secretary',
+                                    ),
+                                    memberWidget(
+                                      'assets/images/Imman_pic.jpg',
+                                      'Immanuel S, B.com',
+                                      'Treasurer',
+                                    ),
+                                    memberWidget(
+                                      'assets/images/Sample_user.png',
+                                      'Siva Kumar, B.com',
+                                      'E.C Member',
+                                    ),
+                                    memberWidget(
+                                      'assets/images/Sample_user.png',
+                                      'Vishnu Balan, B.com',
+                                      'E.C Member',
+                                    ),
+                                  ],
+                                  options: CarouselOptions(
+                                      height:
+                                          currentScreenWidth < 575 ? 330 : 400,
+                                      scrollDirection: Axis.horizontal,
+                                      enlargeCenterPage: true,
+                                      enlargeFactor: 0.3,
+                                      viewportFraction: 0.9,
+                                      autoPlay: true)),
+                            ]),
+                          ),
+                        ),
                       ),
                       headerWidget(),
                       blurWidget(),

@@ -37,6 +37,7 @@ class WelcomeScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
             controller: _scrollController,
+            // reverse: true,
             child: GestureDetector(
               onHorizontalDragEnd: (s) {
                 if (screenWidth < 575) {

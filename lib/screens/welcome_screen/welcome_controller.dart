@@ -2,7 +2,7 @@ List<Map<String, String>> welcomeContents = [
   {
     'heading': 'About Us',
     'content':
-        "At SPARTAN TAEKWONDO MARTIAL ART ACADEMY, we take pride in being more than just a martial arts academy; we are a community dedicated to fostering personal growth, physical fitness, and mental discipline through the art of Taekwondo. Our academy is not just a place to learn kicks and punches; it's a place to cultivate strength, resilience, and character."
+        "At SPARTAN TAEKWONDO MARTIAL ART ACADEMY, we take pride in being more than just a martial arts academy; we are a community dedicated to fostering personal growth, physical fitness, and mental discipline through the art of Taekwondo. Our academy is not just a place to learn kicks and punches; it's a place to cultivate strength, resilience, and character. We are proud to announce our affiliation with the PUDUCHERRY TAEKWONDO SPORTS ASSOCIATION."
   },
   {
     'heading': 'Our Mission',

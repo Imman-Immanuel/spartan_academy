@@ -78,9 +78,11 @@ Widget headerWidget() {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               IconButton(
-                  tooltip: "Home Page",
+                  tooltip: "Spartan Taekwondo\nMarial Art Academy",
                   onPressed: () {
-                    Get.off(HomeScreen(), transition: Transition.fadeIn);
+                    Get.off(HomeScreen(),
+                        transition: Transition.fadeIn,
+                        duration: Duration(milliseconds: 1500));
                   },
                   icon: Container(
                       height: 50,
@@ -88,7 +90,12 @@ Widget headerWidget() {
                       // decoration: BoxDecoration(
                       //     borderRadius: BorderRadius.circular(10),
                       //     border: Border.all(color: Colors.redAccent)),
-                      child: Image.asset("assets/images/Spartan_logo.png"))),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset("assets/images/Spartan_logo.png"),
+                        ],
+                      ))),
               Container(
                 child: Row(
                   children: [
@@ -97,7 +104,8 @@ Widget headerWidget() {
                       indexed: "0",
                       onPressFunc: () {
                         Get.offAll(WelcomeScreen(),
-                            transition: Transition.fadeIn);
+                            transition: Transition.fadeIn,
+                            duration: Duration(milliseconds: 1500));
                         hc.selectedButton.value = "0";
                       },
                     ),
@@ -106,7 +114,8 @@ Widget headerWidget() {
                       menuName: "Members",
                       onPressFunc: () {
                         Get.offAll(MembersScreen(),
-                            transition: Transition.fadeIn);
+                            transition: Transition.fadeIn,
+                            duration: Duration(milliseconds: 1500));
                         hc.selectedButton.value = "1";
                       },
                     ),
@@ -115,7 +124,8 @@ Widget headerWidget() {
                       menuName: "Contact Us",
                       onPressFunc: () {
                         Get.offAll(ContactUsScreen(),
-                            transition: Transition.fadeIn);
+                            transition: Transition.fadeIn,
+                            duration: Duration(milliseconds: 1500));
                         hc.selectedButton.value = "2";
                       },
                     ),
@@ -124,7 +134,8 @@ Widget headerWidget() {
                       menuName: "Registration",
                       onPressFunc: () {
                         Get.offAll(RegistrationScreen(),
-                            transition: Transition.fadeIn);
+                            transition: Transition.fadeIn,
+                            duration: Duration(milliseconds: 1500));
                         hc.selectedButton.value = "3";
                       },
                     ),
@@ -133,7 +144,8 @@ Widget headerWidget() {
                       menuName: "Admin",
                       onPressFunc: () {
                         Get.offAll(AdminLoginScreen(),
-                            transition: Transition.fadeIn);
+                            transition: Transition.fadeIn,
+                            duration: Duration(milliseconds: 1500));
                         hc.selectedButton.value = "4";
                       },
                     ),
@@ -151,9 +163,11 @@ Widget headerWidget() {
               IconButton(
                   tooltip: "Home Page",
                   onPressed: () {
-                    Get.off(HomeScreen(), transition: Transition.fadeIn);
+                    Get.off(const HomeScreen(),
+                        transition: Transition.fadeIn,
+                        duration: Duration(milliseconds: 1500));
                   },
-                  icon: Container(
+                  icon: SizedBox(
                       height: 50,
                       width: 50,
                       // decoration: BoxDecoration(
@@ -271,7 +285,9 @@ Widget animatedDrawer() {
                 onPressFunc: () {
                   hc.selectedButton.value = "0";
                   Future.delayed((Duration(milliseconds: 300)), () {
-                    Get.offAll(HomeScreen(), transition: Transition.fadeIn);
+                    Get.offAll(HomeScreen(),
+                        transition: Transition.fadeIn,
+                        duration: Duration(milliseconds: 1500));
                   });
                   hc.isDraged.value = 2;
 
@@ -285,7 +301,9 @@ Widget animatedDrawer() {
                 onPressFunc: () {
                   hc.selectedButton.value = "1";
                   Future.delayed((Duration(milliseconds: 300)), () {
-                    Get.offAll(MembersScreen(), transition: Transition.fadeIn);
+                    Get.offAll(MembersScreen(),
+                        transition: Transition.fadeIn,
+                        duration: Duration(milliseconds: 1500));
                   });
                   hc.isDraged.value = 2;
 
@@ -300,7 +318,8 @@ Widget animatedDrawer() {
                   hc.selectedButton.value = "2";
                   Future.delayed((Duration(milliseconds: 300)), () {
                     Get.offAll(ContactUsScreen(),
-                        transition: Transition.fadeIn);
+                        transition: Transition.fadeIn,
+                        duration: Duration(milliseconds: 1500));
                   });
                   hc.isDraged.value = 2;
                 },
@@ -313,7 +332,8 @@ Widget animatedDrawer() {
                   hc.selectedButton.value = "3";
                   Future.delayed((Duration(milliseconds: 300)), () {
                     Get.offAll(RegistrationScreen(),
-                        transition: Transition.fadeIn);
+                        transition: Transition.fadeIn,
+                        duration: Duration(milliseconds: 1500));
                   });
                   hc.isDraged.value = 2;
                 },
@@ -326,7 +346,8 @@ Widget animatedDrawer() {
                   hc.selectedButton.value = "4";
                   Future.delayed((Duration(milliseconds: 300)), () {
                     Get.offAll(AdminLoginScreen(),
-                        transition: Transition.fadeIn);
+                        transition: Transition.fadeIn,
+                        duration: Duration(milliseconds: 1500));
                   });
                   hc.isDraged.value = 2;
                 },
