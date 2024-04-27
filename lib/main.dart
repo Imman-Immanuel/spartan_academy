@@ -14,6 +14,7 @@ void main() async {
   );
 
   runApp(GetMaterialApp(
+    title: "Spartan Taekwondo Academy",
     home: SplashScreen(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.grey),

@@ -128,18 +128,18 @@ Widget masterCard() {
               width: 140,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  border: Border(
+                  border: const Border(
                       top: BorderSide(color: Colors.black, width: 2),
                       right: BorderSide(color: Colors.black, width: 2),
                       bottom: BorderSide(color: Colors.black, width: 2),
                       left: BorderSide(color: Colors.black, width: 2)),
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/Sample_user.png"))),
+                  image: const DecorationImage(
+                      image: AssetImage("assets/images/master.png"))),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
-            Text(
+            const Text(
               "Chief Master",
               style: TextStyle(
                   fontWeight: FontWeight.w500,
@@ -147,8 +147,8 @@ Widget masterCard() {
                   fontStyle: FontStyle.italic,
                   fontSize: 15),
             ),
-            SizedBox(height: 3),
-            SelectableText(
+            const SizedBox(height: 3),
+            const SelectableText(
               "CHITTIBABU P",
               style: TextStyle(
                 color: Colors.white,
@@ -181,12 +181,12 @@ Widget masterCard() {
                       bottom: BorderSide(color: Colors.black, width: 2),
                       left: BorderSide(color: Colors.black, width: 2)),
                   image: DecorationImage(
-                      image: AssetImage("assets/images/Sample_user.png"))),
+                      image: AssetImage("assets/images/master.png"))),
             ),
-            SizedBox(
+            const SizedBox(
               height: 3,
             ),
-            Text(
+            const Text(
               "Chief Master",
               style: TextStyle(
                   fontWeight: FontWeight.w600,

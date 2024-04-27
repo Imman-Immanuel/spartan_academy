@@ -11,7 +11,7 @@ import '../registration_screen/view/registration_screen.dart';
 class HomeController extends GetxController {
   var selectedButton = "0".obs;
   RxDouble isDraged = 2.0.obs;
-  var version = "2.4".obs;
+  var version = "2.7".obs;
   List homeMenuList = [
     'Home',
     'Members',
